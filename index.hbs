@@ -1,0 +1,19 @@
+{{!< default}}
+
+{{!-- The main content area --}}
+<header>
+    {{> navbar }}
+</header>
+
+<main id="site-main" class="site-main">
+    <section class="container post-feed">
+        <div class="row row-cols-1 row-cols-md-3">
+            {{#foreach posts limit=9}}
+                {{> "post-card"}}
+            {{/foreach}}
+        </div>
+    </section>
+
+</main>
+
+{{> footer }}

@@ -1,0 +1,48 @@
+.navbar {
+    z-index: 1;
+    height: $navbar-height;
+    background-color: $darkgray;
+    padding: 0;
+
+    .navbar-brand {
+        height: $navbar-height;
+        padding: 1.6rem;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .nav {
+        display: none;
+        margin: 0;
+
+        li {
+            font-size: 1.6rem;
+            padding: .5em 1.6rem;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+
+            a {
+                color: white;
+                margin: 0;
+                border: none;
+                text-decoration: none;
+            }
+        }
+
+        li:hover {
+            border-bottom: 2px solid $primary;
+        }
+    }
+
+    .btn-lg {
+        margin-right: 1rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .navbar .nav {
+        display: block;
+    }
+}

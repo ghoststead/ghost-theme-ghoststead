@@ -1,0 +1,32 @@
+footer {
+    padding-top: 4rem;
+
+    a {
+        font-weight: normal;
+        color: white;
+    }
+
+    a:hover {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+.page-footer-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 4rem;
+}
+
+@include media-breakpoint-up(sm) {
+    footer {
+        padding-top: 8rem;
+    }
+
+    .page-footer-content {
+        margin-bottom: 8rem;
+    }
+}
+
+
