@@ -1,11 +1,12 @@
 // Variables
 
 //- Override and add to color system
+$primary: #15db95;
+$secondary: #03c;
 
-//- Override primary color
 
 //- Override font system
-$font-size-base: 1.6rem;
+//$font-size-base: 1.6rem;
 
 $font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
 $font-family-serif: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
@@ -13,10 +14,10 @@ $font-family-base: $font-family-serif !default;
 $headings-font-family: $font-family-sans-serif !default;
 
 //- Spacing
-$spacer: 16px;
+//$spacer: 16px;
 
 //- Borders
-$border-radius-lg: 3.2rem;
+//$border-radius-lg: 3.2rem;
 
 //- Add custom variables
 $navbar-height: 7.2rem !default;
