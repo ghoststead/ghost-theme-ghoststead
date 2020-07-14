@@ -4,20 +4,15 @@
 --------------------*/
 @mixin mm-link {
 	> a {
-		color: $link-color;
+		color: $navbar-light-color;
 	    display: block;
 	    font-size: 15px;
 	    font-weight: 600;
-	    i {
-	        font-size: 14px;
-		    vertical-align: middle;
-		    width: 24px;
-		    display: inline-block;
-		}
+		text-decoration: none;
 	}
 	&:hover {
 		> a {
-			color: $link-hover-color;
+			color: $navbar-light-hover-color;
 		}
 	}
 }
@@ -38,7 +33,7 @@
 			    font-weight: 900;
 			    margin-left: .5rem;
 			    transition: 0.3s ease;
-				color: $link-color;
+				color: $navbar-light-color;
 			}
 		}
 	}
@@ -52,6 +47,7 @@
 		    top: 100%;
 		    left: 0;
 		    background: $white;
+			box-sizing: border-box;
 		    box-shadow: 0 26px 21px 0 rgba(0, 0, 0, 0.1);
 		    width: 200px;
 		    margin: 0;
@@ -93,12 +89,12 @@
 		    background: $white;
 		    box-shadow: 0 26px 21px 0 rgba(0, 0, 0, 0.1);
 		    width: 100%;
-		    margin: 0;
+		    margin: -2px 0;
 		    list-style: none;
 		    pointer-events: none;
 		    @include transition(ease all 0.55s);
 		    opacity: 0;
-		    border-top: 5px solid $secondary;
+		    border-top: 5px solid $primary;
 		}
 		.mm-right {
 			padding: 20px;
@@ -152,7 +148,6 @@
 		    list-style: none;
 		    display: none;
 	    	background: #f5f5f5;
-	    	border-top: 1px solid #e6e6e6;
 			> li {
 				padding-left: 10px;
 				&:not(:last-child) {
@@ -164,7 +159,7 @@
 				    font-size: 13px;
 				    font-weight: 600;
 				    line-height: 40px;
-				    color: $link-color;
+				    color: $navbar-light-color;
 					&:hover {
 						color:$primary;
 					}
