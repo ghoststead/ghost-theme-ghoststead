@@ -81,16 +81,14 @@ $whitegray: $gray-100;
 //@import "casper/subscribe-overlay";
 @import "casper/site-footer";
 @import "casper/dark-mode";
+// end casper
 
-/* Vendor */
+@import "mixins";
+
+/* Components */
 @import "components/mega-menu";
+@import "components/effect";
 
-
-@import "global";
-
-//@import "masthead";
-//@import "navbar";
-//@import "buttons";
 @import "footer";
 
 @import "site";

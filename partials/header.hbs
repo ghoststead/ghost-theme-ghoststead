@@ -50,7 +50,7 @@
                             <div class="row no-gutters">
                                 <div class="col-lg-4 d-none d-lg-block">
                                     <div class="h-100 mm-left"
-                                         style="background-image: url(static/img/500x500.jpg); "></div>
+                                         style="background-image: url({{asset "images/500x500.jpg"}}); "></div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="mm-right">
@@ -122,6 +122,8 @@
                             </div> <!-- row -->
                         </div>
                     </li>
+                    <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
+                    the url helper sanitizes the content -->
                     <li><a class="nav-link py-4" href="#about">About</a></li>
                     <li><a class="nav-link py-4" href="#feature">Features</a></li>
                     <li><a class="nav-link py-4" href="#team">Team</a></li>

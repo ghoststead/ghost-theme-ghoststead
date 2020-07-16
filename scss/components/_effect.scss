@@ -1,0 +1,370 @@
+/* particles-box
+---------------------------*/
+.particles-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+
+/* Effect Section
+------------------------*/
+.effect-section {
+    position: relative;
+    overflow: hidden;
+
+    .effect {
+        pointer-events: none;
+    }
+
+    .effect-img {
+        position: absolute;
+        right: -2px;
+        left: -2px;
+
+        img {
+            width: 100%;
+        }
+
+        &.bottom {
+            bottom: -2px;
+        }
+
+        &.top {
+            top: -2px;
+        }
+    }
+
+    .effect-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .effect-bg-75 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 25%;
+    }
+
+    .effect-bg-65 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 35%;
+    }
+
+    .effect-bg-40 {
+        position: absolute;
+        top: 0;
+        bottom: 60%;
+        left: 0;
+        right: 0;
+
+        &.bottom {
+            top: 60%;
+            bottom: 0;
+        }
+    }
+
+    .effect-round {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0 0 0 220px;
+    }
+
+    .effect-skew {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -50%;
+        right: 31%;
+        @include skew(-35);
+        border-radius: 0 0 180px 0;
+        @include media-breakpoint-down(sm) {
+            right: -40%;
+            left: -90%;
+        }
+    }
+
+    .effect-skew-01 {
+        position: absolute;
+        top: -10%;
+        bottom: -30%;
+        right: -50%;
+        left: 40%;
+        border-radius: 27% 73% 32% 68% / 52% 66% 34% 48%;
+        @include media-breakpoint-down(sm) {
+            right: -40%;
+            left: -90%;
+        }
+    }
+
+    .effect-radius {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0% 100% 20% 80% / 73% 0% 100% 27%;
+
+        @include media-breakpoint-down(sm) {
+            bottom: 30px;
+            left: -50px;
+            right: -40px;
+        }
+    }
+
+    .effect-middle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 20%;
+        @include skew(30);
+        z-index: -1;
+    }
+
+    .effect-shape {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -40%;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0.08), rgba(2, 2, 2, 0.05));
+            right: -25%;
+            margin: auto;
+            transform: skew(30deg);
+            top: -40%;
+            left: 45%;
+            border-radius: 50%;
+        }
+    }
+
+    .effect-radius-bg {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+        > div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 23rem;
+            height: 23rem;
+            border-radius: 100%;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(227, 221, 246, 0.1)), color-stop(65%, rgba(227, 221, 246, 0.2)), to(rgba(227, 221, 246, 0.1)));
+            background-image: -webkit-linear-gradient(top, rgba(227, 221, 246, 0.1) 0%, rgba(227, 221, 246, 0.2) 65%, rgba(227, 221, 246, 0.1) 100%);
+            background-image: -o-linear-gradient(top, rgba(227, 221, 246, 0.1) 0%, rgba(227, 221, 246, 0.2) 65%, rgba(227, 221, 246, 0.1) 100%);
+            background-image: linear-gradient(-180deg, rgba(227, 221, 246, 0.1) 0%, rgba(227, 221, 246, 0.2) 65%, rgba(227, 221, 246, 0.1) 100%);
+            z-index: -1;
+        }
+
+        .radius-1 {
+            -webkit-transform: translate(-50%, -50%) scale(0.67);
+            -ms-transform: translate(-50%, -50%) scale(0.67);
+            transform: translate(-50%, -50%) scale(0.67);
+        }
+
+        .radius-2 {
+            -webkit-transform: translate(-50%, -50%) scale(1.05);
+            -ms-transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.05);
+        }
+
+        .radius-3 {
+            -webkit-transform: translate(-50%, -50%) scale(1.63);
+            -ms-transform: translate(-50%, -50%) scale(1.63);
+            transform: translate(-50%, -50%) scale(1.63);
+        }
+
+        .radius-4 {
+            -webkit-transform: translate(-50%, -50%) scale(2.1);
+            -ms-transform: translate(-50%, -50%) scale(2.1);
+            transform: translate(-50%, -50%) scale(2.1);
+        }
+
+        .radius-x {
+            will-change: transform;
+            -webkit-animation: pulsate 3s infinite;
+            animation: pulsate 3s infinite;
+        }
+    }
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(4);
+        transform: translate(-50%, -50%) scale(4)
+    }
+
+}
+
+@keyframes pulsate {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0.5)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate(-50%, -50%) scale(4);
+        transform: translate(-50%, -50%) scale(4)
+    }
+
+}
+
+/* After 
+------------------------*/
+.after-50px {
+    position: relative;
+
+    &:after {
+        width: 50px;
+        height: 2px;
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        .text-center & {
+            right: 0;
+            margin: auto;
+        }
+    }
+}
+
+.hr-line {
+    height: 3px;
+    font-size: 0px;
+
+    span {
+        width: 50px;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        height: 3px;
+        margin-right: 15px;
+        border-radius: 3px;
+
+        &:after {
+            content: "";
+            background: currentColor;
+            width: 15px;
+            height: 3px;
+            margin-right: 10px;
+            position: absolute;
+            top: 0;
+            right: -30px;
+        }
+    }
+}
+
+/* Mask
+------------------------*/
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Sticky
+------------------------*/
+.sticky-xl-top {
+    @include media-breakpoint-up(xl) {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        .fixed-header ~ main & {
+            top: 90px;
+        }
+    }
+}
+
+.sticky-lg-top {
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        .fixed-header ~ main & {
+            top: 90px;
+        }
+    }
+}
+
+.sticky-md-top {
+    @include media-breakpoint-up(md) {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        .fixed-header ~ main & {
+            top: 90px;
+        }
+    }
+}
+
+.sticky-sm-top {
+    @include media-breakpoint-up(sm) {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        .fixed-header ~ main & {
+            top: 90px;
+        }
+    }
+}
+
+/* Parallax
+--------------*/
+.jarallax {
+    position: relative;
+    z-index: 0;
+}
+
+.jarallax > .jarallax-img {
+    position: absolute;
+    object-fit: cover;
+    /* support for plugin https://github.com/bfred-it/object-fit-images */
+    font-family: 'object-fit: cover;';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

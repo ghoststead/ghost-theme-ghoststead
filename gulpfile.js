@@ -29,7 +29,7 @@ function scss(done) {
 
 function js(done) {
     pump([
-        gulp.src('node_modules/bootstrap/dist/js/bootstrap.js', {sourcemaps: true}),
+        gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js', 'js/**/*.js'], {sourcemaps: true}),
         gulp.dest('assets/built/js/', {sourcemaps: '.'}),
         livereload()
     ], done);
