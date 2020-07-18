@@ -1,0 +1,16 @@
+.section-title {
+	margin-bottom: 45px;
+	.after-50px {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+	}
+	p {
+		font-size: 1.1rem;
+		&:last-child {
+			margin-bottom:0;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		margin-bottom: 25px;
+	}
+}

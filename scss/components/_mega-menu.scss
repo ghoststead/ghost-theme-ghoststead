@@ -1,5 +1,12 @@
 // Prefix: mm-
 
+// Position for mega menu width
+.navbar {
+	> .container {
+		position: relative;
+	}
+}
+
 /* Desktop
 --------------------*/
 @mixin mm-link {
@@ -88,8 +95,8 @@
 		    left: 0;
 		    background: $white;
 		    box-shadow: 0 26px 21px 0 rgba(0, 0, 0, 0.1);
-		    width: 100%;
-		    margin: -2px 0;
+		    width: calc(100% - 30px);
+		    margin: -2px 15px;
 		    list-style: none;
 		    pointer-events: none;
 		    @include transition(ease all 0.55s);

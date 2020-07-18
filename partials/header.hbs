@@ -10,9 +10,9 @@
                     <a class="navbar-brand" href="{{@site.url}}">{{@site.title}}</a>
                 {{/if}}
             </div>
-            <div class="order-lg-last d-flex align-items-center py-4 py-lg-0">
+            <div class="order-lg-last d-flex align-items-center py-3 py-lg-0">
                 <div class="d-none d-md-block">
-                    <a class="btn btn-primary text-nowrap text-light" href="#">Buy Now</a>
+                    <a class="btn btn-secondary text-nowrap text-light" href="#">Buy Now</a>
                 </div>
                 <button type="button" class="navbar-toggler collapsed mx-2" data-toggle="collapse"
                         data-target="#navbar-collapse-toggle" aria-expanded="false">
@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
                 <ul class="nav navbar-nav m-auto">
                     <li class="nav-item mm-in mm-dropdown">
-                        <a class="nav-link py-4" href="#home">Home
+                        <a class="nav-link py-lg-4" href="#home">Home
                             {{> icons/chevron-down}}
                         </a>
                         <ul class="mm-dropdown-menu mm-drop-in">
@@ -43,7 +43,7 @@
                         </ul>
                     </li>
                     <li class="mm-in mm-mega">
-                        <a class="nav-link py-4" href="javascript:void(0)">Pages
+                        <a class="nav-link py-lg-4" href="javascript:void(0)">Pages
                             {{> icons/chevron-down}}
                         </a>
                         <div class="mm-mega-menu mm-drop-in">
@@ -124,12 +124,12 @@
                     </li>
                     <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
                     the url helper sanitizes the content -->
-                    <li><a class="nav-link py-4" href="#about">About</a></li>
-                    <li><a class="nav-link py-4" href="#feature">Features</a></li>
-                    <li><a class="nav-link py-4" href="#team">Team</a></li>
-                    <li><a class="nav-link py-4" href="#price">Price</a></li>
-                    <li><a class="nav-link py-4" href="#blog">Blog</a></li>
-                    <li><a class="nav-link py-4" href="#contact">Contact Us</a></li>
+                    <li><a class="nav-link py-lg-4" href="#about">About</a></li>
+                    <li><a class="nav-link py-lg-4" href="#feature">Features</a></li>
+                    <li><a class="nav-link py-lg-4" href="#team">Team</a></li>
+                    <li><a class="nav-link py-lg-4" href="#price">Price</a></li>
+                    <li><a class="nav-link py-lg-4" href="#blog">Blog</a></li>
+                    <li><a class="nav-link py-lg-4" href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -142,9 +142,9 @@
             let header = document.getElementById('main-header');
             window.addEventListener('scroll', function () {
                 if (window.scrollY > 100) {
-                    header.children[0].classList.add('bg-secondary');
+                    header.children[0].classList.add('bg-primary');
                 } else {
-                    header.children[0].classList.remove('bg-secondary');
+                    header.children[0].classList.remove('bg-primary');
                 }
             });
         })();

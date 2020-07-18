@@ -1,0 +1,31 @@
+.list-type-01 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+	    position: relative;
+		padding: 8px 0 8px 30px;
+		font-weight: 500;
+	}
+    svg {
+        position: absolute;
+        top: 13px;
+        left: 0;
+        color: $primary;
+        width: 16px;
+        height: 16px;
+        path {
+            fill: currentColor;
+        }
+    }
+	&.dark {
+		svg {
+            color: $primary;
+        }
+	}
+    &.secondary {
+		svg {
+            color: $white;
+        }
+	}
+}

@@ -1,7 +1,22 @@
+
+// :after Background Color
+@each $color, $value in $theme-colors {
+	.bg-#{$color}-after {
+		&:after {
+			background-color: $value;
+		}
+	}
+}
+
 .bg-gray-100 {
     background-color: $gray-100;
 }
 
 .bg-gray-300 {
     background-color: $gray-300;
+}
+
+// Light Text Color
+.text-white-light {
+	color: rgba($white, 0.65);
 }

@@ -1,21 +1,73 @@
 // Variables
 
 //- Override and add to color system
-$primary: #15db95;
-$secondary: #03c;
+$primary: 			#03c !default;
+$secondary: 		#15db95 !default;
+$dark:				#171347 !default;
+$gray-100: 			#f1f6fd !default;
 
-//- Override font system
-//$font-size-base: 1.6rem;
 
-$font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
-$font-family-serif: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
-$font-family-base: $font-family-serif !default;
-$headings-font-family: $font-family-sans-serif !default;
 
-//- Spacing
-//$spacer: 16px;
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+$input-btn-padding-y:         .75rem !default;
+$input-btn-padding-x:         1.75rem !default;
 
-//- Borders
-//$border-radius-lg: 3.2rem;
+$btn-font-weight:               600 !default;
+$btn-focus-box-shadow:           none !default;
 
-//- Add custom variables
+
+//- Override Body
+//
+// Settings for the `<body>` element.
+$body-color:	#718096 !default;
+
+//- Override Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
+$headings-font-weight:        700 !default;
+$headings-color:              $dark !default;
+$font-weight-base:				500 !default
+
+
+
+//- Override Links
+//
+// Style anchor elements.
+$link-decoration:                         none !default;
+
+
+//- Override Components
+//
+// Define common padding and border radius sizes and more.
+$box-shadow:                  0px 3px 10px 0px rgba(38, 59, 94, 0.1) !default;
+$box-shadow-lg:               0px 30px 60px 0px rgba(38, 59, 94, 0.1) !default;
+
+
+// Navbar Toggle Button
+$navbar-toggler-padding-y:          .57rem !default;
+
+
+//- Added Extra Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+  10: $spacer * 5,
+  11: $spacer * 6,
+  12: $spacer * 7,
+) !default;

@@ -1,0 +1,71 @@
+/*------------------
+*   Tab style 01
+-------------------*/
+.tab-style-1 {
+    .nav {
+        border-bottom: 1px solid $gray-200;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 15px;
+        }
+    }
+    .nav-item {
+        margin: 0 10px;
+        @include media-breakpoint-down(md) {
+            margin: 0 5px;
+        }
+        a {
+            color: $dark;
+            position: relative;
+            padding: 12px 15px;
+            text-align: center;
+            border-bottom: none;
+            width: 100%;
+            display: block;
+            @include media-breakpoint-down(md) {
+                padding: 10px 12px;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background: $primary;
+                transition: ease-in-out all 0.55s;
+            }
+            &.active {
+                color: $primary;
+                &:after{
+                    width: 100%;
+                }
+            }
+        }
+        .icon {
+            @include media-breakpoint-up(md) {
+                margin-bottom: 8px;
+            }
+            svg {
+              height: 38px;
+              width: 38px;
+              @include media-breakpoint-down(md) {
+                  height: 30px;
+                  width: 30px;
+              }
+            }
+        }
+        span {
+            font-weight: 700;
+            font-size: 16px;
+            width: 100%;
+            display: block;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+    }
+
+    .tab-pane {
+        padding-top: 20px;
+    }
+}

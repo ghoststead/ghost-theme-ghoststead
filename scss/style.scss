@@ -86,12 +86,31 @@ $whitegray: $gray-100;
 @import "mixins";
 
 /* Components */
+@import "components/fonts";
 @import "components/mega-menu";
 @import "components/effect";
+@import "components/heading";
+@import "components/space";
+@import "components/opacity";
+@import "components/list";
+@import "components/border";
+@import "components/avatar";
+@import "components/price.table";
+@import "components/media";
+@import "components/typo";
+@import "components/font.weight";
+@import "components/section";
+@import "components/icon";
+@import "components/social.icon";
+@import "components/button";
+@import "components/hover";
+@import "components/tabs";
+@import "components/image";
+@import "components/blog";
 
+@import "colors";
 @import "footer";
 
 @import "site";
 @import "post";
 @import "post-card";
-

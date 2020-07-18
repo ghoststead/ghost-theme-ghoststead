@@ -1,0 +1,25 @@
+// Link Dark Light Colors
+.links-white {
+	a {
+		&:not(:hover) {
+			color: rgba($white, .7);
+		}
+		&:hover {
+			color: $white;
+		}
+	}
+}
+.links-dark {
+	a {
+		&:not(:hover) {
+			color: $body-color;
+		}
+		&:hover {
+			color: $dark;
+		}
+	}
+}
+
+.btn-secondary {
+	color: $white !important;
+}
