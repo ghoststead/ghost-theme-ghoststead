@@ -1,0 +1,100 @@
+// Link Dark Light Colors
+.links-white {
+	a {
+		&:not(:hover) {
+			color: rgba($white, .7);
+		}
+		&:hover {
+			color: $white;
+		}
+	}
+}
+.links-dark {
+	a {
+		&:not(:hover) {
+			color: $body-color;
+		}
+		&:hover {
+			color: $dark;
+		}
+	}
+}
+
+// Video Buttons
+.video-btn {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+	transition: ease all 0.55s;
+    z-index: 1;
+    border: none;
+    &:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border-radius: 50%;
+		animation: pulse-border 1500ms ease-out infinite;
+		pointer-events: none;
+		z-index: -1;
+	}
+	&.white {
+		background: $white;
+		&:after {
+			background: $white;
+		}
+		span {
+			color:$primary;
+		}
+	}
+	&.primary {
+		background: $primary;
+		&:after {
+			background: $primary;
+		}
+		span {
+			color:$white;
+		}
+	}
+
+	span {
+	    border-top: 15px solid transparent;
+	    border-bottom: 15px solid transparent;
+	    border-left: 20px solid currentcolor;
+	    position: absolute;
+	    top: 0;
+	    bottom: 0;
+	    left: 9px;
+	    right: 0;
+	    margin: auto;
+	    width: 0px;
+	    height: 0px;
+	}
+}
+
+@keyframes pulse-border {
+  0% {
+    @include scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    @include scale(2);
+    opacity: 0;
+  }
+}
+
+.p-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}

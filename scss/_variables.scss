@@ -6,7 +6,10 @@ $secondary: 		#15db95 !default;
 $dark:				#171347 !default;
 $gray-100: 			#f1f6fd !default;
 
-
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// Default value is 3
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   1.8 !default;
 
 // Buttons + Forms
 //
@@ -29,7 +32,9 @@ $body-color:	#718096 !default;
 $font-family-sans-serif: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;
 $headings-font-weight:        700 !default;
 $headings-color:              $dark !default;
-$font-weight-base:				500 !default
+$display-font-weight:         700 !default;
+
+$font-weight-base:				400 !default
 
 
 
