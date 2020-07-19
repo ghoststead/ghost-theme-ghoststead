@@ -13,7 +13,7 @@
 
     {{!-- Built stylesheet --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
-
+    <script async src={{asset "built/js/swiper-bundle.js"}}></script>
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
@@ -24,5 +24,6 @@
     {{ghost_foot}}
 
     <script src={{asset "built/js/bootstrap.js"}}></script>
+    <script async src={{asset "built/js/theme.js"}}></script>
 </body>
 </html>
