@@ -3,11 +3,10 @@
   typeof define === 'function' && define.amd ? define(factory) :
   (global = global || self, global.Swiper = factory());
 }(this, (function () { 'use strict';
-
-  var numberOfSwiperClasses = document.getElementsByClassName('swiper-container').length;
-  if(numberOfSwiperClasses > 0) {
-    for (var i = 0; i < numberOfSwiperClasses; i++) {
-      var currentSwiper = document.getElementsByClassName('swiper-container')[i];
+  var numberOfSwiperClasses = document.getElementsByClassName('swiper-container');
+  if(numberOfSwiperClasses.length > 0) {
+    for (var i = 0; i < numberOfSwiperClasses.length; i++) {
+      var currentSwiper = numberOfSwiperClasses[i];
       var newClassSwiper = "instance-swiper"+i;
       currentSwiper.classList.add(newClassSwiper);
       new Swiper("."+newClassSwiper, {
@@ -25,5 +24,4 @@
       });
     }
   }
-
 })));
