@@ -171,6 +171,7 @@
 
 }
 
+// Arrow Icon
 .arrow-icon {
     width: 32px;
     height: 12px;
@@ -199,4 +200,97 @@
         right: 0;
         @include rotate(-45);
     }
+}
+
+// Hover rotate effect
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin hover-rotate {
+  animation: lds-dual-ring 1.2s linear infinite;
+  animation-play-state: paused;
+}
+
+@mixin hover-rotate-hover {
+  animation-play-state: running;
+}
+
+.hover-rotate {
+  .hr-rotate {
+    @include hover-rotate;
+  }
+
+  .hr-rotate-after {
+    position: relative;
+    z-index: 1;
+    &:after {
+        content: "";
+        position: absolute;
+        margin: auto;
+        border-radius: 50px;
+		transition: ease all 0.55s;
+        z-index: -1;
+        @include hover-rotate;
+    }
+  }
+  .ef-1 {
+    &:after {
+        border-top: 50px solid transparent;
+        border-left: 50px solid currentColor;
+        top: -10px;
+        left: -10px;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid transparent;
+    }
+  }
+  .ef-2 {
+    &:after {
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: 4px solid currentcolor;
+      border-bottom: 4px solid transparent;
+    }
+  }
+  .ef-3 {
+    &:after {
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border: 2px solid currentcolor;
+      border-bottom: 2px solid transparent;
+      border-top: 2px solid transparent;
+    }
+  }
+  .ef-4 {
+    &:after {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border: 2px solid currentcolor;
+        border-left: 2px solid transparent;
+        border-right: 2px solid transparent;
+        border-top: 2px solid transparent;
+    }
+  }
+
+  &:hover {
+    .hr-rotate {
+      @include hover-rotate-hover;
+    }
+    .hr-rotate-after {
+      &:after {
+        @include hover-rotate-hover;
+      }
+    }
+  }
 }

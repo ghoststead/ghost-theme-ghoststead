@@ -16,6 +16,7 @@
 	}
 }
 
+// Border Style
 .border-style {
 	position: relative;
 	&:after {
@@ -44,4 +45,10 @@
 			background: radial-gradient(ellipse at center, rgba($white, 0.2) 0, rgba(31, 45, 61, 0) 75%);
 		}
 	}
+}
+
+
+// Border Color
+.border-gray {
+	border-color: $gray-200;
 }

@@ -69,3 +69,39 @@
         padding-top: 20px;
     }
 }
+
+/*------------------
+*   Tab style 02
+-------------------*/
+.tab-style-2 {
+    .nav {
+        margin-bottom: 15px;
+        border: none;
+        .nav-item {
+            margin-right: 18px;
+            a {
+                padding: 8px 0;
+                font-weight: 600;
+                color: $dark;
+                position: relative;
+                display: block;
+                &:after {
+                    content:"";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0px;
+                    transition: ease-in-out all 0.55s;
+                    height: 2px;
+                    background: $secondary;
+                }
+                &.active {
+                    color: $primary;
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

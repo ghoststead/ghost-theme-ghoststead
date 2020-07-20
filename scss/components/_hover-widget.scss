@@ -1,3 +1,4 @@
+// Hover top
 .hover-top {
 	transition: ease-in-out all 0.35s;
     position: relative;
@@ -7,7 +8,15 @@
     }
 }
 
+// Hover shadow
+.shadow-hover {
+    box-shadow: $box-shadow;
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
+}
 
+// Hover arrow
 .arrow-hover {
     position: relative;
     .arrow-icon {
@@ -53,6 +62,23 @@
     &:hover {
         .hover-top--in {
             top:-10px;
+        }
+    }
+}
+
+// Grayscale Hover
+.grayscale-hover {
+    img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: .7;
+		transition: ease all 0.35s;
+    }
+    &:hover {
+        img {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+            opacity: 1;
         }
     }
 }
