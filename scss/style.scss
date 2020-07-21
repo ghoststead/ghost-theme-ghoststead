@@ -85,6 +85,9 @@ $whitegray: $gray-100;
 
 @import "mixins";
 
+// S    wiper slider
+@import "swiper-bundle";
+
 /* Components */
 @import "components/mega-menu-widget";
 @import "components/effect-widget";
@@ -107,11 +110,12 @@ $whitegray: $gray-100;
 @import "components/tabs-widget";
 @import "components/image-widget";
 @import "components/blog-widget";
+@import "components/swiper-widget";
 
 @import "colors";
+@import "header";
 @import "footer";
 
 @import "site";
 @import "post";
 @import "post-card";
-@import "swiper-bundle";

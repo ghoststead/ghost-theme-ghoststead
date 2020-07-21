@@ -14,7 +14,7 @@
                 <div class="d-none d-md-block">
                     <a class="btn btn-secondary text-nowrap text-light" href="#">Buy Now</a>
                 </div>
-                <button type="button" class="navbar-toggler collapsed mx-2" data-toggle="collapse"
+                <button type="button" class="navbar-toggler collapsed ml-2" data-toggle="collapse"
                         data-target="#navbar-collapse-toggle" aria-expanded="false">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -22,10 +22,9 @@
             <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
                 <ul class="nav navbar-nav m-auto">
                     <li class="nav-item mm-in mm-dropdown">
-                        <a class="nav-link py-lg-4" href="#home">Home
-                            {{> icons/chevron-down}}
-                        </a>
-                        <ul class="mm-dropdown-menu mm-drop-in">
+                        <a class="nav-link py-lg-4" href="#home">Home</a>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <ul class="mm-dropdown-menu mm-drop-in dropdown-menu">
                             <li><a href="index.html">Home Option 1</a></li>
                             <li><a href="index-01.html">Home Option 2</a></li>
                             <li><a href="index-02.html">Home Option 3</a></li>
@@ -42,15 +41,13 @@
                             <li><a href="index-13.html">Home Option 14</a></li>
                         </ul>
                     </li>
-                    <li class="mm-in mm-mega">
-                        <a class="nav-link py-lg-4" href="javascript:void(0)">Pages
-                            {{> icons/chevron-down}}
-                        </a>
-                        <div class="mm-mega-menu mm-drop-in">
+                    <li class="nav-item mm-in mm-mega">
+                        <a class="nav-link py-lg-4" href="javascript:void(0)">Pages</a>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <div class="mm-mega-menu mm-drop-in dropdown-menu">
                             <div class="row no-gutters">
                                 <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="h-100 mm-left"
-                                         style="background-image: url({{asset "images/500x500.jpg"}}); "></div>
+                                    <div class="h-100 mm-left" style="background-image: url({{asset "images/500x500.jpg"}}); "></div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="mm-right">
@@ -124,12 +121,12 @@
                     </li>
                     <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
                     the url helper sanitizes the content -->
-                    <li><a class="nav-link py-lg-4" href="#about">About</a></li>
-                    <li><a class="nav-link py-lg-4" href="#feature">Features</a></li>
-                    <li><a class="nav-link py-lg-4" href="#team">Team</a></li>
-                    <li><a class="nav-link py-lg-4" href="#price">Price</a></li>
-                    <li><a class="nav-link py-lg-4" href="#blog">Blog</a></li>
-                    <li><a class="nav-link py-lg-4" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#feature">Features</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#price">Price</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
@@ -141,7 +138,7 @@
 
             let header = document.getElementById('main-header');
             window.addEventListener('scroll', function () {
-                if (window.scrollY > 100) {
+                if (window.scrollY > 50) {
                     header.children[0].classList.add('bg-primary');
                 } else {
                     header.children[0].classList.remove('bg-primary');

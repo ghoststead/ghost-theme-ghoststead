@@ -1,0 +1,24 @@
+@include media-breakpoint-down(lg) {
+    .navbar-nav {
+        .navbar-collapse {
+            position: absolute;
+            top: 100%;
+            left: 1rem;
+            right: 1rem;
+            width: calc(100% - 2rem);
+            max-height: 80vh;
+            overflow-y: auto;
+            &.show,
+            &.collapsing {
+                background: $primary;
+            }
+        }
+        .nav-item {
+            border-bottom: 1px solid rgba($white, 0.1);
+        }
+        .nav-link {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+    }
+}
