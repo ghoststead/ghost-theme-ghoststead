@@ -1,3 +1,4 @@
+/* Start Swiper */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -10,18 +11,26 @@
       var newClassSwiper = "instance-swiper"+i;
       currentSwiper.classList.add(newClassSwiper);
       new Swiper("."+newClassSwiper, {
+        direction: currentSwiper.getAttribute("data-direction") || 'horizontal',
         slidesPerView: currentSwiper.getAttribute("data-slidesPerView") || 2,
-        spaceBetween: 30,
+        spaceBetween: currentSwiper.getAttribute("data-spaceBetween") || 30,
+        speed: currentSwiper.getAttribute("data-speed") || 300,
+        width: currentSwiper.getAttribute("data-width") || null,
+        height: currentSwiper.getAttribute("data-height") || null,
+        loop: currentSwiper.getAttribute("data-loop") || false,
+        autoHeight: currentSwiper.getAttribute("data-autoHeight") || false,
+        centeredSlides:currentSwiper.getAttribute("data-centeredSlides") || false,
         freeMode: true,
         pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
+          el: (currentSwiper.getAttribute("data-dotshide") == 'true' ? null : '.swiper-pagination'),
+          clickable: currentSwiper.getAttribute("data-paginationclickable") || false,
         },
         autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
+          delay: currentSwiper.getAttribute("data-autoplaydelay") || 2500,
+          disableOnInteraction: currentSwiper.getAttribute("data-disableOnInteraction") || false,
         },
       });
     }
   }
 })));
+/* End Swiper */
