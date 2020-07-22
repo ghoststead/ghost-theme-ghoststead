@@ -12,9 +12,9 @@
       currentSwiper.classList.add(newClassSwiper);
       new Swiper("."+newClassSwiper, {
         direction: currentSwiper.getAttribute("data-direction") || 'horizontal',
-        slidesPerView: currentSwiper.getAttribute("data-slidesPerView") || 2,
-        spaceBetween: currentSwiper.getAttribute("data-spaceBetween") || 30,
-        speed: currentSwiper.getAttribute("data-speed") || 300,
+        slidesPerView: parseInt(currentSwiper.getAttribute("data-slidesPerView")) || 2,
+        spaceBetween: parseInt(currentSwiper.getAttribute("data-spaceBetween")) || 30,
+        speed: parseInt(currentSwiper.getAttribute("data-speed")) || 300,
         width: currentSwiper.getAttribute("data-width") || null,
         height: currentSwiper.getAttribute("data-height") || null,
         loop: currentSwiper.getAttribute("data-loop") || false,
@@ -29,6 +29,23 @@
           delay: currentSwiper.getAttribute("data-autoplaydelay") || 2500,
           disableOnInteraction: currentSwiper.getAttribute("data-disableOnInteraction") || false,
         },
+        breakpoints: {
+          576: {
+              slidesPerView : currentSwiper.getAttribute("data-sm") || 5,
+          },
+          768: {
+              slidesPerView : currentSwiper.getAttribute("data-md") || 5,
+          },
+          992: {
+              slidesPerView : currentSwiper.getAttribute("data-lg") || 5,
+          },
+          1200: {
+              slidesPerView : currentSwiper.getAttribute("data-xl") || 5,
+          },
+          1400: {
+              slidesPerView : currentSwiper.getAttribute("data-xxl") || 5,
+          },
+        }
       });
     }
   }
