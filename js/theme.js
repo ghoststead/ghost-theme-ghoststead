@@ -12,7 +12,7 @@
       currentSwiper.classList.add(newClassSwiper);
       new Swiper("."+newClassSwiper, {
         direction: currentSwiper.getAttribute("data-direction") || 'horizontal',
-        slidesPerView: parseInt(currentSwiper.getAttribute("data-slidesPerView")) || 2,
+        slidesPerView: parseInt(currentSwiper.getAttribute("data-slidesPerView")) || 1,
         spaceBetween: parseInt(currentSwiper.getAttribute("data-spaceBetween")) || 30,
         speed: parseInt(currentSwiper.getAttribute("data-speed")) || 300,
         width: currentSwiper.getAttribute("data-width") || null,
@@ -20,7 +20,6 @@
         loop: currentSwiper.getAttribute("data-loop") || false,
         autoHeight: currentSwiper.getAttribute("data-autoHeight") || false,
         centeredSlides:currentSwiper.getAttribute("data-centeredSlides") || false,
-        freeMode: true,
         pagination: {
           el: (currentSwiper.getAttribute("data-dotshide") == 'true' ? null : '.swiper-pagination'),
           clickable: currentSwiper.getAttribute("data-paginationclickable") || false,
@@ -31,19 +30,19 @@
         },
         breakpoints: {
           576: {
-              slidesPerView : currentSwiper.getAttribute("data-sm") || 5,
+              slidesPerView : currentSwiper.getAttribute("data-sm") || 1,
           },
           768: {
-              slidesPerView : currentSwiper.getAttribute("data-md") || 5,
+              slidesPerView : currentSwiper.getAttribute("data-md") || 1,
           },
           992: {
-              slidesPerView : currentSwiper.getAttribute("data-lg") || 5,
+              slidesPerView : currentSwiper.getAttribute("data-lg") || 1,
           },
           1200: {
-              slidesPerView : currentSwiper.getAttribute("data-xl") || 5,
+              slidesPerView : currentSwiper.getAttribute("data-xl") || 1,
           },
           1400: {
-              slidesPerView : currentSwiper.getAttribute("data-xxl") || 5,
+              slidesPerView : currentSwiper.getAttribute("data-xxl") || 1,
           },
         }
       });
@@ -51,3 +50,129 @@
   }
 })));
 /* End Swiper */
+/* Start Video & Photo Swiper */
+(function() {
+  // four image gallery
+  var imageLinks = document.querySelectorAll('#image_container a')
+  for (var i = 0; i < imageLinks.length; i++) {
+    imageLinks[i].addEventListener('click', function(e) {
+      e.preventDefault()
+      BigPicture({
+        el: e.target,
+        gallery: '#image_container',
+      })
+    })
+  }
+  // unsplash gallery
+  var unsplashImages = [
+    'meiying',
+    'clemono2',
+    'heftiba',
+    'westbeach013',
+    'anniespratt',
+    'camylla93',
+    'nathananderson',
+    'aaronburden',
+    'elke_karin',
+    'scottwebb',
+    'lucabravo',
+    'neonbrand',
+  ].map(function(user) {
+    return {
+      src: 'https://source.unsplash.com/user/' + user + '/daily',
+    }
+  })
+  if(document.getElementById('unsplash_gallery') !== null){
+    document.getElementById('unsplash_gallery').addEventListener("click", function() {
+      BigPicture({
+        el: this,
+        gallery: unsplashImages,
+      })
+    });
+  }
+  if(document.getElementById('unsplash_gallery_position') !== null){
+    document.getElementById('unsplash_gallery_position').addEventListener("click", function() {
+      BigPicture({
+        el: this,
+        position: 6,
+        gallery: unsplashImages,
+      })
+    });
+  }
+  // other stuff
+  function setClickHandler(id, fn) {
+    if(document.getElementById(id) !== null){
+    document.getElementById(id).addEventListener("click", fn);
+    }
+  }
+  setClickHandler('local_image_container', function(e) {
+    ;(e.target.tagName === 'IMG' ||
+      e.target.className === 'background-image') &&
+      BigPicture({
+        el: e.target,
+      })
+  })
+  setClickHandler('video_container', function(e) {
+    var className = e.target.className
+    if (~className.indexOf('htmlvid')) {
+      BigPicture({
+        el: e.target,
+        vidSrc: e.target.getAttribute('vidSrc'),
+      })
+    } else if (~className.indexOf('vimeo')) {
+      BigPicture({
+        el: e.target,
+        vimeoSrc: e.target.getAttribute('vimeoSrc'),
+      })
+    } else if (~className.indexOf('twin-peaks')) {
+      BigPicture({
+        el: e.target,
+        ytSrc: e.target.getAttribute('ytSrc'),
+        dimensions: [1226, 900],
+      })
+    } else if (~className.indexOf('youtube')) {
+      BigPicture({
+        el: e.target,
+        ytSrc: e.target.getAttribute('ytSrc'),
+      })
+    }
+  })
+  setClickHandler('broken_container', function(e) {
+    e.target.id === 'broken_image' &&
+      BigPicture({
+        el: e.target,
+        imgSrc: '/nopic.jpg',
+      })
+    e.target.id === 'broken_vid' &&
+      BigPicture({
+        el: e.target,
+        vidSrc: '/novid.mp4',
+      })
+    ~e.target.className.indexOf('vimeo') &&
+      BigPicture({
+        el: e.target,
+        vimeoSrc: 'ajoiejlkr',
+      })
+    ~e.target.className.indexOf('youtube') &&
+      BigPicture({
+        el: e.target,
+        ytSrc: 'oijlksdjf',
+      })
+  })
+  setClickHandler('iframe_example', function(e) {
+    e.preventDefault()
+    BigPicture({
+      el: e.target,
+      iframeSrc: e.target.getAttribute('data-iframe'),
+      dimensions: [800, 800],
+    })
+  })
+  setClickHandler('audio_example', function(e) {
+    e.preventDefault()
+    BigPicture({
+      el: this,
+      audio: 'audio/happy-step.mp3',
+    })
+  })
+})()
+/* End Video & Photo Swiper */
