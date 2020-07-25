@@ -5,6 +5,7 @@ $primary: 			#03c !default;
 $secondary: 		#15db95 !default;
 $dark:				#171347 !default;
 $gray-100: 			#f1f6fd !default;
+$gray-200:          #e9ecef !default;
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // Default value is 3
@@ -76,3 +77,13 @@ $spacers: (
   11: $spacer * 6,
   12: $spacer * 7,
 ) !default;
+
+
+// Card
+
+$card-cap-padding-y:               .85rem  !default;
+$card-border-color:                 $gray-200 !default;
+
+
+// List Group
+$list-group-border-color:           $gray-200 !default;

@@ -38,3 +38,48 @@
 	    }
     }
 }
+
+
+// Page Heading
+.page-heading {
+	padding-top: $spacer * 10;
+	padding-bottom: $spacer * 5;
+	.container {
+		position: relative;
+	}
+	.breadcrumb {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		&.white {
+			color: rgba($white, 0.8);
+			li {
+				a {
+					color: $white;
+				}
+			}
+		}
+		li {
+			position: relative;
+			+ li {
+				padding-left: 17px;
+				margin-left: 17px;
+				&::after {
+					content: "";
+					position: absolute;
+					width: 4px;
+					height: 4px;
+					border-radius: 50%;
+					background: currentColor;
+					opacity: 0.5;
+					left: -2px;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+				}
+			}
+		}
+	}
+}

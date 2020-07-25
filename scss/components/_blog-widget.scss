@@ -83,3 +83,81 @@
 		}
 	}
 }
+
+
+// Blog list post
+.blog-post {
+	border:1px solid $gray-200;
+	border-radius: $border-radius;
+	position: relative;
+	top: 0;
+	transition: ease all 0.35s;
+	&:hover {
+		top: -10px;
+		box-shadow: $box-shadow-lg;
+	}
+	.blog-post-img {
+		img {
+			border-top-left-radius: calc($border-radius - 1px);
+			border-top-right-radius: calc($border-radius - 1px);
+		}
+	}
+	.blog-post-content {
+		padding: 20px;
+	}
+	.blog-post-title {
+		padding-top: 10px;
+		padding-bottom: 15px;
+		margin: 0;
+		a {
+			color: $dark;
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+	.blog-post-meta {
+		padding-top: 15px;
+		border-top: 1px solid $gray-200;
+		font-size: 0.85rem;
+		a {
+			color: $body-color;
+			display: inline-flex;
+			align-items: center;
+			svg {
+				width: 14px;
+				height: 14px;
+				margin-right: 8px;
+			}
+		}
+		.blog-post-comment {
+			margin-left: 12px;
+		}
+		.blog-post-more {
+			margin-left: auto;
+			&:hover {
+				color: $primary;
+			}
+			svg {
+				margin-right: 0;
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+.tag-cloud {
+	a {
+		background: $gray-200;
+		color: $dark;
+		display: block;
+		margin: 0 4px 6px 0px;
+		border-radius: 40px;
+		font-size: 0.86rem;
+		padding: 3px 16px 6px;
+		&:hover {
+			background: $primary;
+			color: $white;
+		}
+	}
+}
