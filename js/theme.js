@@ -107,8 +107,8 @@
     var i;
     if(x.length > 0){
       for (i = 0; i < x.length; i++) {
-        new simpleParallax(x[i], {
-          scale:2
+        new jarallax(x[i], {
+          speed: 0.2
         });
       }
     }

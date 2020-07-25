@@ -44,6 +44,7 @@
 		animation: pulse-border 1500ms ease-out infinite;
 		pointer-events: none;
 		z-index: -1;
+		pointer-events: none;
 	}
 	&.white {
 		background: $white;
@@ -76,6 +77,7 @@
 	    margin: auto;
 	    width: 0px;
 	    height: 0px;
+		pointer-events: none;
 	}
 }
 
