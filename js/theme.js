@@ -103,7 +103,7 @@
     });
     /* End Video & Photo Swiper */
     /* Start Parallax Image */
-    var x = document.getElementsByClassName('parallax_img');
+    var x = document.getElementsByClassName('parallax');
     var i;
     if(x.length > 0){
       for (i = 0; i < x.length; i++) {
