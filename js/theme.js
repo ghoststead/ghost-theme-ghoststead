@@ -44,135 +44,73 @@
           1400: {
               slidesPerView : currentSwiper.getAttribute("data-xxl") || 1,
           },
-        }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
       });
     }
   }
 })));
 /* End Swiper */
-/* Start Video & Photo Swiper */
 (function() {
-  // four image gallery
-  var imageLinks = document.querySelectorAll('#image_container a')
-  for (var i = 0; i < imageLinks.length; i++) {
-    imageLinks[i].addEventListener('click', function(e) {
-      e.preventDefault()
-      BigPicture({
-        el: e.target,
-        gallery: '#image_container',
+  /* Start Video & Photo Swiper */
+    // four image gallery
+    var imageLinks = document.querySelectorAll('.image_container a')
+    for (var i = 0; i < imageLinks.length; i++) {
+      imageLinks[i].addEventListener('click', function(e) {
+        e.preventDefault()
+        BigPicture({
+          el: e.target,
+          gallery: '.image_container',
+        })
       })
-    })
-  }
-  // unsplash gallery
-  var unsplashImages = [
-    'meiying',
-    'clemono2',
-    'heftiba',
-    'westbeach013',
-    'anniespratt',
-    'camylla93',
-    'nathananderson',
-    'aaronburden',
-    'elke_karin',
-    'scottwebb',
-    'lucabravo',
-    'neonbrand',
-  ].map(function(user) {
-    return {
-      src: 'https://source.unsplash.com/user/' + user + '/daily',
     }
-  })
-  if(document.getElementById('unsplash_gallery') !== null){
-    document.getElementById('unsplash_gallery').addEventListener("click", function() {
-      BigPicture({
-        el: this,
-        gallery: unsplashImages,
-      })
+    function setClickHandler(id, fn) {
+      var x = document.getElementsByClassName(id);
+      var i;
+      if(x.length > 0){
+      for (i = 0; i < x.length; i++) {
+        x[i].addEventListener("click", fn);
+      }
+      }
+    }
+    setClickHandler('video_container', function(e) {
+      var className = e.target.className
+      if (~className.indexOf('htmlvid')) {
+        BigPicture({
+          el: e.target,
+          vidSrc: e.target.getAttribute('vidSrc'),
+        })
+      } else if (~className.indexOf('vimeo')) {
+        BigPicture({
+          el: e.target,
+          vimeoSrc: e.target.getAttribute('vimeoSrc'),
+        })
+      } else if (~className.indexOf('twin-peaks')) {
+        BigPicture({
+          el: e.target,
+          ytSrc: e.target.getAttribute('ytSrc'),
+          dimensions: [1226, 900],
+        })
+      } else if (~className.indexOf('youtube')) {
+        BigPicture({
+          el: e.target,
+          ytSrc: e.target.getAttribute('ytSrc'),
+        })
+      }
     });
-  }
-  if(document.getElementById('unsplash_gallery_position') !== null){
-    document.getElementById('unsplash_gallery_position').addEventListener("click", function() {
-      BigPicture({
-        el: this,
-        position: 6,
-        gallery: unsplashImages,
-      })
-    });
-  }
-  // other stuff
-  function setClickHandler(id, fn) {
-    if(document.getElementById(id) !== null){
-    document.getElementById(id).addEventListener("click", fn);
+    /* End Video & Photo Swiper */
+    /* Start Parallax Image */
+    var x = document.getElementsByClassName('parallax_img');
+    var i;
+    if(x.length > 0){
+      for (i = 0; i < x.length; i++) {
+        new simpleParallax(x[i], {
+          scale:2
+        });
+      }
     }
-  }
-  setClickHandler('local_image_container', function(e) {
-    ;(e.target.tagName === 'IMG' ||
-      e.target.className === 'background-image') &&
-      BigPicture({
-        el: e.target,
-      })
-  })
-  setClickHandler('video_container', function(e) {
-    var className = e.target.className
-    if (~className.indexOf('htmlvid')) {
-      BigPicture({
-        el: e.target,
-        vidSrc: e.target.getAttribute('vidSrc'),
-      })
-    } else if (~className.indexOf('vimeo')) {
-      BigPicture({
-        el: e.target,
-        vimeoSrc: e.target.getAttribute('vimeoSrc'),
-      })
-    } else if (~className.indexOf('twin-peaks')) {
-      BigPicture({
-        el: e.target,
-        ytSrc: e.target.getAttribute('ytSrc'),
-        dimensions: [1226, 900],
-      })
-    } else if (~className.indexOf('youtube')) {
-      BigPicture({
-        el: e.target,
-        ytSrc: e.target.getAttribute('ytSrc'),
-      })
-    }
-  })
-  setClickHandler('broken_container', function(e) {
-    e.target.id === 'broken_image' &&
-      BigPicture({
-        el: e.target,
-        imgSrc: '/nopic.jpg',
-      })
-    e.target.id === 'broken_vid' &&
-      BigPicture({
-        el: e.target,
-        vidSrc: '/novid.mp4',
-      })
-    ~e.target.className.indexOf('vimeo') &&
-      BigPicture({
-        el: e.target,
-        vimeoSrc: 'ajoiejlkr',
-      })
-    ~e.target.className.indexOf('youtube') &&
-      BigPicture({
-        el: e.target,
-        ytSrc: 'oijlksdjf',
-      })
-  })
-  setClickHandler('iframe_example', function(e) {
-    e.preventDefault()
-    BigPicture({
-      el: e.target,
-      iframeSrc: e.target.getAttribute('data-iframe'),
-      dimensions: [800, 800],
-    })
-  })
-  setClickHandler('audio_example', function(e) {
-    e.preventDefault()
-    BigPicture({
-      el: this,
-      audio: 'audio/happy-step.mp3',
-    })
-  })
+    /* End Parallax Image */
 })()
-/* End Video & Photo Swiper */
