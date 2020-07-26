@@ -28,3 +28,35 @@
         }
 	}
 }
+
+.list-type-02 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+	    position: relative;
+		padding: 8px 0 8px 30px;
+		&:after {
+			content: "";
+			width: 7px;
+			height: 12px;
+			color: $primary;
+			border-bottom: 2px solid currentColor;
+			border-right: 2px solid currentColor;
+			position: absolute;
+			top: 13px;
+			left: 6px;
+			transform: rotate(45deg);
+		}
+	}
+	&.dark {
+		&::after {
+			color: $dark;
+		}
+	}
+    &.secondary {
+		&::after {
+			color: $secondary;
+		}
+	}
+}
