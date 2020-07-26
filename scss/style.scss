@@ -61,7 +61,7 @@ $whitegray: $gray-100;
     --darkmode: color(var($darkgray) l(+2%));
 }
 
-/* Casper */
+/* Casper
 //@import "casper/global";
 //@import "casper/layout";
 //@import "casper/special";
@@ -82,6 +82,7 @@ $whitegray: $gray-100;
 @import "casper/site-footer";
 @import "casper/dark-mode";
 // end casper
+*/
 
 @import "mixins";
 
