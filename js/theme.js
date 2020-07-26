@@ -57,7 +57,7 @@
 (function() {
   /* Start Video & Photo Swiper */
     // four image gallery
-    var imageLinks = document.querySelectorAll('.image_container a')
+    var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
     for (var i = 0; i < imageLinks.length; i++) {
       imageLinks[i].addEventListener('click', function(e) {
         e.preventDefault()
@@ -115,7 +115,7 @@
     /* End Parallax Image */
     /* Start Smooth Scrolling */
     let anchorlinks = document.querySelectorAll('a[href^="#"]')
-    for (let item of anchorlinks) { // relitere 
+    for (let item of anchorlinks) { // relitere
         item.addEventListener('click', (e)=> {
             let hashval = item.getAttribute('href')
             let target = document.querySelector(hashval)
