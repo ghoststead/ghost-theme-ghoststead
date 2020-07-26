@@ -1,25 +1,22 @@
 {{!< default}}
 {{> header}}
-{{> sections/home1/banner}}
-{{> sections/home1/feature}}
-{{> sections/home1/feature-2}}
-{{> sections/home1/video}}
-{{> sections/home1/accordion}}
-{{> sections/home1/call-top-action}}
-{{> sections/home1/tab}}
-{{> sections/home1/team}}
-{{> sections/home1/testimonials}}
-{{> sections/home1/price}}
-{{> sections/home1/blog}}
-{{> sections/home1/contact}}
-{{!-- The main content area --}}
-{{> footer }}
 
-<!--
-{{#page}}
-    {{> header}}
+{{!-- The main content area --}}
+{{#post}}
     <main id="site-main" class="site-main">
+        {{> sections/home1/banner}}
+        {{> sections/home1/feature}}
+        {{> sections/home1/feature-2}}
+        {{> sections/home1/video}}
+        {{> sections/home1/accordion}}
+        {{> sections/home1/call-top-action}}
+        {{> sections/home1/tab}}
+        {{> sections/home1/team}}
+        {{> sections/home1/testimonials}}
+        {{> sections/home1/price}}
+        {{> sections/home1/blog}}
+        {{> sections/home1/contact}}
     </main>
-    {{> footer }}
-{{/page}}
--->
+{{/post}}
+
+{{> footer }}
