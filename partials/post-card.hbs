@@ -1,4 +1,4 @@
-<div class="col-lg-4 col-sm-12 mb-4 {{#if feature_image}}{{^is "home"}}{{#has index="0"}}col-md-12 col-lg-12{{/has}}{{/is}}{{/if}}">
+<div class="col-md-6 col-sm-12 mb-4 {{#if feature_image}}{{^is "home"}}{{#has index="0"}}col-md-12 col-lg-12{{/has}}{{/is}}{{/if}}">
     <div class="card {{post_class}} {{#unless feature_image}}no-image{{else}}{{^is "home"}}{{#has
             index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100">
         {{#if feature_image}}
@@ -13,22 +13,23 @@
                      loading="lazy"
                      src="{{img_url feature_image size="m"}}"
                      alt="{{title}}"
+                     class="card-img-top"
                 />
             </a>
         {{/if}}
 
-        <div>
+        <div class="card-body">
             <a href="{{url}}">
                 <div class="post-card-header">
                     {{#if primary_tag}}
                         {{#primary_tag}}
-                            <div class="post-card-primary-tag">{{name}}</div>
+                            <div class="post-card-primary-tag text-body">{{name}}</div>
                         {{/primary_tag}}
                     {{/if}}
-                    <h2>{{title}}</h2>
+                    <h5 class="mt-2 mb-3">{{title}}</h5>
                 </div>
 
-                <div class="post-card-excerpt">
+                <div class="post-card-excerpt text-body">
                     {{#if feature_image}}
                         <p>{{excerpt words="30"}}</p>
                     {{else}}
@@ -37,35 +38,35 @@
                 </div>
 
             </a>
-
-            <footer class="post-card-meta">
-                <ul class="author-list">
-                    {{#foreach authors}}
-                        <li class="author-list-item">
-
-                            <div class="author-name-tooltip">
-                                {{name}}
-                            </div>
-
-                            {{#if profile_image}}
-                                <a href="{{url}}" class="static-avatar">
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}"
-                                         alt="{{name}}"/>
-                                </a>
-                            {{else}}
-                                <a href="{{url}}">{{> "icons/avatar"}}</a>
-                            {{/if}}
-                        </li>
-                    {{/foreach}}
-                </ul>
-                <div>
-                    <span>{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
-                    <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
-                            format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
-                </div>
-            </footer>
-
         </div>
+        <footer class="card-footer bg-transparent post-card-meta d-flex">
+            <ul class="author-list list-unstyled m-0">
+                {{#foreach authors}}
+                    <li class="author-list-item">
+
+                        <!--
+                        <div class="author-name-tooltip">
+                            {{name}}
+                        </div>
+                        -->
+
+                        {{#if profile_image}}
+                            <a href="{{url}}" class="static-avatar">
+                                <img class="author-profile-image avatar-30" title="{{name}}" alt="{{name}}" src="{{img_url profile_image size="xs"}}"
+                                     alt="{{name}}"/>
+                            </a>
+                        {{else}}
+                            <a href="{{url}}">{{> "icons/avatar"}}</a>
+                        {{/if}}
+                    </li>
+                {{/foreach}}
+            </ul>
+            <div class="d-flex flex-column pl-2 lh-sm">
+                <span class="links-dark font-w-600">{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
+                <span class="post-card-byline-date small"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
+                        format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            </div>
+        </footer>
 
     </div>
 </div>
