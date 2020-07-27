@@ -4,8 +4,18 @@
 
 {{#post}}
     <main id="site-main" class="site-main">
-        <section>
-            {{content}}
+        {{> sections/blog-detail-sidebar/heading}}
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        {{content}}
+                    </div>
+                    <div class="col-lg-4 mt-5 mt-lg-0 pl-xl-8">
+                        {{> sections/blog-detail-sidebar/blog-widget}}
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 {{/post}}
