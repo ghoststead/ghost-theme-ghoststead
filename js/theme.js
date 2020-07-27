@@ -128,4 +128,28 @@
         })
     }
     /* End Smooth Scrolling */
+    /* Start Isotope */
+    var isoWork = document.querySelector('.portfolio-content');
+    if(isoWork !== null){
+      var iso = new Isotope( isoWork, {
+        itemSelector: '.grid-item',
+        layoutMode: 'masonry'
+      });
+      var isoWorkParent = document.querySelectorAll('.portfolio-filter .filter li');
+      let allElements = Array.from(document.querySelectorAll('.portfolio-filter .filter li'));
+      isoWorkParent.forEach(filterItem => {
+        filterItem.addEventListener('click', function (e) {
+          for (let element of allElements) {
+            element.classList.remove('active');
+          }
+          if(e.target.getAttribute("data-filter")) {
+            e.target.classList.add("active");        
+            iso.arrange({
+              filter: e.target.getAttribute("data-filter")
+            });
+          }
+        });
+      });
+    }
+    /* End Isotope */
 })()
