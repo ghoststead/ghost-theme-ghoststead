@@ -51,8 +51,8 @@
                         -->
 
                         {{#if profile_image}}
-                            <a href="{{url}}" class="static-avatar">
-                                <img class="author-profile-image avatar-30" title="{{name}}" alt="{{name}}" src="{{img_url profile_image size="xs"}}"
+                            <a href="{{url}}" class="static-avatar avatar-30">
+                                <img class="author-profile-image" title="{{name}}" alt="{{name}}" src="{{img_url profile_image size="xs"}}"
                                      alt="{{name}}"/>
                             </a>
                         {{else}}
@@ -61,7 +61,7 @@
                     </li>
                 {{/foreach}}
             </ul>
-            <div class="d-flex flex-column pl-2 lh-sm">
+            <div class="d-flex flex-column pl-2 lh-1">
                 <span class="links-dark font-w-600">{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
                 <span class="post-card-byline-date small"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
                         format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
