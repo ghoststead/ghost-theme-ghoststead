@@ -161,3 +161,49 @@
 		}
 	}
 }
+
+
+.subscribe-form {
+	.btn-primary {
+		position: relative;
+		.button-loader {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			width: 1.5rem;
+			height: 1.5rem;
+			display: none;
+		}
+	}
+	.loading {
+		.btn-primary {
+			.button-content{
+				visibility: hidden;
+			}
+			.button-loader {
+				display: block;
+			}
+		}
+	}
+
+	.message-error,
+	.message-success {
+		display: none;
+	}
+
+	.invalid,
+	.error {
+		.message-error {
+			display: block;
+
+		}
+	}
+	.success  {
+		.message-success {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+<div class="card subscribe-form">
+    <div class="card-header bg-transparent">
+        <span class="h5 m-0">Subscribe to {{@site.title}}</span>
+    </div>
+    <div class="card-body">
+        <p class="subscribe-form-description">Get the latest posts delivered right to your inbox</p>
+        <form data-members-form="subscribe">
+            <div class="form-group input-group">
+                <input class="subscribe-email form-control" data-members-email placeholder="youremail@example.com" autocomplete="false" />
+                <button class="button primary btn btn-primary" type="submit">
+                    <span class="button-content">Subscribe</span>
+                    <span class="button-loader spinner-border text-light"></span>
+                </button>
+            </div>
+            <div class="message-success text-success mt-3">
+                <strong>Great!</strong> Check your inbox and click the link to confirm your subscription.
+            </div>
+            <div class="message-error text-danger mt-3">
+                Please enter a valid email address!
+            </div>
+        </form>
+    </div>
+</div>
