@@ -118,13 +118,17 @@
     for (let item of anchorlinks) { // relitere
         item.addEventListener('click', (e)=> {
             let hashval = item.getAttribute('href')
-            let target = document.querySelector(hashval)
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            })
+            if(hashval !== undefined && hashval != '#'){
+              let target = document.querySelector(hashval)
+              if(target !== null){
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                })
+              }
+            }
             history.pushState(null, null, '')
-            e.preventDefault()
+            e.preventDefault();
         })
     }
     /* End Smooth Scrolling */
