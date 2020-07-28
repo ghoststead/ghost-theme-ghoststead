@@ -14,6 +14,21 @@
                         {{#foreach posts limit=9}}
                             {{> "post-card"}}
                         {{/foreach}}
+                        <div class="col-12 pt-3">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- Widget -->
