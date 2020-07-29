@@ -105,3 +105,68 @@
         }
     }
 }
+
+
+/*------------------
+*   Tab style 03
+-------------------*/
+.tab-style-3 {
+    .nav {
+        background: $white;
+        border: none;
+        a {
+            display: block;
+            padding: 15px 10px 18px;
+            line-height: normal;
+            position: relative;
+            color: $body-color;
+            &:after,
+            &:before {
+              content:"";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              transition: ease-in-out all 0.25s;
+              margin: auto;
+            }
+            &:after {
+              width: 0px;
+              height: 3px;
+              background: $secondary;
+            }
+            &:before {
+              width: 20px;
+              background: $white;
+              border-radius: 50%;
+              z-index: 1;
+              height: 20px;
+              bottom: -8px;
+              box-shadow: $box-shadow;
+            }
+            &.active {
+              color: $secondary;
+              &:after {
+                width: 100%;
+              }
+            }
+        }
+        .tab-icon {
+            margin-bottom: 10px;
+            svg {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        span {
+          font-size: 16px;
+          font-weight: 600;
+          @include media-breakpoint-down(md) {
+            display: none;
+          }
+        }
+    }
+    .tab-content {
+      padding-top: 30px;
+    }
+}
