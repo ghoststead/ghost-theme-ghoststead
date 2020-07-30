@@ -49,6 +49,13 @@
 			transform: rotate(45deg);
 		}
 	}
+	&.white {
+		li {
+			&::after {
+				color: $white;
+			}
+		}
+	}
 	&.dark {
 		li {
 			&::after {
@@ -84,6 +91,13 @@
 			top: 13px;
 			right: 6px;
 			transform: rotate(45deg);
+		}
+	}
+	&.white {
+		li {
+			&::after {
+				color: $white;
+			}
 		}
 	}
 	&.dark {

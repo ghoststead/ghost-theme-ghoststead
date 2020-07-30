@@ -8,6 +8,13 @@
 	}
 }
 
+// :after Background Color
+@each $color, $value in $theme-colors {
+	.bg-#{$color}-light {
+		background-color: lighten($value, 50%);
+	}
+}
+
 .bg-gray-100 {
     background-color: $gray-100;
 }
