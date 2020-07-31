@@ -22,7 +22,7 @@
             <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
                 <ul class="nav navbar-nav m-auto">
                     <li class="nav-item mm-in mm-dropdown">
-                        <a class="nav-link py-lg-4" href="#home">Home</a>
+                        <a class="nav-link py-lg-4" href="#">Home</a>
                         <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
                         <ul class="mm-dropdown-menu mm-drop-in dropdown-menu">
                             <li><a href="/home-1">Home Option 1</a></li>
@@ -55,16 +55,16 @@
                                             <div class="col-lg-4">
                                                 <h6 class="mm-title">Company</h6>
                                                 <ul class="mm-link">
-                                                    <li><a href="/about-us">About Us</a></li>
+                                                    <li><a href="/about">About Us</a></li>
                                                     <li><a href="/services">Services</a></li>
                                                     <li><a href="/price">Pricing</a></li>
                                                     <li><a href="/portfolio">Portfolio</a></li>
                                                     <li><a href="/team">Our Team</a></li>
-                                                    <li><a href="/contact-us">Contact Us</a></li>
-                                                    <li><a href="careers.html">Careers</a></li>
+                                                    <li><a href="/contact">Contact</a></li>
+                                                    <li><a href="/careers">Careers</a></li>
                                                     <li><a href="single-careers.html">Careers Single</a></li>
                                                 </ul>
-                                                <h6 class="mm-title">Helps Center</h6>
+                                                <h6 class="mm-title">Help Center</h6>
                                                 <ul class="mm-link">
                                                     <li><a href="support.html">Support</a></li>
                                                     <li><a href="support-topic.html">Support Topic</a></li>
@@ -96,6 +96,7 @@
                                                     <li><a href="account-notifications.html">Notifications</a></li>
                                                 </ul>
                                             </div>
+                                            {{!--
                                             <div class="col-lg-4">
 
                                                 <h6 class="mm-title">Authentication</h6>
@@ -113,6 +114,7 @@
                                                         Overlay</a></li>
                                                 </ul>
                                             </div>
+                                            --}}
                                         </div>
                                     </div>
                                 </div>
@@ -122,11 +124,11 @@
                     <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
                     the url helper sanitizes the content -->
                     <li class="nav-item"><a class="nav-link py-lg-4" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link py-lg-4" href="#feature">Features</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="#team">Team</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="#price">Price</a></li>
-                    <li class="nav-item"><a class="nav-link py-lg-4" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link py-lg-4" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="/blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
