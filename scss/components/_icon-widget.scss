@@ -29,6 +29,10 @@
         svg {
             width: .85rem;
             height: .85rem;
+			&.bi {
+				width: 1.2rem;
+	            height: 1.2rem;
+			}
         }
     }
     &-xl {

@@ -11,7 +11,7 @@
 // :after Background Color
 @each $color, $value in $theme-colors {
 	.bg-#{$color}-light {
-		background-color: lighten($value, 50%);
+		background-color: rgba($value, 0.2);
 	}
 }
 

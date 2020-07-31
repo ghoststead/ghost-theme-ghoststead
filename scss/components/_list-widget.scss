@@ -115,3 +115,24 @@
 		}
 	}
 }
+
+
+.list-type-04 {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	li {
+	    position: relative;
+		padding: 2px 0 2px 20px;
+		&:after {
+			content: "";
+			width: 10px;
+			height: 10px;
+			border: 2px solid $secondary;
+			position: absolute;
+			top: 9px;
+			left: 0;
+			border-radius: 50%;
+		}
+	}
+}
