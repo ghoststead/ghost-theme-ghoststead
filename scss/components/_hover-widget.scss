@@ -11,6 +11,14 @@
 // Hover shadow
 .shadow-hover {
     box-shadow: $box-shadow;
+	transition: ease all 0.35s;
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
+}
+
+.shadow-only-hover {
+	transition: ease all 0.35s;
     &:hover {
         box-shadow: $box-shadow-lg;
     }

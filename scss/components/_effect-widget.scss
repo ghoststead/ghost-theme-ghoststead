@@ -248,7 +248,7 @@
 
 }
 
-/* After 
+/* After
 ------------------------*/
 .after-50px {
     position: relative;
@@ -308,9 +308,6 @@
 ------------------------*/
 .sticky-xl-top {
     @include media-breakpoint-up(xl) {
-        position: sticky;
-        top: 0;
-        z-index: 1;
         .fixed-header ~ main & {
             top: 90px;
         }
@@ -319,9 +316,6 @@
 
 .sticky-lg-top {
     @include media-breakpoint-up(lg) {
-        position: sticky;
-        top: 0;
-        z-index: 1;
         .fixed-header ~ main & {
             top: 90px;
         }
@@ -330,9 +324,6 @@
 
 .sticky-md-top {
     @include media-breakpoint-up(md) {
-        position: sticky;
-        top: 0;
-        z-index: 1;
         .fixed-header ~ main & {
             top: 90px;
         }
@@ -341,9 +332,6 @@
 
 .sticky-sm-top {
     @include media-breakpoint-up(sm) {
-        position: sticky;
-        top: 0;
-        z-index: 1;
         .fixed-header ~ main & {
             top: 90px;
         }
