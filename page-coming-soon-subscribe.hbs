@@ -1,0 +1,27 @@
+{{!< default}}
+
+{{!-- The main content area --}}
+{{#post}}
+    <main id="site-main" class="site-main">
+        <section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
+            <div class="container">
+                <div class="row justify-content-center min-vh-100 align-items-center">
+                    <div class="col-lg-8 text-center">
+                        <div class="mb-4">
+                            <img width="250" src="{{@site.logo}}" alt="{{@site.title}}"/>
+                        </div>
+                        <h1 class="display-2 text-white mb-3">We're coming soon..</h1>
+                        <p class="h5 text-white-light pb-2 font-w-400">Our website is under construction. We'll be here soon with our new awesome site.</p>
+                        <form class="d-flex flex-row mb-2 p-1 bg-white input-group">
+                            <input type="email" class="form-control rounded-0 border-0" placeholder="you@yoursite.com">
+                            <button class="btn btn-secondary flex-shrink-0 rounded-0" type="submit">Get Started</button>
+                        </form>
+                        <div class="pt-6">
+                            <a class="btn btn-light" href="#">Back to Home</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+{{/post}}
