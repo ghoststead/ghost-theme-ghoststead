@@ -170,3 +170,59 @@
       padding-top: 30px;
     }
 }
+
+/*------------------
+*   Tab style 04
+-------------------*/
+.tab-style-4 {
+    .nav {
+        margin-bottom: 15px;
+        border-bottom: 2px solid $gray-200;
+        .nav-item {
+            .tb-icon {
+              display: inline-block;
+              vertical-align: middle;
+              height: 30px;
+              color: $primary;
+              svg {
+                    height: 30px;
+                    path {
+                        fill: currentColor;
+                    }
+              }
+            }
+            span {
+              margin-left: 10px;
+              vertical-align: middle;
+              @include media-breakpoint-down(sm) {
+                display: none;
+              }
+            }
+            a {
+                padding: 15px 0;
+                font-weight: 600;
+                color: $dark;
+                position: relative;
+                display: block;
+                &:after {
+                    content:"";
+                    position: absolute;
+                    bottom: -2px;
+                    left: auto;
+                    right: 0;
+                    width: 0px;
+                    transition: ease-in-out all 0.55s;
+                    height: 3px;
+                    background: $primary;
+                }
+                &.active {
+                    &:after {
+                        left: 0;
+                        right: auto;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
