@@ -163,4 +163,34 @@
         document.body.setAttribute("data-spy", "scroll");
     } 
     /* End Add Default Scroll Spy Param */
+    /* Start Countdown Timer */
+    var numberOfCountDown = document.getElementsByClassName('count-down');
+    if(numberOfCountDown.length > 0) {
+        for (var i = 0; i < numberOfCountDown.length; i++) {
+            var currentCountDown = numberOfCountDown[i];
+            var CountDownAttr = currentCountDown.getAttribute("data-seconds");
+            if(CountDownAttr > 0){
+                initTimer(currentCountDown, CountDownAttr);
+            }
+        }
+    }
+    function initTimer(i, seconds) {
+        var timer = new Timer();
+        timer.start({precision: 'seconds', startValues: {seconds: seconds}});
+        timer.addEventListener('secondsUpdated', function (e) {
+            var childNodes = i.childNodes;
+            for (var j = 0; j < childNodes.length; j++) {
+                if (childNodes[j].className == "date-box-1") {
+                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
+                }else if (childNodes[j].className == "date-box-2") {
+                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
+                }else if (childNodes[j].className == "date-box-3") {
+                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
+                }else if (childNodes[j].className == "date-box-4") {
+                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
+                }
+            }
+        });
+    }
+    /* End Countdown Timer */
 })();
