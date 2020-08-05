@@ -9,3 +9,14 @@
 		bottom: auto;
 	}
 }
+
+.swiper-white {
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background: $white;
+            &.swiper-pagination-bullet-active {
+                background: $white;
+            }
+        }
+    }
+}

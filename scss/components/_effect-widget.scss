@@ -26,7 +26,9 @@
         position: absolute;
         right: -2px;
         left: -2px;
-
+        svg {
+            color: currentColor;
+        }
         img {
             width: 100%;
         }
