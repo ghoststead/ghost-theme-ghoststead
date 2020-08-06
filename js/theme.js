@@ -52,9 +52,9 @@
     }
 })));
 /* End Swiper */
-(function() {
-  /* Start Video & Photo Swiper */
-    // four image gallery
+/* Start Video & Photo Swiper */
+// four image gallery
+function ImageGalleryF(){
     var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
     if(imageLinks.length > 0) {
         for (var i = 0; i < imageLinks.length; i++) {
@@ -65,15 +65,6 @@
                     gallery: '.image_container',
                 });
             });
-        }
-    }
-    function setClickHandler(id, fn) {
-        var x = document.getElementsByClassName(id);
-        var i;
-        if(x.length > 0){
-            for (i = 0; i < x.length; i++) {
-                x[i].addEventListener("click", fn);
-            }
         }
     }
     setClickHandler('video_container', function(e) {
@@ -101,8 +92,19 @@
             })
         }
     });
-    /* End Video & Photo Swiper */
-    /* Start Parallax Image */
+}
+function setClickHandler(id, fn) {
+    var x = document.getElementsByClassName(id);
+    var i;
+    if(x.length > 0){
+        for (i = 0; i < x.length; i++) {
+            x[i].addEventListener("click", fn);
+        }
+    }
+}
+/* End Video & Photo Swiper */
+/* Start Parallax Image */
+function ParallaxImageF(){
     var x = document.getElementsByClassName('parallax');
     var i;
     if(x.length > 0){
@@ -112,8 +114,10 @@
             });
         }
     }
-    /* End Parallax Image */
-    /* Start Smooth Scrolling */
+}
+/* End Parallax Image */
+/* Start Smooth Scrolling */
+function SmoothScrollingF(){
     let anchorlinks = document.querySelectorAll('a[href^="#"]')
     if(anchorlinks.length > 0){
         for (let item of anchorlinks) { // relitere
@@ -133,11 +137,13 @@
             })
         }
     }
-    /* End Smooth Scrolling */
-    /* Start Isotope */
+}
+/* End Smooth Scrolling */
+/* Start Isotope */
+function IsotopeF(){
     var isoWork = document.querySelector('.portfolio-content');
     if(isoWork !== null){
-        var iso = new Isotope( isoWork, {
+        var iso = new Isotope(isoWork, {
             itemSelector: '.grid-item',
             layoutMode: 'masonry'
         });
@@ -157,40 +163,62 @@
             });
         });
     }
-    /* End Isotope */
-    /* Start Add Default Scroll Spy Param */
+};
+/* End Isotope */
+/* Start Add Default Scroll Spy Param */
+function ScrollSpyParamF(){
     if(window.location.pathname === "/" || window.location.href.indexOf("home") != -1) {
         document.body.setAttribute("data-spy", "scroll");
     } 
-    /* End Add Default Scroll Spy Param */
-    /* Start Countdown Timer */
+}
+/* End Add Default Scroll Spy Param */
+/* Start Countdown Timer */
+function CountdownTimerF(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
     if(numberOfCountDown.length > 0) {
         for (var i = 0; i < numberOfCountDown.length; i++) {
             var currentCountDown = numberOfCountDown[i];
-            var CountDownAttr = currentCountDown.getAttribute("data-seconds");
-            if(CountDownAttr > 0){
+            var CountDownAttr = currentCountDown.getAttribute("data-date");
+            if(CountDownAttr != ''){
                 initTimer(currentCountDown, CountDownAttr);
             }
         }
-    }
-    function initTimer(i, seconds) {
-        var timer = new Timer();
-        timer.start({precision: 'seconds', startValues: {seconds: seconds}});
-        timer.addEventListener('secondsUpdated', function (e) {
-            var childNodes = i.childNodes;
-            for (var j = 0; j < childNodes.length; j++) {
-                if (childNodes[j].className == "date-box-1") {
-                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
-                }else if (childNodes[j].className == "date-box-2") {
-                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
-                }else if (childNodes[j].className == "date-box-3") {
-                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
-                }else if (childNodes[j].className == "date-box-4") {
-                    childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
-                }
+    }   
+}
+function GetSeconds(end_date){
+    var date_now = new Date();
+    var date_future = new Date(end_date);
+    var diff =(date_future.getTime() - date_now.getTime()) / 1000;
+    diff /= 60;
+    var minutes = Math.abs(Math.round(diff));
+    var seconds = minutes * 60;
+    return seconds;
+}
+function initTimer(i, date) {
+    var timer = new Timer();
+    var seconds = GetSeconds(date);
+    timer.start({precision: 'seconds', startValues: {seconds: seconds}});
+    timer.addEventListener('secondsUpdated', function (e) {
+        var childNodes = i.childNodes;
+        for (var j = 0; j < childNodes.length; j++) {
+            if (childNodes[j].className == "date-box-1") {
+                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
+            }else if (childNodes[j].className == "date-box-2") {
+                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
+            }else if (childNodes[j].className == "date-box-3") {
+                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
+            }else if (childNodes[j].className == "date-box-4") {
+                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
             }
-        });
-    }
-    /* End Countdown Timer */
+        }
+    });
+}
+/* End Countdown Timer */
+(function() {
+    ImageGalleryF();
+    ParallaxImageF();
+    SmoothScrollingF();
+    ScrollSpyParamF();
+    CountdownTimerF();
+    setTimeout(IsotopeF(), 200);
 })();
