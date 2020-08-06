@@ -13,47 +13,31 @@
         </form>
     </div>
 </div>
-
+{{#posts}}
 <div class="card mt-5">
     <div class="card-header bg-transparent">
         <span class="h5 m-0">Recent Posts</span>
     </div>
     <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
+        {{#get "posts" order="published_at desc" limit="4"}}
+            {{#foreach posts}}
+                <a href="{{url}}" class="list-group-item list-group-item-action d-flex py-3">
+                    <div class="avatar-50">
+                        {{#if feature_image}}
+                            <img class="rounded" src="{{img_url feature_image}}" title="" alt="">
+                        {{else}}
+                            <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                        {{/if}}
+                    </div>
+                    <div class="pl-3">
+                        <p class="m-0">{{title}}</p>
+                    </div>
+                </a>
+            {{/foreach}}
+        {{/get}}
     </div>
 </div>
-
+{{/posts}}
 <div class="card mt-5">
     <div class="card-header bg-transparent">
         <span class="h5 m-0">Tags</span>
