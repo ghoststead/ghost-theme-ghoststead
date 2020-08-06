@@ -1,0 +1,127 @@
+<header id="main-header">
+    <nav class="navbar navbar-nav navbar-light navbar-expand-lg fixed-top py-0">
+        <div class="container container-lg">
+            <div class="navbar-brand">
+                {{#if @site.logo}}
+                    <a class="navbar-brand logo" href="{{@site.url}}">
+                        <img height="32" src="{{@site.logo}}" alt="{{@site.title}}"/>
+                    </a>
+                {{else}}
+                    <a class="navbar-brand" href="{{@site.url}}">{{@site.title}}</a>
+                {{/if}}
+            </div>
+            <div class="order-lg-last d-flex align-items-center py-3 py-lg-0">
+                <div class="d-none d-md-block">
+                    <a class="btn btn-secondary text-nowrap text-light" href="#">Buy Now</a>
+                </div>
+                <button type="button" class="navbar-toggler collapsed ml-2" data-toggle="collapse"
+                        data-target="#navbar-collapse-toggle" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
+                <ul class="nav navbar-nav m-auto">
+                    <li class="nav-item mm-in mm-dropdown">
+                        <a class="nav-link py-lg-4" href="#">Home</a>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <ul class="mm-dropdown-menu mm-drop-in dropdown-menu">
+                            <li><a href="/home-1">Home Option 1</a></li>
+                            <li><a href="/home-2">Home Option 2</a></li>
+                            <li><a href="/home-3">Home Option 3</a></li>
+                            <li><a href="/home-4">Home Option 4</a></li>
+                            <li><a href="/home-5">Home Option 5</a></li>
+                            <li><a href="/home-6">Home Option 6</a></li>
+                            <li><a href="/home-7">Home Option 7</a></li>
+                            <li><a href="/home-8">Home Option 8</a></li>
+                            <li><a href="/home-9">Home Option 9</a></li>
+                            <li><a href="/home-10">Home Option 10</a></li>
+                            <li><a href="/home-11">Home Option 11</a></li>
+                            <li><a href="/home-12">Home Option 12</a></li>
+                            <li><a href="/home-13">Home Option 13</a></li>
+                            <li><a href="/home-14">Home Option 14</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mm-in mm-mega">
+                        <a class="nav-link py-lg-4" href="#">Pages</a>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <div class="mm-mega-menu mm-drop-in dropdown-menu">
+                            <div class="row no-gutters">
+                                <div class="col-lg-4 d-none d-lg-block">
+                                    <div class="h-100 mm-left" style="background-image: url({{asset "images/500x500.jpg"}}); "></div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="mm-right">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <h6 class="mm-title">Company</h6>
+                                                <ul class="mm-link">
+                                                    <li><a href="/about">About Us</a></li>
+                                                    <li><a href="/services">Services</a></li>
+                                                    <li><a href="/pricing">Pricing</a></li>
+                                                    <li><a href="/portfolio">Portfolio</a></li>
+                                                    <li><a href="/team">Our Team</a></li>
+                                                    <li><a href="/contact">Contact</a></li>
+                                                    <li><a href="/careers">Careers</a></li>
+                                                    <li><a href="/careers-single">Careers Single</a></li>
+                                                    <li><a href="/policy">Policy</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <h6 class="mm-title">Blogs</h6>
+                                                <ul class="mm-link">
+                                                    <li><a href="/blog">Blog</a></li>
+                                                    <li><a href="#">Blog Sidebar</a></li>
+                                                    <li><a href="/blog/welcome">Single Blog</a></li>
+                                                    <li><a href="#">Single Blog Sidebar</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <h6 class="mm-title">Others</h6>
+                                                <ul class="mm-link">
+                                                    <li><a href="/support">Support</a></li>
+                                                    <li><a href="/support-topic">Support Topic</a></li>
+                                                    <li><a href="/faq">FAQs</a></li>
+                                                    <li><a href="/coming-soon-subscribe">Coming Soon
+                                                        Subscribe</a></li>
+                                                    <li><a href="/coming-soon-countdown">Coming Soon
+                                                        Countdown</a></li>
+                                                    <li><a href="/error-404">Error 404</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- row -->
+                        </div>
+                    </li>
+
+                    <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
+                    the url helper sanitizes the content -->
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="#price">Price</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="/blog" data-target="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="/contact" data-target="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        (function () {
+            "use strict";
+
+            let header = document.getElementById('main-header');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.children[0].classList.add('bg-white');
+                    header.classList.add('fixed-header');
+                } else {
+                    header.children[0].classList.remove('bg-white');
+                    header.classList.remove('fixed-header');
+                }
+            });
+        })();
+    </script>
+</header>
