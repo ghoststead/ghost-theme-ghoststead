@@ -60,13 +60,9 @@
     </div>
     <div class="card-body">
         <div class="nav tag-cloud">
-            <a href="#">Design</a>
-            <a href="#">Development</a>
-            <a href="#">Travel</a>
-            <a href="#">Web Design</a>
-            <a href="#">Marketing</a>
-            <a href="#">Research</a>
-            <a href="#">Managment</a>
+            {{#foreach tags}}
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+            {{/foreach}}
         </div>
     </div>
 </div>
