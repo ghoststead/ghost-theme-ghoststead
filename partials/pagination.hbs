@@ -1,0 +1,19 @@
+<ul class="pagination justify-content-center">
+{{#if prev}}
+    <li class="page-item">
+{{else}}
+    <li class="page-item disabled">
+{{/if}}
+        <a class="page-link" href="{{page_url prev}}"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    <li class="page-item">
+            <span class="page-link">Page {{page}} of {{pages}}<span>
+    </li>
+{{#if next}}
+    <li class="page-item">
+{{else}}
+    <li class="page-item disabled">
+{{/if}}
+        <a class="page-link" href="{{page_url next}}"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+</ul>
