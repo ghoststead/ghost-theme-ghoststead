@@ -111,9 +111,13 @@
     position: relative;
 }
 .dots {
-  z-index: 0;
-  animation: dots 6s infinite linear;
+  	z-index: 0;
+  	animation: dots 6s infinite linear;
 	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
     .dot {
         width: 5px;
         height: 5px;

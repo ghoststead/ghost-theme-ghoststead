@@ -1,0 +1,12 @@
+<div class="card mt-5">
+    <div class="card-header bg-transparent">
+        <span class="h5 m-0">Tags</span>
+    </div>
+    <div class="card-body">
+        <div class="nav tag-cloud">
+            {{#foreach tags}}
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
+            {{/foreach}}
+        </div>
+    </div>
+</div>

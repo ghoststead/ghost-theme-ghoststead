@@ -14,7 +14,12 @@
                         </div>
                     </div>
                     <div class="col-lg-4 mt-5 mt-lg-0 pl-xl-8">
-                        {{> sections/blog-sidebar/blog-widget}}
+                        {{#if @labs.members}}
+                            {{> subscribe-form}}
+                        {{/if}}
+                        {{> blog-search}}
+                        {{> blog-recent-post}}
+                        {{> blog-tag}}
                     </div>
                 </div>
             </div>

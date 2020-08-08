@@ -226,3 +226,28 @@
         }
     }
 }
+
+/*------------------
+*   Tab style 05
+-------------------*/
+.tab-style-5  {
+	.nav-tabs {
+        border: none;
+        .nav-item {
+            margin: 5px;
+            > a {
+    			position: relative;
+    			padding: 15px 10px;
+    			font-weight: 600;
+    			color: $dark;
+                border: none;
+                border-radius: 10px;
+                background: $white;
+    			&.active {
+    				color: $white;
+                    background: $primary;
+    			}
+            }
+        }
+	}
+}

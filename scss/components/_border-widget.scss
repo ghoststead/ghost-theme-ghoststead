@@ -52,3 +52,10 @@
 .border-gray {
 	border-color: $gray-200;
 }
+
+.separated {
+	overflow: hidden;
+	> * {
+		box-shadow: -1px -1px 0px 0px $gray-200;
+	}
+}
