@@ -3,16 +3,25 @@
     <div class="container">
         <div class="row screen-65 justify-content-center align-items-center py-12">
             <div class="col-lg-10 text-center mt-6">
-                <h1 class="display-4 text-white mb-4">How to make trust your competitive advantage</h1>
-                <p class="lead m-0 text-white">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
+                <h1 class="display-4 text-white mb-4">{{title}}</h1>
+
+                {{#if custom_excerpt}}
+                    <p class="lead m-0 text-white">{{custom_excerpt}}</p>
+                {{/if}}
+
                 <div class="d-flex align-items-center mt-4 justify-content-center text-left">
-                    <div class="avatar-50 rounded-circle">
-                        <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                    <div class="avatar-50">
+                        {{#if profile_image}}
+                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
+                        {{else}}
+                            <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                        {{/if}}
                     </div>
-                    <div class="pl-3">
-                        <p class="h6 text-white">Nancy Bayers</p>
-                        <small class="text-white-light">Co-Founder</small>
-                    </div>
+                    {{#primary_author}}
+                        <div class="pl-3">
+                            <p class="my-0"><a class="h6 text-white" href="{{url}}">{{name}}</a></p>
+                        </div>
+                    {{/primary_author}}
                 </div>
             </div>
         </div>
