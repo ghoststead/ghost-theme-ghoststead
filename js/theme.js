@@ -214,11 +214,50 @@ function initTimer(i, date) {
     });
 }
 /* End Countdown Timer */
+/* Start Pie Chart */
+function PieChartF(){
+    var PieChartC = document.getElementsByClassName('pie_chart_in');
+    if(PieChartC.length > 0) {
+        for (var i = 0; i < PieChartC.length; i++) {
+            SetPieCharts(PieChartC[i]);
+        }
+    }
+}
+function SetPieCharts(p){
+    var pie_chart_size = p.getAttribute('data-size') || "160",
+        pie_chart_animate = p.getAttribute('data-animate') || "2000",
+        pie_chart_width = p.getAttribute('data-width') || "6",
+        pie_chart_color = p.getAttribute('data-color') || "#84ba3f",
+        pie_chart_track_color = p.getAttribute('data-trackcolor') || "rgba(0,0,0,0.10)",
+        pie_chart_line_Cap = p.getAttribute('data-lineCap') || "round",
+        pie_chart_scale_Color = p.getAttribute('data-scaleColor') || "true";
+    var childNodes = p.querySelector("span.middle");
+
+    new EasyPieChart(p, {
+        size: Number(pie_chart_size),
+        animate: Number(pie_chart_animate),
+        trackColor: pie_chart_track_color,
+        lineWidth: Number(pie_chart_width),
+        barColor: pie_chart_color,
+        scaleColor: false,
+        lineCap: pie_chart_line_Cap,
+        onStep: function (from, to, percent) {
+            childNodes.innerHTML = Math.round(percent)+'%';
+        }
+    });
+}
+/* End Pie Chart */
 (function() {
     ImageGalleryF();
     ParallaxImageF();
     SmoothScrollingF();
     ScrollSpyParamF();
     CountdownTimerF();
-    setTimeout(IsotopeF(), 200);
+    PieChartF();
+    var isoContent = document.querySelector('.portfolio-content');
+    if(isoContent !== null) {
+        imagesLoaded( isoContent, function( instance ) {
+            IsotopeF();
+        });
+    }
 })();
