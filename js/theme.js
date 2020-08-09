@@ -260,4 +260,13 @@ function SetPieCharts(p){
             IsotopeF();
         });
     }
+    var blogSearchInput = document.querySelector('#blogsearch-input');
+    var blogSearchResult = document.querySelector('#blogsearch-result');
+    if(blogSearchInput !== null && blogSearchResult !== null) {
+        new GhostFinder({
+            input: '#blogsearch-input',
+            showResult: '#blogsearch-result',
+            contentApiKey: '368baa06d7751a15f1dbdce5fa',
+        });
+    }
 })();
