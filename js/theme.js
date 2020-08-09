@@ -247,6 +247,7 @@ function SetPieCharts(p){
     });
 }
 /* End Pie Chart */
+
 (function() {
     ImageGalleryF();
     ParallaxImageF();
@@ -266,7 +267,7 @@ function SetPieCharts(p){
         new GhostFinder({
             input: '#blogsearch-input',
             showResult: '#blogsearch-result',
-            contentApiKey: '368baa06d7751a15f1dbdce5fa',
+            contentApiKey: 'CONTENT_API_KEY',
         });
     }
 })();
