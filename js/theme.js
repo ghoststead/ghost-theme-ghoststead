@@ -220,5 +220,20 @@ function initTimer(i, date) {
     SmoothScrollingF();
     ScrollSpyParamF();
     CountdownTimerF();
-    setTimeout(IsotopeF(), 200);
+    PieChartF();
+    var isoContent = document.querySelector('.portfolio-content');
+    if(isoContent !== null) {
+        imagesLoaded( isoContent, function( instance ) {
+            IsotopeF();
+        });
+    }
+    var blogSearchInput = document.querySelector('#blogsearch-input');
+    var blogSearchResult = document.querySelector('#blogsearch-result');
+    if(blogSearchInput !== null && blogSearchResult !== null) {
+        new GhostFinder({
+            input: '#blogsearch-input',
+            showResult: '#blogsearch-result',
+            contentApiKey: '368baa06d7751a15f1dbdce5fa',
+        });
+    }
 })();

@@ -11,6 +11,9 @@
                     <input type="email" class="form-control rounded-0 border-0" placeholder="you@yoursite.com">
                     <button class="btn btn-secondary flex-shrink-0 rounded-0" type="submit">Get started</button>
                 </form>
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
                 <small class="text-white-light">14-day FREE trial - no credit card needed</small>
             </div>
             <div class="col-lg-7 col-xl-8">
