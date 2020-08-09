@@ -29,8 +29,8 @@ function scss(done) {
 
 function js(done) {
     pump([
-        gulp.src('assets/js/*.js', {sourcemaps: true}),
-        gulp.dest('assets/built/', {sourcemaps: '.'}),
+        gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js', 'js/**/*.js'], {sourcemaps: true}),
+        gulp.dest('assets/built/js/', {sourcemaps: '.'}),
         livereload()
     ], done);
 }
@@ -51,7 +51,7 @@ function zipper(done) {
     ], done);
 }
 
-const scssWatcher = () => gulp.watch('assets/scss/**', scss);
+const scssWatcher = () => gulp.watch(['scss/**'], scss);
 const hbsWatcher = () => gulp.watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const watcher = gulp.parallel(scssWatcher, hbsWatcher);
 const build = gulp.series(scss, js);

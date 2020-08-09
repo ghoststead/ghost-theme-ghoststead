@@ -1,0 +1,20 @@
+.count-down {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    [class*="date-box-"] {
+        border-radius: 5px;
+        border: 2px solid $white;
+        color: $white;
+        margin: 3px;
+        padding: 15px 8px;
+        min-width: 120px;
+        span {
+            font-size: 30px;
+            line-height: 1;
+            font-weight: 600;
+            width: 100%;
+            display: block;
+        }
+    }
+}

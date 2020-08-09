@@ -1,0 +1,21 @@
+//Global img tag max width 100%
+img {
+	max-width: 100%;
+	.site-main & {
+		height: auto;
+	}
+}
+
+// Background Property
+.bg-cover {
+	background-size: cover;
+}
+.bg-no-repeat {
+ 	background-repeat: no-repeat;
+ }
+.bg-fixed {
+ 	background-attachment: fixed;
+}
+.bg-center {
+	background-position: center;
+}

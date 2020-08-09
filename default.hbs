@@ -13,14 +13,25 @@
 
     {{!-- Built stylesheet --}}
     <link rel="stylesheet" type="text/css" href="{{asset "built/style.css"}}" />
-
+    <script src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
+    <script src={{asset "built/js/vendor/big_picture/BigPicture.js"}}></script>
+    <script src={{asset "built/js/vendor/jarallax/jarallax.js"}}></script>
+    <script src={{asset "built/js/vendor/isotope/isotope.js"}}></script>
+    <script src={{asset "built/js/vendor/images_loaded/imagesloaded.pkgd.min.js"}}></script>
+    <script src={{asset "built/js/vendor/easytimer/easytimer.js"}}></script>
+    <script src={{asset "built/js/vendor/pie_chart/pie_chart.js"}}></script>
+    <script src={{asset "built/js/vendor/ghost_finder/ghost_finder.js"}}></script>
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}">
+<body class="{{body_class}}" data-target="#navbar-collapse-toggle" data-offset="0">
     {{{body}}}
 
     {{ghost_foot}}
+
+    <script src={{asset "built/js/bootstrap.js"}}></script>
+    <script src={{asset "built/js/theme.js"}}></script>
+    <script src={{asset "built/js/vendor/pure_counter/purecounter.js"}}></script>
 </body>
 </html>

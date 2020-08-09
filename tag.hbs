@@ -1,29 +1,45 @@
 {{!< default}}
 
 {{#tag}}
-<header class="site-archive-header">
-    {{> navbar }}
-    {{> header-background background=feature_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-        <div class="container site-header-content">
-            <h1 class="site-title">{{name}}</h1>
-            <h2 class="site-description">
-                {{#if description}}
-                {{description}}
-                {{else}}
-                A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </h2>
-        </div>
-    </div>
-</header>
+{{> header}}
 {{/tag}}
 
 <main id="site-main" class="site-main">
-    <section class="container post-feed">
-        <div class="row row-cols-1 row-cols-md-3">
-            {{#foreach posts limit=9}}
-                {{> "post-card"}}
-            {{/foreach}}
+    <section class="parallax effect-section page-heading" style="background-image: url({{asset "images/1600x900.jpg"}});">
+        <div class="mask bg-primary opacity-9"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-white h1 mb-4">Tags</h2>
+                    <ol class="breadcrumb white">
+                        <li><a href="/">Home</a></li>
+                        <li class="active">Tags</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="post-feed post-tag-feed">
+        <div class="container">
+            <div class="row">
+                <!-- Blog List -->
+                <div class="col-lg-8">
+                    <div class="row row-cols-1 row-cols-sm-2">
+                        {{#foreach posts limit=9}}
+                            {{> "post-card"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+                <!-- Widget -->
+                <div class="col-lg-4 mt-5 mt-lg-0 pl-xl-8">
+                    {{#if @labs.members}}
+                        {{> subscribe-form}}
+                    {{/if}}
+                    {{> blog-search}}
+                    {{> blog-recent-post}}
+                    {{> blog-tag}}
+                </div>
+            </div>
         </div>
     </section>
 </main>

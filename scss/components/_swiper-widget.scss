@@ -1,0 +1,22 @@
+:root {
+  --swiper-theme-color: #{$primary};
+  --swiper-navigation-size: 44px;
+}
+
+.swiper-container-horizontal {
+	> .swiper-pagination-bullets {
+		position: relative;
+		bottom: auto;
+	}
+}
+
+.swiper-white {
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background: $white;
+            &.swiper-pagination-bullet-active {
+                background: $white;
+            }
+        }
+    }
+}

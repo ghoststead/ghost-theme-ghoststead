@@ -1,0 +1,24 @@
+@mixin transform($transforms) {
+           -moz-transform: $transforms;
+             -o-transform: $transforms;
+            -ms-transform: $transforms;
+        -webkit-transform: $transforms;
+          transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+    @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+    @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+// skew
+@mixin skew($skew) {
+   @include transform(skew(#{$skew}deg));
+}

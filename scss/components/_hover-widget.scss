@@ -1,0 +1,92 @@
+// Hover top
+.hover-top {
+	transition: ease-in-out all 0.35s;
+    position: relative;
+    top: 0;
+    &:hover {
+    	top: -10px;
+    }
+}
+
+// Hover shadow
+.shadow-hover {
+    box-shadow: $box-shadow;
+	transition: ease all 0.35s;
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
+}
+
+.shadow-only-hover {
+	transition: ease all 0.35s;
+    &:hover {
+        box-shadow: $box-shadow-lg;
+    }
+}
+
+// Hover arrow
+.arrow-hover {
+    position: relative;
+    .arrow-icon {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        bottom: 0;
+        right: 30px;
+        margin: auto;
+        @include transition(ease all 0.35s);
+    }
+    &:hover {
+        .arrow-icon {
+            opacity: 1;
+            right: 15px;
+        }
+    }
+}
+
+// Hover background
+.theme-hover-bg {
+    &:hover {
+        background: $primary !important;
+        h6 {
+            color: $white;
+        }
+        p {
+            color: $white;
+        }
+    }
+}
+
+// Hover Top Inner Tag
+.hover-top-in {
+    .hover-top--in {
+        position: relative;
+        top: 0;
+		transition: ease all 0.35s;
+		&.mt-n4 {
+			margin-top: -24px;
+		}
+    }
+    &:hover {
+        .hover-top--in {
+            top:-10px;
+        }
+    }
+}
+
+// Grayscale Hover
+.grayscale-hover {
+    img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: .7;
+		transition: ease all 0.35s;
+    }
+    &:hover {
+        img {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0);
+            opacity: 1;
+        }
+    }
+}

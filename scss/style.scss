@@ -1,81 +1,99 @@
 @import "variables";
 
-/* Bootstrap */
+/*!
+ * Bootstrap v5.0.0-alpha1 (https://getbootstrap.com/)
+ * Copyright 2011-2020 The Bootstrap Authors
+ * Copyright 2011-2020 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+// scss-docs-start import-stack
+// Configuration
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
+@import "node_modules/bootstrap/scss/utilities";
+
+// Layout & components
 @import "node_modules/bootstrap/scss/root";
 @import "node_modules/bootstrap/scss/reboot";
 @import "node_modules/bootstrap/scss/type";
 @import "node_modules/bootstrap/scss/images";
-//@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/containers";
 @import "node_modules/bootstrap/scss/grid";
-//@import "node_modules/bootstrap/scss/tables";
-//@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/tables";
+@import "node_modules/bootstrap/scss/forms";
 @import "node_modules/bootstrap/scss/buttons";
-//@import "node_modules/bootstrap/scss/transitions";
-//@import "node_modules/bootstrap/scss/dropdown";
-//@import "node_modules/bootstrap/scss/button-group";
-//@import "node_modules/bootstrap/scss/input-group";
-//@import "node_modules/bootstrap/scss/custom-forms";
-//@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/dropdown";
+@import "node_modules/bootstrap/scss/button-group";
+@import "node_modules/bootstrap/scss/nav";
 @import "node_modules/bootstrap/scss/navbar";
 @import "node_modules/bootstrap/scss/card";
-//@import "node_modules/bootstrap/scss/breadcrumb";
-//@import "node_modules/bootstrap/scss/pagination";
-//@import "node_modules/bootstrap/scss/badge";
-//@import "node_modules/bootstrap/scss/jumbotron";
-//@import "node_modules/bootstrap/scss/alert";
-//@import "node_modules/bootstrap/scss/progress";
-//@import "node_modules/bootstrap/scss/media";
-//@import "node_modules/bootstrap/scss/list-group";
-//@import "node_modules/bootstrap/scss/close";
-//@import "node_modules/bootstrap/scss/modal";
-//@import "node_modules/bootstrap/scss/tooltip";
-//@import "node_modules/bootstrap/scss/popover";
+// @import "node_modules/bootstrap/scss/breadcrumb";
+@import "node_modules/bootstrap/scss/pagination";
+@import "node_modules/bootstrap/scss/badge";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/progress";
+@import "node_modules/bootstrap/scss/list-group";
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/toasts";
+@import "node_modules/bootstrap/scss/modal";
+@import "node_modules/bootstrap/scss/tooltip";
+@import "node_modules/bootstrap/scss/popover";
 //@import "node_modules/bootstrap/scss/carousel";
-@import "node_modules/bootstrap/scss/utilities";
-//@import "node_modules/bootstrap/scss/print";
+@import "node_modules/bootstrap/scss/spinners";
 
-//- Casper grays to Bootstrap
+// Helpers
+@import "node_modules/bootstrap/scss/helpers";
+
+// Utilities
+@import "node_modules/bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+
+//- Grays to Bootstrap
 $darkgray: $gray-900;
 $midgray: $gray-500;
 $lightgray: $gray-300;
 $whitegray: $gray-100;
 
-:root {
-    --darkmode: color(var($darkgray) l(+2%));
-}
+@import "mixins";
 
-/* Casper */
-//@import "casper/global";
-//@import "casper/layout";
-//@import "casper/special";
-//@import "casper/site-header";
-//@import "casper/home-header";
-//@import "casper/archive-header";
-//@import "casper/site-nav";
-@import "casper/post-feed";
-@import "casper/single-post";
-@import "casper/post-byline";
-//@import "casper/subscribe-form";
-//@import "casper/comment";
-//@import "casper/related-post";
-@import "casper/koenig";
-@import "casper/author";
-@import "casper/error";
-//@import "casper/subscribe-overlay";
-@import "casper/site-footer";
-@import "casper/dark-mode";
+// Swiper slider
+@import "swiper-bundle";
 
+/* Components */
+@import "components/mega-menu-widget";
+@import "components/effect-widget";
+@import "components/heading-widget";
+@import "components/space-widget";
+@import "components/accordion-widget";
+@import "components/opacity-widget";
+@import "components/zindex-widget";
+@import "components/list-widget";
+@import "components/border-widget";
+@import "components/avatar-widget";
+@import "components/price-table-widget";
+@import "components/media-widget";
+@import "components/typography-widget";
+@import "components/font-weight-widget";
+@import "components/section-widget";
+@import "components/icon-widget";
+@import "components/social-icon-widget";
+@import "components/button-widget";
+@import "components/hover-widget";
+@import "components/tabs-widget";
+@import "components/image-widget";
+@import "components/blog-widget";
+@import "components/post-article-widget";
+@import "components/portfolio-widget";
+@import "components/swiper-widget";
+@import "components/count-down-widget";
 
-@import "global";
-@import "masthead";
-@import "navbar";
-@import "buttons";
+@import "colors";
+@import "header";
 @import "footer";
 
 @import "site";
 @import "post";
 @import "post-card";
-

@@ -1,0 +1,61 @@
+@for $i from 1 through 15 {
+	.border-all-#{$i} {
+		border: #{$i}px solid;
+	}
+	.border-bottom-#{$i} {
+		border-bottom: #{$i}px solid;
+	}
+	.border-top-#{$i} {
+		border-top: #{$i}px solid;
+	}
+	.border-left-#{$i} {
+		border-left: #{$i}px solid;
+	}
+	.border-right-#{$i} {
+		border-right: #{$i}px solid;
+	}
+}
+
+// Border Style
+.border-style {
+	position: relative;
+	&:after {
+		content: '';
+		display: block;
+		width: 80%;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: auto;
+		height: 1px;
+		background: radial-gradient(ellipse at center, #dee4ef 0, rgba($white, 0) 75%);
+	}
+	&.bottom {
+		&:after {
+			bottom:0;
+		}
+	}
+	&.top {
+		&:after {
+			top:0;
+		}
+	}
+	&.light {
+		&:after {
+			background: radial-gradient(ellipse at center, rgba($white, 0.2) 0, rgba(31, 45, 61, 0) 75%);
+		}
+	}
+}
+
+
+// Border Color
+.border-gray {
+	border-color: $gray-200;
+}
+
+.separated {
+	overflow: hidden;
+	> * {
+		box-shadow: -1px -1px 0px 0px $gray-200;
+	}
+}

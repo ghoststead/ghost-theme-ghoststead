@@ -1,32 +1,79 @@
-footer {
-    padding-top: 4rem;
+.footer {
+	.footer-top {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
 
-    a {
-        font-weight: normal;
-        color: white;
-    }
+	.footer-bottom {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		.nav {
+			li {
+				margin-bottom: 0;
+				&:not(:first-child),
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
 
-    a:hover {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-    }
+	h6 {
+		margin-bottom: 20px;
+		font-size: 1.12rem;
+	}
+
+	.links-white {
+		a:not(:hover) {
+			color: rgba($white, 0.6);
+		}
+	}
+
+	.font-small {
+		font-size: .8rem;
+	}
+
+	a.theme2nd-color {
+		&:hover {
+			color: $white;
+		}
+	}
+
+	.footer-link-1 {
+		margin: 0;
+		li {
+		    margin: 0 0 10px;
+		    a {
+		    	position: relative;
+		    	&:after {
+		    		content:"";
+		    		position: absolute;
+		    		bottom: 0;
+		    		right: 0;
+		    		left: auto;
+		    		width: 0px;
+		    		height: 1px;
+		    		transition: ease all 0.35s;
+		    		background: currentColor;
+		    	}
+		    	&:hover {
+		    		&:after {
+	    			    width: 100%;
+					    left: 0;
+					    right: auto;
+		    		}
+		    	}
+		    }
+		    &:last-child {
+		    	margin-bottom:0;
+		    }
+		}
+	}
+
+	.footer-border-light {
+		border-top: 1px solid rgba($white,.1);
+	}
+	.footer-border-dark {
+		border-top: 1px solid rgba($dark,.07);
+	}
 }
-
-.page-footer-content {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 4rem;
-}
-
-@include media-breakpoint-up(sm) {
-    footer {
-        padding-top: 8rem;
-    }
-
-    .page-footer-content {
-        margin-bottom: 8rem;
-    }
-}
-
-

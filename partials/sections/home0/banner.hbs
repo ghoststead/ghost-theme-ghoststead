@@ -1,0 +1,27 @@
+<section id="home" class="effect-section bg-gray-100">
+    <div class="effect bg-primary effect-skew"></div>
+    <div class="particles-box" id="particles-box"></div>
+    <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center py-10">
+            <div class="col-lg-5 col-xl-4 py-7">
+                <h1 class="text-white h1 mb-3">Our analysis is your financial results</h1>
+                <p class="lead-sm text-white-light mb-3">Sass and Bootstrap 5 theme
+                    with modern and creative multipurpose design you can use it as a startups.</p>
+                <form class="d-flex flex-row mb-2 p-1 bg-white input-group">
+                    <input type="email" class="form-control rounded-0 border-0" placeholder="you@yoursite.com">
+                    <button class="btn btn-secondary flex-shrink-0 rounded-0" type="submit">Get started</button>
+                </form>
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
+                <small class="text-white-light">14-day FREE trial - no credit card needed</small>
+            </div>
+            <div class="col-lg-7 col-xl-8">
+                <img class="max-width-auto" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- particles -->
+    <script src="{{asset "built/js/vendor/particles/particles.js"}}"></script>
+    <script src="{{asset "built/js/vendor/particles/particles-app.js"}}"></script>
+</section>
