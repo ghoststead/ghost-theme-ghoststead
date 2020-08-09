@@ -1,7 +1,3 @@
-{{#if @labs.members}}
-    {{> subscribe-form}}
-{{/if}}
-
 <div class="card mt-5">
     <div class="card-header bg-transparent">
         <span class="h5 m-0">Search</span>
@@ -11,58 +7,5 @@
             <input type="email" class="form-control" placeholder="Search">
             <button class="btn btn-primary" type="submit">{{> icons/bootstrap/search}}</button>
         </form>
-    </div>
-</div>
-
-<div class="card mt-5">
-    <div class="card-header bg-transparent">
-        <span class="h5 m-0">Recent posts</span>
-    </div>
-    <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex py-3">
-            <div class="avatar-50">
-                <img class="rounded" src="{{asset "images/250x250.jpg"}}" title="" alt="">
-            </div>
-            <div class="pl-3">
-                <p class="m-0">You don't want Traveling as your enemy!</p>
-            </div>
-        </a>
-    </div>
-</div>
-
-<div class="card mt-5">
-    <div class="card-header bg-transparent">
-        <span class="h5 m-0">Tags</span>
-    </div>
-    <div class="card-body">
-        <div class="nav tag-cloud">
-            {{#foreach tags}}
-                <a href="{{url}}" title="{{name}}" class="tag tag-{{id}} {{slug}}">{{name}}</a>
-            {{/foreach}}
-        </div>
     </div>
 </div>
