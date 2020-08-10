@@ -1,20 +1,21 @@
 {{!< default}}
-{{> header}}
-{{> page-heading}}
+{{> header-inner}}
+{{> blog-heading}}
 
-<section id="home" class="section post-feed">
-    <div class="container">
-        <div class="row">
-            <!-- Blog List -->
-            <div class="row row-cols-1 row-cols-sm-2">
-                {{#get "posts" limit="all" order="published_at desc"}}
-                    {{#foreach posts limit=9}}
-                        {{> "post-card"}}
-                    {{/foreach}}
-                {{/get}}
+<main id="site-main" class="site-main">
+    <section id="home" class="section post-feed">
+        <div class="container">
+            <div class="row">
+                <!-- Blog List -->
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    {{#get "posts" limit="all" order="published_at desc"}}
+                        {{#foreach posts limit=9}}
+                            {{> "post-card"}}
+                        {{/foreach}}
+                    {{/get}}
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
+</main>
 {{> footer }}
