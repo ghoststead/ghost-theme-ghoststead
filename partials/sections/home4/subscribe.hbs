@@ -5,10 +5,9 @@
                 <div class="section-title text-center">
                     <h3 class="h1 after-50px bg-light-after text-white">Get every updates form there</h3>
                 </div>
-                <form class="d-flex flex-column flex-md-row mb-2">
-                    <input type="email" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="you@yoursite.com">
-                    <button class="btn btn-secondary flex-shrink-0" type="submit">Get started</button>
-                </form>
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
             </div>
         </div>
     </div>
