@@ -51,42 +51,15 @@
 @import "node_modules/bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
 
-//- Casper grays to Bootstrap
+//- Grays to Bootstrap
 $darkgray: $gray-900;
 $midgray: $gray-500;
 $lightgray: $gray-300;
 $whitegray: $gray-100;
 
-:root {
-    --darkmode: color(var($darkgray) l(+2%));
-}
-
-/* Casper
-//@import "casper/global";
-//@import "casper/layout";
-//@import "casper/special";
-//@import "casper/site-header";
-//@import "casper/home-header";
-//@import "casper/archive-header";
-//@import "casper/site-nav";
-@import "casper/post-feed";
-@import "casper/single-post";
-@import "casper/post-byline";
-//@import "casper/subscribe-form";
-//@import "casper/comment";
-//@import "casper/related-post";
-@import "casper/koenig";
-@import "casper/author";
-@import "casper/error";
-//@import "casper/subscribe-overlay";
-@import "casper/site-footer";
-@import "casper/dark-mode";
-// end casper
-*/
-
 @import "mixins";
 
-// S    wiper slider
+// Swiper slider
 @import "swiper-bundle";
 
 /* Components */
