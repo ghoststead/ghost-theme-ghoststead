@@ -7,39 +7,38 @@
             </div>
         </div>
         <div class="row">
+            {{#get "posts" order="published_at desc" include="authors" limit="3"}}
+            {{#foreach posts}}
             <div class="col-lg-4 my-3">
-                <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
+                {{#if feature_image}}
+                    <div class="hover-top blog-grid-overlay" style="background-image: url({{img_url feature_image}}); ">
+                {{else}}
+                    <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
+                {{/if}}
                     <div class="blog-gird-info">
                         <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
+                            <span class="date">
+                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                            </span>
                         </div>
-                        <h5><a class="text-white stretched-link" href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h5><a class="text-white stretched-link" href="{{url}}">{{title}}</a></h5>
+                        <p>{{excerpt words="10"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+                        <div class="border-style top light mt-4"></div>
+                        {{#primary_author}}
+                        <div class="media">
+                            <div class="avatar-40 rounded-circle">
+                                <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
+                            </div>
+                            <div class="media-body pl-2 align-self-center">
+                                <span class="text-white"><a class="text-white" href="{{url}}">{{name}}</a></span>
+                            </div>
+                        </div>
+                        {{/primary_author}}
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 my-3">
-                <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                        </div>
-                        <h5><a class="text-white stretched-link" href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 my-3">
-                <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                        </div>
-                        <h5><a class="text-white stretched-link" href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-            </div>
+            {{/foreach}}
+            {{/get}}
         </div>
     </div>
 </section>

@@ -1,92 +1,44 @@
 <section id="blog" class="section bg-gray-100">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
-			<div class="col-lg-8 col-xl-6">
+            <div class="col-lg-8 col-xl-6">
                 <label class="border-bottom-2 text-uppercase font-w-600 text-primary border-secondary">Our Blog</label>
-				<h3 class="h1 m-0">Checkout our latest blogs</h3>
-			</div>
-		</div>
+                <h3 class="h1 m-0">Checkout our latest blogs</h3>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-6 col-lg-3 my-3">
-                <div class="blog-grid">
-                    <div class="blog-grid-img">
-                        <a href="#">
-                            <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
-                        </a>
-                    </div>
+            {{#get "posts" order="published_at desc" include="authors" limit="3"}}
+            {{#foreach posts}}
+            <div class="col-lg-4 my-3">
+                {{#if feature_image}}
+                    <div class="hover-top blog-grid-overlay" style="background-image: url({{img_url feature_image}}); ">
+                {{else}}
+                    <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
+                {{/if}}
                     <div class="blog-gird-info">
                         <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                            <span class="meta">Design</span>
+                            <span class="date">
+                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                            </span>
                         </div>
-                        <h5><a href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="btn-grid">
-                            <a class="btn btn-sm btn-primary" href="#">Read more</a>
+                        <h5><a class="text-white stretched-link" href="{{url}}">{{title}}</a></h5>
+                        <p>{{excerpt words="10"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+                        <div class="border-style top light mt-4"></div>
+                        {{#primary_author}}
+                        <div class="media">
+                            <div class="avatar-40 rounded-circle">
+                                <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
+                            </div>
+                            <div class="media-body pl-2 align-self-center">
+                                <span class="text-white"><a class="text-white" href="{{url}}">{{name}}</a></span>
+                            </div>
                         </div>
+                        {{/primary_author}}
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 my-3">
-                <div class="blog-grid">
-                    <div class="blog-grid-img">
-                        <a href="#">
-                            <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                            <span class="meta">Design</span>
-                        </div>
-                        <h5><a href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="btn-grid">
-                            <a class="btn btn-sm btn-primary" href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 my-3">
-                <div class="blog-grid">
-                    <div class="blog-grid-img">
-                        <a href="#">
-                            <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                            <span class="meta">Design</span>
-                        </div>
-                        <h5><a href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="btn-grid">
-                            <a class="btn btn-sm btn-primary" href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3 my-3">
-                <div class="blog-grid">
-                    <div class="blog-grid-img">
-                        <a href="#">
-                            <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
-                        </a>
-                    </div>
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">02 Mar 2019</span>
-                            <span class="meta">Design</span>
-                        </div>
-                        <h5><a href="#">Make your marketing website</a></h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <div class="btn-grid">
-                            <a class="btn btn-sm btn-primary" href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{/foreach}}
+            {{/get}}
         </div>
     </div>
 </section>
