@@ -254,7 +254,6 @@ function SetPieCharts(p){
     SmoothScrollingF();
     ScrollSpyParamF();
     CountdownTimerF();
-    PieChartF();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
         imagesLoaded( isoContent, function( instance ) {
@@ -270,4 +269,16 @@ function SetPieCharts(p){
             contentApiKey: 'CONTENT_API_KEY',
         });
     }
+    var checkPieChartLoaded = false;
+    window.addEventListener('scroll', function() {
+        var element = document.getElementsByClassName('piechartcontainer');
+        if(element.length > 0) {
+            var position = element[0].getBoundingClientRect();
+            // checking for partial visibility
+            if(position.top < window.innerHeight && position.bottom >= 0 && !checkPieChartLoaded) {
+                checkPieChartLoaded = true;
+                PieChartF();
+            }
+        }
+    });
 })();
