@@ -163,7 +163,18 @@
 }
 
 
+.blog-subscribe {
+	.subscribe-form {
+		.subscribe-email {
+			border: 1px solid $input-border-color;
+		}
+	}
+}
+
 .subscribe-form {
+	.subscribe-email {
+		border: none;
+	}
 	.btn-primary {
 		position: relative;
 		.button-loader {
