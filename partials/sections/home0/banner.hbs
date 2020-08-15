@@ -12,7 +12,11 @@
                 {{/if}}
             </div>
             <div class="col-lg-7 col-xl-8">
-                <img class="max-width-auto" src="{{asset "images/home-banner-1.png"}}" title="" alt="">
+                {{#if feature_image}}
+                    {{> feature-image}}
+                {{else}}
+                    <img class="max-width-auto" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                {{/if}}
             </div>
         </div>
     </div>
