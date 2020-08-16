@@ -7,99 +7,46 @@
             </div>
         </div>
         <div class="row">
+            {{#get "posts" order="published_at desc" include="authors" limit="3"}}
+            {{#foreach posts}}
             <div class="col-lg-4 my-3">
                 <div class="card post tag-getting-started h-100">
-                    <a href="#">
-                        <img src="{{asset "images/900x550.jpg"}}">
+                    <a href="{{url}}">
+                        {{#if feature_image}}
+                            <img class="card-img-top" src="{{img_url feature_image}}">
+                        {{else}}
+                            <img class="card-img-top" src="{{asset "images/900x550.jpg"}}">
+                        {{/if}}
                     </a>
                     <div class="card-body">
-                        <a href="#">
+                        <a href="{{url}}">
                             <div class="post-card-header">
-                                <div class="post-card-primary-tag text-body">Getting started</div>
-                                <h5 class="mt-2 mb-3">Writing posts with Ghost ✍️</h5>
+                                <h5 class="mt-2 mb-3">{{title}}</h5>
                             </div>
                             <div class="post-card-excerpt text-body">
-                                <p>Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly.</p>
+                                <p class="paragraph-overflow">{{excerpt words="10"}}</p>
                             </div>
                         </a>
                     </div>
                     <footer class="card-footer bg-transparent post-card-meta d-flex">
-                        <ul class="author-list list-unstyled m-0">
-                            <li class="author-list-item">
-                                <a href="#" class="static-avatar avatar-30">
-                                    <img class="author-profile-image" title="Ghost" alt="Ghost" src="{{asset "images/100x100.jpg"}}">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="d-flex flex-column pl-2 lh-1">
-                            <span class="links-dark font-w-600"><a href="#">Ghost</a></span>
-                            <span class="post-card-byline-date small"><time datetime="2020-07-11">11 Jul 2020</time> <span class="bull">•</span> 3 min read</span>
+                        {{#primary_author}}
+                        <div class="media">
+                            <div class="avatar-40">
+                                <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
+                            </div>
+                            <div class="media-body pl-2 align-self-center">
+                                <span class="links-dark w-100 d-block lh-1 font-w-600"><a href="{{url}}">{{name}}</a></span>
+                                <span class="post-card-byline-date small">
+                                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                                </span>
+                            </div>
                         </div>
+                        {{/primary_author}}
                     </footer>
                 </div>
             </div>
-            <div class="col-lg-4 my-3">
-                <div class="card post tag-getting-started h-100">
-                    <a href="#">
-                        <img src="{{asset "images/900x550.jpg"}}">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <div class="post-card-header">
-                                <div class="post-card-primary-tag text-body">Getting started</div>
-                                <h5 class="mt-2 mb-3">Writing posts with Ghost ✍️</h5>
-                            </div>
-                            <div class="post-card-excerpt text-body">
-                                <p>Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <footer class="card-footer bg-transparent post-card-meta d-flex">
-                        <ul class="author-list list-unstyled m-0">
-                            <li class="author-list-item">
-                                <a href="#" class="static-avatar avatar-30">
-                                    <img class="author-profile-image" title="Ghost" alt="Ghost" src="{{asset "images/100x100.jpg"}}">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="d-flex flex-column pl-2 lh-1">
-                            <span class="links-dark font-w-600"><a href="#">Ghost</a></span>
-                            <span class="post-card-byline-date small"><time datetime="2020-07-11">11 Jul 2020</time> <span class="bull">•</span> 3 min read</span>
-                        </div>
-                    </footer>
-                </div>
-            </div>
-            <div class="col-lg-4 my-3">
-                <div class="card post tag-getting-started h-100">
-                    <a href="#">
-                        <img src="{{asset "images/900x550.jpg"}}">
-                    </a>
-                    <div class="card-body">
-                        <a href="#">
-                            <div class="post-card-header">
-                                <div class="post-card-primary-tag text-body">Getting started</div>
-                                <h5 class="mt-2 mb-3">Writing posts with Ghost ✍️</h5>
-                            </div>
-                            <div class="post-card-excerpt text-body">
-                                <p>Discover familiar formatting options in a functional toolbar and the ability to add dynamic content seamlessly.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <footer class="card-footer bg-transparent post-card-meta d-flex">
-                        <ul class="author-list list-unstyled m-0">
-                            <li class="author-list-item">
-                                <a href="#" class="static-avatar avatar-30">
-                                    <img class="author-profile-image" title="Ghost" alt="Ghost" src="{{asset "images/100x100.jpg"}}">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="d-flex flex-column pl-2 lh-1">
-                            <span class="links-dark font-w-600"><a href="#">Ghost</a></span>
-                            <span class="post-card-byline-date small"><time datetime="2020-07-11">11 Jul 2020</time> <span class="bull">•</span> 3 min read</span>
-                        </div>
-                    </footer>
-                </div>
-            </div>
+            {{/foreach}}
+            {{/get}}
         </div>
     </div>
 </section>

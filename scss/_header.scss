@@ -1,3 +1,7 @@
+.image-logo {
+    height: 32px;
+}
+
 @include media-breakpoint-down(lg) {
     .navbar-nav {
         .navbar-collapse {

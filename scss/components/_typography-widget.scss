@@ -1,5 +1,14 @@
-// Typography 
+// Typography
 
 .lead-sm {
 	font-size: 1.1rem;
+}
+
+// text overflow
+.paragraph-overflow {
+	display: -webkit-box;
+ 	overflow : hidden;
+ 	text-overflow: ellipsis;
+ 	-webkit-line-clamp: 2;
+ 	-webkit-box-orient: vertical;
 }

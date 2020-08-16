@@ -5,10 +5,9 @@
             <div class="col-lg-8 text-center">
                 <h1 class="h1 text-white mb-3">How can we help?</h1>
                 <p class="lead-sm text-white-light">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
-                <form class="d-flex flex-column flex-md-row mb-2">
-                    <input type="email" class="form-control mr-sm-2 mb-2 mb-sm-0" placeholder="you@yoursite.com">
-                    <button class="btn btn-outline-light flex-shrink-0" type="submit">Get started</button>
-                </form>
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
             </div>
         </div>
     </div>

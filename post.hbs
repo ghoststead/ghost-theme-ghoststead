@@ -1,10 +1,10 @@
 {{!< default}}
 
-{{> header}}
+{{> header-inner}}
 
 {{#post}}
     <main id="site-main" class="site-main">
-        {{> sections/blog-detail-sidebar/heading}}
+        {{> blog-detail-heading}}
         <section class="section">
             <div class="container">
                 <div class="row">
@@ -15,7 +15,14 @@
                     </div>
                     <div class="col-lg-4 mt-5 mt-lg-0 pl-xl-8">
                         {{#if @labs.members}}
-                            {{> subscribe-form}}
+                            <div class="card blog-subscribe">
+                                <div class="card-header bg-transparent">
+                                    <span class="h5 m-0">Subscribe</span>
+                                </div>
+                                <div class="card-body">
+                                    {{> subscribe-form}}
+                                </div>
+                            </div>
                         {{/if}}
                         {{> blog-search}}
                         {{> blog-recent-post}}
