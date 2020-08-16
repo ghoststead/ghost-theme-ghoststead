@@ -53,7 +53,8 @@ function zipper(done) {
 
 const scssWatcher = () => gulp.watch(['scss/**'], scss);
 const hbsWatcher = () => gulp.watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const watcher = gulp.parallel(scssWatcher, hbsWatcher);
+const jsWatcher = () => gulp.watch(['js/**'], js);
+const watcher = gulp.parallel(scssWatcher, hbsWatcher, jsWatcher);
 const build = gulp.series(scss, js);
 const dev = gulp.series(build, serve, watcher);
 
