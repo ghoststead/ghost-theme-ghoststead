@@ -54,7 +54,7 @@
 /* End Swiper */
 /* Start Video & Photo Swiper */
 // four image gallery
-function ImageGallery(){
+function customImageGallery(){
     var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
     if(imageLinks.length > 0) {
         for (var i = 0; i < imageLinks.length; i++) {
@@ -104,7 +104,7 @@ function setClickHandler(id, fn) {
 }
 /* End Video & Photo Swiper */
 /* Start Parallax Image */
-function ParallaxImage(){
+function customParallaxImage(){
     var x = document.getElementsByClassName('parallax');
     var i;
     if(x.length > 0){
@@ -117,7 +117,7 @@ function ParallaxImage(){
 }
 /* End Parallax Image */
 /* Start Smooth Scrolling */
-function SmoothScrolling(){
+function customSmoothScrolling(){
     let anchorlinks = document.querySelectorAll('a[href^="#"]')
     if(anchorlinks.length > 0){
         for (let item of anchorlinks) { // relitere
@@ -140,7 +140,7 @@ function SmoothScrolling(){
 }
 /* End Smooth Scrolling */
 /* Start Isotope */
-function Isotope(){
+function customIsotope(){
     var isoWork = document.querySelector('.portfolio-content');
     if(isoWork !== null){
         var iso = new Isotope(isoWork, {
@@ -166,7 +166,7 @@ function Isotope(){
 };
 /* End Isotope */
 /* Start Add Default Scroll Spy Param */
-function ScrollSpyParam(){
+function customScrollSpyParam(){
     var mainHeader = document.querySelector('#main-header');
     if (mainHeader) {
         if (!mainHeader.classList.contains('header-inner')) {
@@ -176,7 +176,7 @@ function ScrollSpyParam(){
 }
 /* End Add Default Scroll Spy Param */
 /* Start Countdown Timer */
-function CountdownTimer(){
+function customCountdownTimer(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
     if(numberOfCountDown.length > 0) {
         for (var i = 0; i < numberOfCountDown.length; i++) {
@@ -218,15 +218,15 @@ function initTimer(i, date) {
 }
 /* End Countdown Timer */
 /* Start Pie Chart */
-function PieChart(){
+function customPieChart(){
     var chart = document.getElementsByClassName('pie_chart_in');
     if(chart.length > 0) {
         for (var i = 0; i < chart.length; i++) {
-            SetPieCharts(chart[i]);
+            customSetPieCharts(chart[i]);
         }
     }
 }
-function SetPieCharts(p){
+function customSetPieCharts(p){
     var pie_chart_size = p.getAttribute('data-size') || '160',
         pie_chart_animate = p.getAttribute('data-animate') || '2000',
         pie_chart_width = p.getAttribute('data-width') || '6',
@@ -251,15 +251,15 @@ function SetPieCharts(p){
 /* End Pie Chart */
 
 (function() {
-    ImageGallery();
-    ParallaxImage();
-    SmoothScrolling();
-    ScrollSpyParam();
-    CountdownTimer();
+    customImageGallery();
+    customParallaxImage();
+    customSmoothScrolling();
+    customScrollSpyParam();
+    customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
         imagesLoaded( isoContent, function( instance ) {
-            IsotopeF();
+            customIsotope();
         });
     }
     var blogSearchInput = document.querySelector('#blogsearch-input');
@@ -279,7 +279,7 @@ function SetPieCharts(p){
             // checking for partial visibility
             if(position.top < window.innerHeight && position.bottom >= 0 && !checkPieChartLoaded) {
                 checkPieChartLoaded = true;
-                PieChart();
+                customPieChart();
             }
         }
     });
