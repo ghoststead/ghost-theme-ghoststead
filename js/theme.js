@@ -54,7 +54,7 @@
 /* End Swiper */
 /* Start Video & Photo Swiper */
 // four image gallery
-function customImageGallery(){
+async function customImageGallery(){
     var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
     if(imageLinks.length > 0) {
         for (var i = 0; i < imageLinks.length; i++) {
@@ -104,7 +104,7 @@ function setClickHandler(id, fn) {
 }
 /* End Video & Photo Swiper */
 /* Start Parallax Image */
-function customParallaxImage(){
+async function customParallaxImage(){
     var x = document.getElementsByClassName('parallax');
     var i;
     if(x.length > 0){
@@ -117,7 +117,7 @@ function customParallaxImage(){
 }
 /* End Parallax Image */
 /* Start Smooth Scrolling */
-function customSmoothScrolling(){
+async function customSmoothScrolling(){
     let anchorlinks = document.querySelectorAll('a[href^="#"]')
     if(anchorlinks.length > 0){
         for (let item of anchorlinks) { // relitere
@@ -140,7 +140,7 @@ function customSmoothScrolling(){
 }
 /* End Smooth Scrolling */
 /* Start Isotope */
-function customIsotope(){
+async function customIsotope(){
     var isoWork = document.querySelector('.portfolio-content');
     if(isoWork !== null){
         var iso = new Isotope(isoWork, {
@@ -166,7 +166,7 @@ function customIsotope(){
 };
 /* End Isotope */
 /* Start Add Default Scroll Spy Param */
-function customScrollSpyParam(){
+async function customScrollSpyParam(){
     var mainHeader = document.querySelector('#main-header');
     if (mainHeader) {
         if (!mainHeader.classList.contains('header-inner')) {
@@ -176,7 +176,7 @@ function customScrollSpyParam(){
 }
 /* End Add Default Scroll Spy Param */
 /* Start Countdown Timer */
-function customCountdownTimer(){
+async function customCountdownTimer(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
     if(numberOfCountDown.length > 0) {
         for (var i = 0; i < numberOfCountDown.length; i++) {
@@ -188,7 +188,7 @@ function customCountdownTimer(){
         }
     }   
 }
-function GetSeconds(end_date){
+async function GetSeconds(end_date){
     var date_now = new Date();
     var date_future = new Date(end_date);
     var diff =(date_future.getTime() - date_now.getTime()) / 1000;
@@ -197,7 +197,7 @@ function GetSeconds(end_date){
     var seconds = minutes * 60;
     return seconds;
 }
-function initTimer(i, date) {
+async function initTimer(i, date) {
     var timer = new Timer();
     var seconds = GetSeconds(date);
     timer.start({precision: 'seconds', startValues: {seconds: seconds}});
@@ -218,7 +218,7 @@ function initTimer(i, date) {
 }
 /* End Countdown Timer */
 /* Start Pie Chart */
-function customPieChart(){
+async function customPieChart(){
     var chart = document.getElementsByClassName('pie_chart_in');
     if(chart.length > 0) {
         for (var i = 0; i < chart.length; i++) {
@@ -226,7 +226,7 @@ function customPieChart(){
         }
     }
 }
-function customSetPieCharts(p){
+async function customSetPieCharts(p){
     var pie_chart_size = p.getAttribute('data-size') || '160',
         pie_chart_animate = p.getAttribute('data-animate') || '2000',
         pie_chart_width = p.getAttribute('data-width') || '6',
