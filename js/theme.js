@@ -176,7 +176,7 @@ async function customScrollSpyParam(){
 }
 /* End Add Default Scroll Spy Param */
 /* Start Countdown Timer */
-async function customCountdownTimer(){
+function customCountdownTimer(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
     if(numberOfCountDown.length > 0) {
         for (var i = 0; i < numberOfCountDown.length; i++) {
@@ -188,7 +188,7 @@ async function customCountdownTimer(){
         }
     }   
 }
-async function GetSeconds(end_date){
+function GetSeconds(end_date){
     var date_now = new Date();
     var date_future = new Date(end_date);
     var diff =(date_future.getTime() - date_now.getTime()) / 1000;
@@ -197,7 +197,7 @@ async function GetSeconds(end_date){
     var seconds = minutes * 60;
     return seconds;
 }
-async function initTimer(i, date) {
+function initTimer(i, date) {
     var timer = new Timer();
     var seconds = GetSeconds(date);
     timer.start({precision: 'seconds', startValues: {seconds: seconds}});
