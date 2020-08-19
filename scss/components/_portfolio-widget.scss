@@ -1,5 +1,8 @@
 // Portfolio Grid
 .portfolio-content {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
     .grid-item {
         @include media-breakpoint-up(md) {
             width: 33.3333%;
@@ -31,6 +34,10 @@
 			text-transform: uppercase;
 			font-size: 14px;
 			line-height: normal;
+            @include media-breakpoint-down(md) {
+                margin: 0 6px;
+                font-size: 13px;
+            }
 			&:after {
 				content:"";
 				width: 0px;

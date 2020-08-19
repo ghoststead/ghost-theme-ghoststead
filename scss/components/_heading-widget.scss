@@ -44,6 +44,9 @@
 .page-heading {
 	padding-top: $spacer * 10;
 	padding-bottom: $spacer * 5;
+	@include media-breakpoint-down(md) {
+		padding-top: $spacer * 8;
+	}
 	.container {
 		position: relative;
 	}
