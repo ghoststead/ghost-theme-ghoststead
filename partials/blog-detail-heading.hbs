@@ -1,5 +1,9 @@
-<section class="parallax effect-section effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
-    <div class="mask bg-black opacity-4"></div>
+{{#if feature_image}}
+    <section class="parallax effect-section effect-section" style="background-image: url({{img_url feature_image}}); ">
+{{else}}
+    <section class="parallax effect-section effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
+{{/if}}
+    <div class="mask bg-dark opacity-6"></div>
     <div class="container position-relative">
         <div class="row screen-65 justify-content-center align-items-center py-12">
             <div class="col-lg-10 text-center mt-6">
