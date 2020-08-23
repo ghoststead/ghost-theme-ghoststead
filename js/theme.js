@@ -55,11 +55,11 @@
 /* Start Video & Photo Swiper */
 // four image gallery
 function customImageGallery(){
-    var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
+    var imageLinks = document.querySelectorAll('.image_container a.gallery-link');
     if(imageLinks.length > 0) {
         for (var i = 0; i < imageLinks.length; i++) {
             imageLinks[i].addEventListener('click', function(e) {
-                e.preventDefault()
+                e.preventDefault();
                 BigPicture({
                     el: e.target,
                     gallery: '.image_container',
@@ -68,28 +68,28 @@ function customImageGallery(){
         }
     }
     setClickHandler('video_container', function(e) {
-        var className = e.target.className
+        var className = e.target.className;
         if (~className.indexOf('htmlvid')) {
             BigPicture({
                 el: e.target,
                 vidSrc: e.target.getAttribute('vidSrc'),
-            })
+            });
         } else if (~className.indexOf('vimeo')) {
             BigPicture({
                 el: e.target,
                 vimeoSrc: e.target.getAttribute('vimeoSrc'),
-            })
+            });
         } else if (~className.indexOf('twin-peaks')) {
             BigPicture({
                 el: e.target,
                 ytSrc: e.target.getAttribute('ytSrc'),
                 dimensions: [1226, 900],
-            })
+            });
         } else if (~className.indexOf('youtube')) {
             BigPicture({
                 el: e.target,
                 ytSrc: e.target.getAttribute('ytSrc'),
-            })
+            });
         }
     });
 }
@@ -106,9 +106,8 @@ function setClickHandler(id, fn) {
 /* Start Parallax Image */
 function customParallaxImage(){
     var x = document.getElementsByClassName('parallax');
-    var i;
     if(x.length > 0){
-        for (i = 0; i < x.length; i++) {
+        for (var i = 0; i < x.length; i++) {
             new jarallax(x[i], {
                 speed: 0.2
             });
@@ -118,23 +117,24 @@ function customParallaxImage(){
 /* End Parallax Image */
 /* Start Smooth Scrolling */
 function customSmoothScrolling(){
-    let anchorlinks = document.querySelectorAll('a[href^="#"]')
-    if(anchorlinks.length > 0){
-        for (let item of anchorlinks) { // relitere
-            item.addEventListener('click', (e)=> {
-                let hashval = item.getAttribute('href')
-                if(hashval !== undefined && hashval != '#'){
-                    let target = document.querySelector(hashval)
+    var anchorLinks = document.querySelectorAll('a[href^="#"]');
+    if(anchorLinks.length > 0){
+        for (var i = 0; i < anchorLinks.length; i++) {
+            var item = anchorLinks[i];
+            item.addEventListener('click', function (e) {
+                var hashval = item.getAttribute('href');
+                if(hashval !== undefined && hashval !== '#'){
+                    var target = document.querySelector(hashval);
                     if(target !== null){
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
-                        })
+                        });
                     }
                 }
-                history.pushState(null, null, '')
+                history.pushState(null, null, '');
                 e.preventDefault();
-            })
+            });
         }
     }
 }
@@ -148,11 +148,11 @@ function customIsotope(){
             layoutMode: 'masonry'
         });
         var isoWorkParent = document.querySelectorAll('.portfolio-filter .filter li');
-        let allElements = Array.from(document.querySelectorAll('.portfolio-filter .filter li'));
-        isoWorkParent.forEach(filterItem => {
+        var allElements = Array.from(document.querySelectorAll('.portfolio-filter .filter li'));
+        isoWorkParent.forEach(function(filterItem) {
             filterItem.addEventListener('click', function (e) {
-                for (let element of allElements) {
-                    element.classList.remove('active');
+                for (var i = 0; i < allElements.length; i++) {
+                    allElements[i].classList.remove('active');
                 }
                 if(e.target.getAttribute('data-filter')) {
                     e.target.classList.add('active');
@@ -163,7 +163,7 @@ function customIsotope(){
             });
         });
     }
-};
+}
 /* End Isotope */
 /* Start Add Default Scroll Spy Param */
 function customScrollSpyParam(){
@@ -182,7 +182,7 @@ function customCountdownTimer(){
         for (var i = 0; i < numberOfCountDown.length; i++) {
             var currentCountDown = numberOfCountDown[i];
             var CountDownAttr = currentCountDown.getAttribute('data-date');
-            if(CountDownAttr != ''){
+            if(CountDownAttr !== ''){
                 initTimer(currentCountDown, CountDownAttr);
             }
         }
@@ -194,23 +194,23 @@ function GetSeconds(end_date){
     var diff =(date_future.getTime() - date_now.getTime()) / 1000;
     diff /= 60;
     var minutes = Math.abs(Math.round(diff));
-    var seconds = minutes * 60;
-    return seconds;
+    return minutes * 60;
 }
+
 function initTimer(i, date) {
     var timer = new Timer();
     var seconds = GetSeconds(date);
     timer.start({precision: 'seconds', startValues: {seconds: seconds}});
-    timer.addEventListener('secondsUpdated', function (e) {
+    timer.addEventListener('secondsUpdated', function () {
         var childNodes = i.childNodes;
         for (var j = 0; j < childNodes.length; j++) {
-            if (childNodes[j].className == 'date-box-1') {
+            if (childNodes[j].className === 'date-box-1') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
-            }else if (childNodes[j].className == 'date-box-2') {
+            }else if (childNodes[j].className === 'date-box-2') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
-            }else if (childNodes[j].className == 'date-box-3') {
+            }else if (childNodes[j].className === 'date-box-3') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
-            }else if (childNodes[j].className == 'date-box-4') {
+            }else if (childNodes[j].className === 'date-box-4') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
             }
         }
@@ -232,7 +232,7 @@ function customSetPieCharts(p){
         pie_chart_width = p.getAttribute('data-width') || '6',
         pie_chart_color = p.getAttribute('data-color') || '#84ba3f',
         pie_chart_track_color = p.getAttribute('data-trackcolor') || 'rgba(0,0,0,0.10)',
-        pie_chart_line_Cap = p.getAttribute('data-lineCap') || 'round'
+        pie_chart_line_Cap = p.getAttribute('data-lineCap') || 'round';
     var childNodes = p.querySelector('span.middle');
 
     new EasyPieChart(p, {
@@ -258,7 +258,7 @@ function customSetPieCharts(p){
     customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
-        imagesLoaded( isoContent, function( instance ) {
+        imagesLoaded( isoContent, function() {
             customIsotope();
         });
     }
