@@ -24,5 +24,20 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
+        &.navbar-light {
+            .navbar-collapse {
+                &.show,
+                &.collapsing {
+                    background: $white;
+                    border: 1px solid rgba($dark, 0.1);
+                }
+            }
+            .nav-item {
+                border-bottom: 1px solid rgba($dark, 0.1);
+            }
+            .px-nav-toggle {
+                color: $dark;
+            }
+        }
     }
 }
