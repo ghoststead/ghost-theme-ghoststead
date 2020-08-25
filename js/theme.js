@@ -258,9 +258,7 @@ function customSetPieCharts(p){
     customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
-        imagesLoaded( isoContent, function() {
-            customIsotope();
-        });
+        customIsotope();
     }
     var blogSearchInput = document.querySelector('#blogsearch-input');
     var blogSearchResult = document.querySelector('#blogsearch-result');
