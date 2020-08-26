@@ -1,8 +1,553 @@
 /**
- * Minified by jsDelivr using UglifyJS v3.1.10.
- * Original file: /npm/easytimer@1.1.1/src/easytimer.js
- * 
- * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
- */
-var module,Timer=function(n){"use strict";function e(){return"undefined"!=typeof document}function t(){return L}function o(n,e){return(n%e+e)%e}function s(n,e,t){var o,s="";for(o=0;o<e;o+=1)s+=String(t);return(s+n).slice(-s.length)}function i(){this.secondTenths=0,this.seconds=0,this.minutes=0,this.hours=0,this.days=0,this.toString=function(n,e,t){n=n||["hours","minutes","seconds"],e=e||":",t=t||2;var o,i=[];for(o=0;o<t;o+=1)"0";for(o=0;o<n.length;o+=1)void 0!==this[n[o]]&&i.push(s(this[n[o]],t,"0"));return i.join(e)}}function r(){function n(){return X.countdown}function s(n,e){J[n]+=e,K[n]+=e}function r(n){s(j,n),S("daysUpdated")}function U(e){s(k,e),J.hours=o(J.hours,l),(n()&&J.hours===l-1||!n()&&0===J.hours)&&r(e),z===k&&(K[E]+=n()?-f:f,K[g]+=n()?-h:h,K[T]+=n()?-m:m),S("hoursUpdated")}function V(e){s(E,e),J.minutes=o(J.minutes,f),(n()&&J.minutes===f-1||!n()&&0===J.minutes)&&U(e),z===E&&(K[g]+=n()?-d:d,K[T]+=n()?-a:a),S("minutesUpdated")}function A(e){s(g,e),J.seconds=o(J.seconds,d),(n()&&J.seconds===d-1||!n()&&0===J.seconds)&&V(e),z===g&&(K[T]+=n()?-c:c),S("secondsUpdated")}function M(e){s(T,e),J.secondTenths=o(J.secondTenths,c),(n()&&J.secondTenths===c-1||!n()&&0===J.secondTenths)&&A(e),S("secondTenthsUpdated")}function P(){clearInterval(q),q=void 0,Q=!1,W=!1}function x(){return F instanceof Array&&(X.countdown&&(J.hours<F[w]||J.hours===F[w]&&(J.minutes<F[y]||J.minutes===F[y]&&(J.seconds<F[p]||J.seconds===F[p]&&(J.secondTenths<F[v]||J.secondTenths===F[v]))))||!X.countdown&&(J.hours>F[w]||J.hours===F[w]&&(J.minutes>F[y]||J.minutes===F[y]&&J.seconds>=F[p])))}function I(n){z=n&&"string"==typeof n.precision?n.precision:g,D=n&&"function"==typeof n.callback?n.callback:function(){},B=n&&!0===n.countdown?-1:1,H=n&&1==n.countdown,n&&"object"==typeof n.target&&function(n){F=O(n)}(n.target),n&&"object"==typeof n.startValues&&function(n){G=O(n),J.secondTenths=G[v],J.seconds=G[p],J.minutes=G[y],J.hours=G[w],J.days=G[b],K.days=J.days,K.hours=K.days*l+J.hours,K.minutes=K.hours*f+J.minutes,K.seconds=K.minutes*d+J.seconds,K.secondTenths=K.seconds*c+J.secondTenths}(n.startValues),F=F||!H?F:[0,0,0,0,0],X={precision:z,callback:D,countdown:"object"==typeof n&&1==n.countdown,target:F,startValues:G}}function O(n){var e,t,o,s,i,r;if("object"==typeof n)if(n instanceof Array){if(5!=n.length)throw new Error("Array size not valid");r=n}else r=[n.secondTenths||0,n.seconds||0,n.minutes||0,n.hours||0,n.days||0];for(var u=0;u<n.length;u+=1)n[u]<0&&(n[u]=0);return e=r[v],t=r[p]+Math.floor(e/c),o=r[y]+Math.floor(t/d),s=r[w]+Math.floor(o/f),i=r[b]+Math.floor(s/l),r[v]=e%c,r[p]=t%d,r[y]=o%f,r[w]=s%l,r[b]=i,r}function R(){P(),function(){for(var n in J)J.hasOwnProperty(n)&&"number"==typeof J[n]&&(J[n]=0);for(var n in K)K.hasOwnProperty(n)&&"number"==typeof K[n]&&(K[n]=0)}(),S("stopped")}function S(n){e()?N.dispatchEvent(new u(n)):t()&&N.emit(n)}var q,z,B,D,F,G,H,J=new i,K=new i,N=e()?document.createElement("span"):t()?new L.EventEmitter:void 0,Q=!1,W=!1,X={};void 0!==this&&(this.start=function(n){if(this.isRunning())throw new Error("Timer already running");this.isPaused()||I(n),x()||(function(){var n,e=C[z];switch(z){case j:n=r;break;case k:n=U;break;case E:n=V;break;case T:n=M;break;default:n=A}q=setInterval(function(){n(B),D(J),x()&&(S("targetAchieved"),R())},e),Q=!0,W=!1}(),S("started"))},this.pause=function(){P(),W=!0,S("paused")},this.stop=R,this.isRunning=function(){return Q},this.isPaused=function(){return W},this.getTimeValues=function(){return J},this.getTotalTimeValues=function(){return K},this.getConfig=function(){return X},this.addEventListener=function(n,o){e()?N.addEventListener(n,o):t()&&N.on(n,o)},this.removeEventListener=function(n,o){e()?N.removeEventListener(n,o):t()&&N.removeListener(n,o)})}var u="undefined"!=typeof window?window.CustomEvent:void 0;"undefined"!=typeof window&&"function"!=typeof u&&((u=function(n,e){e=e||{bubbles:!1,cancelable:!1,detail:void 0};var t=document.createEvent("CustomEvent");return t.initCustomEvent(n,e.bubbles,e.cancelable,e.detail),t}).prototype=window.Event.prototype,window.CustomEvent=u);var c=10,d=60,a=600,f=60,h=3600,m=36e3,l=24,v=0,p=1,y=2,w=3,b=4,T="secondTenths",g="seconds",E="minutes",k="hours",j="days",C={secondTenths:100,seconds:1e3,minutes:6e4,hours:36e5,days:864e5},L=n&&n.exports?require("events"):void 0;return n&&n.exports?n.exports=r:"function"==typeof define&&define.amd&&define([],function(){return r}),r}(module);
-//# sourceMappingURL=/sm/8d60de019b2239e9099a52a13a7a50c00c2230c631801eea90a1a0b5204d1a18.map
+ * @license easytimer.js v1.0
+ * Created by Albert González
+ * Licensed under The MIT License.
+ *
+* @class Timer
+*/
+
+var module;
+
+var Timer = (
+
+    function (module) {
+        'use strict';
+
+        /*
+         * Polyfill por IE9, IE10 and IE11
+         */
+        var CustomEvent = typeof window !== 'undefined' ? window.CustomEvent : undefined;
+
+        if (typeof window !== 'undefined' && typeof CustomEvent !== "function" ) {
+            CustomEvent = function ( event, params ) {
+                params = params || { bubbles: false, cancelable: false, detail: undefined };
+                var evt = document.createEvent( 'CustomEvent' );
+                evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+                return evt;
+            };
+
+            CustomEvent.prototype = window.Event.prototype;
+
+            window.CustomEvent = CustomEvent;
+        }
+
+        /*
+         * General functions, variables and constants
+         */
+        var SECOND_TENTHS_PER_SECOND = 10,
+            SECONDS_PER_MINUTE = 60,
+            SECOND_TENTHS_PER_MINUTE = 600,
+            MINUTES_PER_HOUR = 60,
+            SECONDS_PER_HOUR = 3600,
+            SECOND_TENTHS_PER_HOUR = 36000,
+            HOURS_PER_DAY = 24,
+
+            SECOND_TENTHS_POSITION = 0,
+            SECONDS_POSITION = 1,
+            MINUTES_POSITION = 2,
+            HOURS_POSITION = 3,
+            DAYS_POSITION = 4,
+
+            SECOND_TENTHS = 'secondTenths',
+            SECONDS = 'seconds',
+            MINUTES = 'minutes',
+            HOURS = 'hours',
+            DAYS = 'days',
+
+            unitsInMilliseconds = {
+                secondTenths: 100,
+                seconds: 1000,
+                minutes: 60000,
+                hours: 3600000,
+                days: 86400000
+            },
+
+            events = module && module.exports? require('events') : undefined,
+
+            prototype;
+
+        function hasDOM() {
+            return typeof document !== 'undefined';
+        }
+
+        function hasEventEmitter() {
+            return events;
+        }
+
+        function mod(number, module) {
+            return ((number % module) + module) % module;
+        }
+
+        function leftPadding(string, padLength, character) {
+            var i,
+                characters = '';
+
+            for (i = 0; i < padLength; i = i + 1) {
+                characters += String(character);
+            }
+
+            return (characters + string).slice(-characters.length);
+        }
+
+        /**
+         * [TimeCounter Stores the units counted by the timer]
+         */
+        function TimeCounter() {
+            this.secondTenths = 0;
+            this.seconds = 0;
+            this.minutes = 0;
+            this.hours = 0;
+            this.days = 0;
+
+            /**
+             * [toString convert the counted values on a string]
+             * @param  {[array]} units           [array with the units to display]
+             * @param  {[string]} separator       [separator of the units]
+             * @param  {[integer]} leftZeroPadding [number of zero padding]
+             * @return {[string]}                 [result string]
+             */
+            this.toString = function(units, separator, leftZeroPadding) {
+                units = units || ['hours', 'minutes', 'seconds'];
+                separator = separator || ':';
+                leftZeroPadding = leftZeroPadding || 2;
+
+                var stringTime,
+                    arrayTime = [],
+                    i,
+                    zeros = '';
+
+                for (i = 0; i < leftZeroPadding; i = i + 1) {
+                    zeros += '0';
+                }
+
+                for (i = 0; i < units.length; i = i + 1) {
+                    if (this[units[i]] !== undefined) {
+                        arrayTime.push(leftPadding(this[units[i]], leftZeroPadding, '0'));
+                    }
+                }
+                stringTime = arrayTime.join(separator);
+
+                return stringTime;
+            };
+        }
+
+        /**
+         * [Timer Timer/Chronometer/Countdown compatible with AMD and NodeJS.
+         * Can update time values with different time intervals: tenth of seconds,
+         * seconds, minutes and hours.]
+         */
+        function Timer() {
+
+            /*
+             * PRIVATE Variables and Functions
+             */
+            var counters = new TimeCounter(),
+                totalCounters =new TimeCounter(),
+
+                intervalId,
+                eventEmitter = hasDOM()? document.createElement('span') :
+                    hasEventEmitter()? new events.EventEmitter() : undefined,
+                running = false,
+                paused = false,
+                precision,
+                valueToAdd,
+                customCallback,
+                timerConfig = {},
+                target,
+                startValues,
+                countdown;
+
+            function isCountdownTimer() {
+                return timerConfig.countdown;
+            }
+
+            function updateCounters(counter, value) {
+                counters[counter] += value;
+                totalCounters[counter] += value;
+            }
+
+            function updateDays(value) {
+                updateCounters(DAYS, value);
+
+                dispatchEvent('daysUpdated');
+            }
+
+            function updateHours(value) {
+                updateCounters(HOURS, value);
+
+                counters.hours = mod(counters.hours, HOURS_PER_DAY);
+
+                if ((isCountdownTimer() && counters.hours === HOURS_PER_DAY - 1) ||
+                        (!isCountdownTimer() && counters.hours === 0)) {
+                    updateDays(value);
+                }
+
+                if (precision === HOURS) {
+                    totalCounters[MINUTES] += isCountdownTimer() ? -MINUTES_PER_HOUR : MINUTES_PER_HOUR;
+                    totalCounters[SECONDS] += isCountdownTimer() ? -SECONDS_PER_HOUR : SECONDS_PER_HOUR;
+                    totalCounters[SECOND_TENTHS] += isCountdownTimer() ? -SECOND_TENTHS_PER_HOUR : SECOND_TENTHS_PER_HOUR;
+                }
+
+                dispatchEvent('hoursUpdated');
+            }
+
+            function updateMinutes(value) {
+                updateCounters(MINUTES, value);
+
+                counters.minutes = mod(counters.minutes, MINUTES_PER_HOUR);
+
+                if ((isCountdownTimer() && counters.minutes === MINUTES_PER_HOUR - 1) ||
+                    (!isCountdownTimer() && counters.minutes === 0)) {
+                    updateHours(value);
+                }
+
+                if (precision === MINUTES) {
+                    totalCounters[SECONDS] += isCountdownTimer() ? -SECONDS_PER_MINUTE : SECONDS_PER_MINUTE;
+                    totalCounters[SECOND_TENTHS] += isCountdownTimer() ? -SECOND_TENTHS_PER_MINUTE : SECOND_TENTHS_PER_MINUTE;
+                }
+
+                dispatchEvent('minutesUpdated');
+            }
+
+            function updateSeconds(value) {
+                updateCounters(SECONDS, value);
+
+                counters.seconds = mod(counters.seconds, SECONDS_PER_MINUTE);
+
+                if ((isCountdownTimer() && counters.seconds === SECONDS_PER_MINUTE - 1) ||
+                    (!isCountdownTimer() && counters.seconds === 0)) {
+                    updateMinutes(value);
+                }
+
+                if (precision === SECONDS) {
+                    totalCounters[SECOND_TENTHS] += isCountdownTimer() ? -SECOND_TENTHS_PER_SECOND : SECOND_TENTHS_PER_SECOND;
+                }
+
+                dispatchEvent('secondsUpdated');
+            }
+
+            function updateSecondTenths(value) {
+                updateCounters(SECOND_TENTHS, value);
+
+                counters.secondTenths = mod(counters.secondTenths, SECOND_TENTHS_PER_SECOND);
+
+                if ((isCountdownTimer() && counters.secondTenths === SECOND_TENTHS_PER_SECOND - 1) ||
+                    (!isCountdownTimer() && counters.secondTenths === 0)) {
+                    updateSeconds(value);
+                }
+
+                dispatchEvent('secondTenthsUpdated');
+            }
+
+            function stopTimer() {
+                clearInterval(intervalId);
+                intervalId = undefined;
+                running = false;
+                paused = false;
+            }
+
+            function startTimer() {
+                var callback,
+                    interval = unitsInMilliseconds[precision];
+
+                switch (precision) {
+                case DAYS:
+                    callback = updateDays;
+                    break;
+                case HOURS:
+                    callback = updateHours;
+                    break;
+                case MINUTES:
+                    callback =  updateMinutes;
+                    break;
+                case SECOND_TENTHS:
+                    callback =  updateSecondTenths;
+                    break;
+                default:
+                    callback = updateSeconds;
+                }
+
+                intervalId = setInterval(
+                    function () {
+                        callback(valueToAdd);
+                        customCallback(counters);
+                        if (isTargetAchieved()) {
+                            dispatchEvent('targetAchieved');
+                            stop();
+                        }
+                    },
+                    interval
+                );
+
+                running = true;
+                paused = false;
+            }
+
+            function isRegularTimerTargetAchieved() {
+                return counters.hours > target[HOURS_POSITION]
+                    || (counters.hours === target[HOURS_POSITION] && (counters.minutes > target[MINUTES_POSITION]
+                        || (counters.minutes === target[MINUTES_POSITION]) && counters.seconds >= target[SECONDS_POSITION]));
+            }
+
+            function isCountdownTimerTargetAchieved() {
+                return counters.hours < target[HOURS_POSITION]
+                    || (counters.hours === target[HOURS_POSITION] && (counters.minutes < target[MINUTES_POSITION]
+                    || (counters.minutes === target[MINUTES_POSITION] && (counters.seconds < target[SECONDS_POSITION]
+                    || (counters.seconds === target[SECONDS_POSITION] && (counters.secondTenths < target[SECOND_TENTHS_POSITION]
+                    || counters.secondTenths === target[SECOND_TENTHS_POSITION] ))))));
+            }
+
+            function isTargetAchieved() {
+                return target instanceof Array &&
+                    (timerConfig.countdown && isCountdownTimerTargetAchieved() || !timerConfig.countdown && isRegularTimerTargetAchieved());
+            }
+
+            function resetCounters() {
+                for (var counter in counters) {
+                    if(counters.hasOwnProperty(counter) && typeof counters[counter] === 'number'){
+                        counters[counter] = 0;
+                    }
+                }
+
+                for (var counter in totalCounters) {
+                    if(totalCounters.hasOwnProperty(counter) && typeof totalCounters[counter] === 'number'){
+                        totalCounters[counter] = 0;
+                    }
+                }
+            }
+
+            function setParams(params) {
+                precision = params && typeof params.precision === 'string' ? params.precision : SECONDS;
+                customCallback = params && typeof params.callback === 'function'? params.callback : function () {};
+                valueToAdd = params && params.countdown === true? -1 : 1;
+                countdown = params && params.countdown == true;
+                if (params && (typeof params.target === 'object')) { setTarget(params.target)};
+                if (params && (typeof params.startValues === 'object')) { setStartValues(params.startValues)};
+                target = target || !countdown? target : [0, 0, 0, 0, 0];
+
+                timerConfig = {
+                    precision: precision,
+                    callback: customCallback,
+                    countdown: typeof params === 'object' && params.countdown == true,
+                    target: target,
+                    startValues: startValues
+                }
+            }
+
+            function configInputValues(inputValues) {
+                var secondTenths, seconds, minutes, hours, days, values;
+                if (typeof inputValues === 'object') {
+                    if (inputValues instanceof Array) {
+                        if (inputValues.length != 5) {
+                            throw new Error('Array size not valid');
+                        }
+                        values = inputValues;
+                    } else {
+                        values = [
+                            inputValues.secondTenths || 0, inputValues.seconds || 0,
+                            inputValues.minutes || 0, inputValues.hours || 0,
+                            inputValues.days || 0
+                        ];
+                    }
+                }
+
+                for (var i = 0; i < inputValues.length; i = i + 1) {
+                    if (inputValues[i] < 0) {
+                        inputValues[i] = 0;
+                    }
+                }
+
+                secondTenths = values[SECOND_TENTHS_POSITION];
+                seconds = values[SECONDS_POSITION] + Math.floor(secondTenths / SECOND_TENTHS_PER_SECOND);
+                minutes = values[MINUTES_POSITION] + Math.floor(seconds / SECONDS_PER_MINUTE);
+                hours = values[HOURS_POSITION] + Math.floor(minutes / MINUTES_PER_HOUR);
+                days = values[DAYS_POSITION] +  Math.floor(hours / HOURS_PER_DAY);
+
+                values[SECOND_TENTHS_POSITION] = secondTenths % SECOND_TENTHS_PER_SECOND;
+                values[SECONDS_POSITION] = seconds % SECONDS_PER_MINUTE;
+                values[MINUTES_POSITION] = minutes % MINUTES_PER_HOUR;
+                values[HOURS_POSITION] = hours % HOURS_PER_DAY;
+                values[DAYS_POSITION] = days;
+
+                return values;
+            }
+
+            function setTarget(inputTarget) {
+                target = configInputValues(inputTarget);
+
+            }
+
+            function setStartValues(inputStartValues) {
+                startValues = configInputValues(inputStartValues);
+                counters.secondTenths = startValues[SECOND_TENTHS_POSITION];
+                counters.seconds = startValues[SECONDS_POSITION];
+                counters.minutes = startValues[MINUTES_POSITION];
+                counters.hours = startValues[HOURS_POSITION]
+                counters.days = startValues[DAYS_POSITION]
+
+                totalCounters.days = counters.days;
+                totalCounters.hours = totalCounters.days * HOURS_PER_DAY + counters.hours;
+                totalCounters.minutes = totalCounters.hours * MINUTES_PER_HOUR + counters.minutes;
+                totalCounters.seconds = totalCounters.minutes * SECONDS_PER_MINUTE + counters.seconds;
+                totalCounters.secondTenths = totalCounters.seconds * SECOND_TENTHS_PER_SECOND + counters.secondTenths;
+            }
+
+            /*
+             * PUBLIC functions
+             */
+
+            /**
+             * [stop stops the timer and resets the counters. Dispatch stopped event]
+             */
+            function stop() {
+                stopTimer();
+                resetCounters();
+                dispatchEvent('stopped');
+            }
+
+            /**
+             * [start starts the timer configured by the params object. Dispatch started event]
+             * @param  {[object]} params [Configuration parameters]
+             */
+            function start(params) {
+                if (this.isRunning()) {
+                    throw new Error('Timer already running');
+                }
+
+                if (!this.isPaused()) {
+                    setParams(params);
+                }
+                if (!isTargetAchieved()) {
+                    startTimer();
+                    dispatchEvent('started');
+                }
+            }
+
+            /**
+             * [pause stops the timer without resetting the counters. The timer it can be restarted with start function.
+             * Dispatch paused event]
+             * @return {[type]} [description]
+             */
+            function pause() {
+                stopTimer();
+                paused = true;
+                dispatchEvent('paused');
+            }
+
+            /**
+             * [addEventListener Adds event listener to the timer]
+             * @param {[string]} event      [event to listen]
+             * @param {[function]} listener   [the event listener function]
+             */
+            function addEventListener(event, listener) {
+                if (hasDOM()) {
+                    eventEmitter.addEventListener(event, listener);
+                } else if (hasEventEmitter()) {
+                    eventEmitter.on(event, listener)
+                }
+            }
+
+            /**
+             * [removeEventListener Removes event listener to the timer]
+             * @param  {[string]} event    [event to remove listener]
+             * @param  {[function]} listener [listener to remove]
+             */
+            function removeEventListener(event, listener) {
+                if (hasDOM()) {
+                    eventEmitter.removeEventListener(event, listener);
+                } else if (hasEventEmitter()) {
+                    eventEmitter.removeListener(event, listener);
+                }
+            }
+
+            /**
+             * [dispatchEvent dispatchs an event]
+             * @param  {string} event [event to dispatch]
+             */
+            function dispatchEvent(event) {
+                if (hasDOM()) {
+                    eventEmitter.dispatchEvent(new CustomEvent(event));
+                } else if (hasEventEmitter()) {
+                    eventEmitter.emit(event)
+                }
+            }
+
+            /**
+             * [isRunning return true if the timer is running]
+             * @return {Boolean}
+             */
+            function isRunning() {
+                return running;
+            }
+
+            /**
+             * [isPaused returns true if the timer is paused]
+             * @return {Boolean}
+             */
+            function isPaused() {
+                return paused;
+            }
+
+            /**
+             * [getTimeValues returns the counter with the current timer values]
+             * @return {[TimeCounter]}
+             */
+            function getTimeValues() {
+                return counters;
+            };
+
+            /**
+             * [getTotalTimeValues returns the counter with the current timer total values]
+             * @return {[TimeCounter]}
+             */
+            function getTotalTimeValues() {
+                return totalCounters;
+            };
+
+            /**
+             * [getConfig returns the configuration paramameters]
+             * @return {[type]}
+             */
+            function getConfig () {
+                return timerConfig;
+            };
+
+            /**
+             * Public API
+             * Definition of Timer instance public functions
+             */
+            if (typeof this !== 'undefined') {
+                this.start= start;
+
+                this.pause = pause;
+
+                this.stop = stop;
+
+                this.isRunning = isRunning;
+
+                this.isPaused = isPaused;
+
+                this.getTimeValues = getTimeValues;
+
+                this.getTotalTimeValues = getTotalTimeValues;
+
+                this.getConfig = getConfig;
+
+                this.addEventListener = addEventListener
+
+                this.removeEventListener = removeEventListener;
+            }
+
+        };
+
+        if (module && module.exports) {
+            module.exports = Timer;
+        } else if (typeof define === 'function' && define.amd) {
+            define([], function() {
+                return Timer;
+            });
+        }
+
+        return  Timer;
+    }(module)
+);
