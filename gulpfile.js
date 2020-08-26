@@ -21,8 +21,10 @@ function hbs(done) {
 
 function scss(done) {
     pump([
-        gulp.src('scss/*.scss', {sourcemaps: true, outputStyle: 'compressed'}),
-        sass(),
+        gulp.src('scss/*.scss', {sourcemaps: true}),
+        sass({
+            outputStyle: 'compressed'
+        }),
         gulp.dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], done);
