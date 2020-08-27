@@ -177,8 +177,15 @@
 	.subscribe-email {
 		border: none;
 	}
-	.btn-primary {
+	.button {
 		position: relative;
+		padding: 0 20px;
+		.button-content {
+			svg {
+				width: 1.5rem;
+				height: 1.5rem;
+			}
+		}
 		.button-loader {
 			position: absolute;
 			top: 0;
