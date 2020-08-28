@@ -8,6 +8,7 @@ module.exports = {
         EasyPieChart: true,
         GhostFinder: true,
         Isotope: true,
+        particlesJS: true,
         Swiper: true,
         Timer: true,
         module: true,
