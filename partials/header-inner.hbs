@@ -23,7 +23,8 @@
                 <ul class="nav navbar-nav m-auto">
                     <li class="nav-item mm-in mm-dropdown">
                         <a class="nav-link py-lg-4" href="#">Home</a>
-                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown"
+                           aria-expanded="false">{{> icons/bootstrap/chevron-down}}</i>
                         <ul class="mm-dropdown-menu mm-drop-in dropdown-menu">
                             <li><a href="/home-1">Home Option 1</a></li>
                             <li><a href="/home-2">Home Option 2</a></li>
@@ -43,11 +44,13 @@
                     </li>
                     <li class="nav-item mm-in mm-mega">
                         <a class="nav-link py-lg-4" href="#">Pages</a>
-                        <i class="px-nav-toggle" type="button" data-toggle="dropdown" aria-expanded="false">{{> icons/chevron-down}}</i>
+                        <i class="px-nav-toggle" type="button" data-toggle="dropdown"
+                           aria-expanded="false">{{> icons/bootstrap/chevron-down}}</i>
                         <div class="mm-mega-menu mm-drop-in dropdown-menu">
                             <div class="row no-gutters">
                                 <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="h-100 mm-left" style="background-image: url({{asset "images/500x500.jpg"}}); "></div>
+                                    <div class="h-100 mm-left"
+                                         style="background-image: url({{asset "images/mega-menu.svg"}}); "></div>
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="mm-right">
@@ -91,18 +94,18 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> <!-- row -->
+                            </div>
                         </div>
                     </li>
 
-                    <!-- FIXME: overriding the {{navigation}} helper is broken in 3.25.0:
-                    the url helper sanitizes the content -->
+                    {{!-- FIXME: overriding the navigation helper is broken in 3.25.0: the url helper sanitizes the content --}}
                     <li class="nav-item"><a class="nav-link py-lg-4" href="/about">About</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="/services">Services</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="/team">Team</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="/pricing">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link py-lg-4" href="/blog" data-target="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link py-lg-4" href="/contact" data-target="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link py-lg-4" href="/contact" data-target="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </div>

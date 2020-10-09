@@ -1,6 +1,6 @@
 {
     "name": "ghoststead",
-    "version": "0.2.0",
+    "version": "0.4.0",
     "author": {
         "email": "ghoststead@ghoststead.com"
     },
@@ -15,13 +15,25 @@
         "dev": "gulp",
         "build": "gulp build",
         "zip": "gulp zip",
-        "gscan": "gscan ."
+        "gscan": "gscan .",
+        "clean": "gulp clean",
+        "linter": "eslint"
     },
     "devDependencies": {
+        "clean": "^4.0.2",
+        "eslint": "^7.7.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1",
         "gscan": "^3.5.1",
         "gulp": "^4.0.2",
+        "gulp-clean": "^0.4.0",
+        "gulp-concat": "^2.6.1",
         "gulp-livereload": "^4.0.2",
         "gulp-sass": "^4.0.2",
+        "gulp-uglify": "^3.0.2",
         "gulp-zip": "^5.0.1",
         "node-sass": "^4.13.1",
         "pump": "^3.0.0",

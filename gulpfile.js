@@ -4,11 +4,21 @@ const pump = require('pump');
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
 const zip = require('gulp-zip');
-var sass = require('gulp-sass');
+const sass = require('gulp-sass');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const clean = require('gulp-clean');
 
 function serve(done) {
     livereload.listen();
     done();
+}
+
+function cleaner(done) {
+    pump([
+        gulp.src(['assets/built'], {read: false}),
+        clean()
+    ], done);
 }
 
 function hbs(done) {
@@ -21,7 +31,9 @@ function hbs(done) {
 function scss(done) {
     pump([
         gulp.src('scss/*.scss', {sourcemaps: true}),
-        sass(),
+        sass({
+            outputStyle: 'compressed'
+        }),
         gulp.dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], done);
@@ -29,8 +41,16 @@ function scss(done) {
 
 function js(done) {
     pump([
-        gulp.src(['node_modules/bootstrap/dist/js/bootstrap.js', 'js/**/*.js'], {sourcemaps: true}),
-        gulp.dest('assets/built/js/', {sourcemaps: '.'}),
+        gulp.src(
+            ['node_modules/bootstrap/dist/js/bootstrap.js', 'js/vendor/**/*.js', 'js/*.js'],
+            {sourcemaps: true}
+        ),
+        concat('ghoststead.js'),
+        uglify(),
+        gulp.dest(
+            'assets/built/js/',
+            {sourcemaps: '.'}
+        ),
         livereload()
     ], done);
 }
@@ -61,3 +81,4 @@ const dev = gulp.series(build, serve, watcher);
 exports.build = build;
 exports.zip = gulp.series(build, zipper);
 exports.default = dev;
+exports.clean = cleaner;

@@ -54,12 +54,12 @@
 /* End Swiper */
 /* Start Video & Photo Swiper */
 // four image gallery
-function ImageGallery(){
-    var imageLinks = document.querySelectorAll('.image_container a.gallery-link')
+function customImageGallery(){
+    var imageLinks = document.querySelectorAll('.image_container a.gallery-link');
     if(imageLinks.length > 0) {
         for (var i = 0; i < imageLinks.length; i++) {
             imageLinks[i].addEventListener('click', function(e) {
-                e.preventDefault()
+                e.preventDefault();
                 BigPicture({
                     el: e.target,
                     gallery: '.image_container',
@@ -68,28 +68,28 @@ function ImageGallery(){
         }
     }
     setClickHandler('video_container', function(e) {
-        var className = e.target.className
+        var className = e.target.className;
         if (~className.indexOf('htmlvid')) {
             BigPicture({
                 el: e.target,
                 vidSrc: e.target.getAttribute('vidSrc'),
-            })
+            });
         } else if (~className.indexOf('vimeo')) {
             BigPicture({
                 el: e.target,
                 vimeoSrc: e.target.getAttribute('vimeoSrc'),
-            })
+            });
         } else if (~className.indexOf('twin-peaks')) {
             BigPicture({
                 el: e.target,
                 ytSrc: e.target.getAttribute('ytSrc'),
                 dimensions: [1226, 900],
-            })
+            });
         } else if (~className.indexOf('youtube')) {
             BigPicture({
                 el: e.target,
                 ytSrc: e.target.getAttribute('ytSrc'),
-            })
+            });
         }
     });
 }
@@ -104,11 +104,10 @@ function setClickHandler(id, fn) {
 }
 /* End Video & Photo Swiper */
 /* Start Parallax Image */
-function ParallaxImage(){
+function customParallaxImage(){
     var x = document.getElementsByClassName('parallax');
-    var i;
     if(x.length > 0){
-        for (i = 0; i < x.length; i++) {
+        for (var i = 0; i < x.length; i++) {
             new jarallax(x[i], {
                 speed: 0.2
             });
@@ -117,30 +116,31 @@ function ParallaxImage(){
 }
 /* End Parallax Image */
 /* Start Smooth Scrolling */
-function SmoothScrolling(){
-    let anchorlinks = document.querySelectorAll('a[href^="#"]')
-    if(anchorlinks.length > 0){
-        for (let item of anchorlinks) { // relitere
-            item.addEventListener('click', (e)=> {
-                let hashval = item.getAttribute('href')
-                if(hashval !== undefined && hashval != '#'){
-                    let target = document.querySelector(hashval)
+function customSmoothScrolling(){
+    var anchorLinks = document.querySelectorAll('a[href^="#"]');
+    if(anchorLinks.length > 0){
+        for (var i = 0; i < anchorLinks.length; i++) {
+            var item = anchorLinks[i];
+            item.addEventListener('click', function (e) {
+                var hashval = item.getAttribute('href');
+                if(hashval !== undefined && hashval !== '#'){
+                    var target = document.querySelector(hashval);
                     if(target !== null){
                         target.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
-                        })
+                        });
                     }
                 }
-                history.pushState(null, null, '')
+                history.pushState(null, null, '');
                 e.preventDefault();
-            })
+            });
         }
     }
 }
 /* End Smooth Scrolling */
 /* Start Isotope */
-function Isotope(){
+function customIsotope(){
     var isoWork = document.querySelector('.portfolio-content');
     if(isoWork !== null){
         var iso = new Isotope(isoWork, {
@@ -148,11 +148,11 @@ function Isotope(){
             layoutMode: 'masonry'
         });
         var isoWorkParent = document.querySelectorAll('.portfolio-filter .filter li');
-        let allElements = Array.from(document.querySelectorAll('.portfolio-filter .filter li'));
-        isoWorkParent.forEach(filterItem => {
+        var allElements = Array.from(document.querySelectorAll('.portfolio-filter .filter li'));
+        isoWorkParent.forEach(function(filterItem) {
             filterItem.addEventListener('click', function (e) {
-                for (let element of allElements) {
-                    element.classList.remove('active');
+                for (var i = 0; i < allElements.length; i++) {
+                    allElements[i].classList.remove('active');
                 }
                 if(e.target.getAttribute('data-filter')) {
                     e.target.classList.add('active');
@@ -163,10 +163,10 @@ function Isotope(){
             });
         });
     }
-};
+}
 /* End Isotope */
 /* Start Add Default Scroll Spy Param */
-function ScrollSpyParam(){
+function customScrollSpyParam(){
     var mainHeader = document.querySelector('#main-header');
     if (mainHeader) {
         if (!mainHeader.classList.contains('header-inner')) {
@@ -176,13 +176,13 @@ function ScrollSpyParam(){
 }
 /* End Add Default Scroll Spy Param */
 /* Start Countdown Timer */
-function CountdownTimer(){
+function customCountdownTimer(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
     if(numberOfCountDown.length > 0) {
         for (var i = 0; i < numberOfCountDown.length; i++) {
             var currentCountDown = numberOfCountDown[i];
             var CountDownAttr = currentCountDown.getAttribute('data-date');
-            if(CountDownAttr != ''){
+            if(CountDownAttr !== ''){
                 initTimer(currentCountDown, CountDownAttr);
             }
         }
@@ -194,23 +194,23 @@ function GetSeconds(end_date){
     var diff =(date_future.getTime() - date_now.getTime()) / 1000;
     diff /= 60;
     var minutes = Math.abs(Math.round(diff));
-    var seconds = minutes * 60;
-    return seconds;
+    return minutes * 60;
 }
+
 function initTimer(i, date) {
     var timer = new Timer();
     var seconds = GetSeconds(date);
     timer.start({precision: 'seconds', startValues: {seconds: seconds}});
-    timer.addEventListener('secondsUpdated', function (e) {
+    timer.addEventListener('secondsUpdated', function () {
         var childNodes = i.childNodes;
         for (var j = 0; j < childNodes.length; j++) {
-            if (childNodes[j].className == 'date-box-1') {
+            if (childNodes[j].className === 'date-box-1') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
-            }else if (childNodes[j].className == 'date-box-2') {
+            }else if (childNodes[j].className === 'date-box-2') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
-            }else if (childNodes[j].className == 'date-box-3') {
+            }else if (childNodes[j].className === 'date-box-3') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
-            }else if (childNodes[j].className == 'date-box-4') {
+            }else if (childNodes[j].className === 'date-box-4') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
             }
         }
@@ -218,21 +218,21 @@ function initTimer(i, date) {
 }
 /* End Countdown Timer */
 /* Start Pie Chart */
-function PieChart(){
+function customPieChart(){
     var chart = document.getElementsByClassName('pie_chart_in');
     if(chart.length > 0) {
         for (var i = 0; i < chart.length; i++) {
-            SetPieCharts(chart[i]);
+            customSetPieCharts(chart[i]);
         }
     }
 }
-function SetPieCharts(p){
+function customSetPieCharts(p){
     var pie_chart_size = p.getAttribute('data-size') || '160',
         pie_chart_animate = p.getAttribute('data-animate') || '2000',
         pie_chart_width = p.getAttribute('data-width') || '6',
         pie_chart_color = p.getAttribute('data-color') || '#84ba3f',
         pie_chart_track_color = p.getAttribute('data-trackcolor') || 'rgba(0,0,0,0.10)',
-        pie_chart_line_Cap = p.getAttribute('data-lineCap') || 'round'
+        pie_chart_line_Cap = p.getAttribute('data-lineCap') || 'round';
     var childNodes = p.querySelector('span.middle');
 
     new EasyPieChart(p, {
@@ -249,18 +249,137 @@ function SetPieCharts(p){
     });
 }
 /* End Pie Chart */
-
+/* Start particlesJS */
+function customParticlesJS(){
+    particlesJS('particles-box',
+        {
+            'particles': {
+                'number': {
+                    'value': 80,
+                    'density': {
+                        'enable': true,
+                        'value_area': 800
+                    }
+                },
+                'color': {
+                    'value': '#ffffff'
+                },
+                'shape': {
+                    'type': 'circle',
+                    'stroke': {
+                        'width': 0,
+                        'color': '#000000'
+                    },
+                    'polygon': {
+                        'nb_sides': 5
+                    },
+                    'image': {
+                        'src': 'img/github.svg',
+                        'width': 100,
+                        'height': 100
+                    }
+                },
+                'opacity': {
+                    'value': 0.5,
+                    'random': false,
+                    'anim': {
+                        'enable': false,
+                        'speed': 1,
+                        'opacity_min': 0.1,
+                        'sync': false
+                    }
+                },
+                'size': {
+                    'value': 5,
+                    'random': true,
+                    'anim': {
+                        'enable': false,
+                        'speed': 40,
+                        'size_min': 0.1,
+                        'sync': false
+                    }
+                },
+                'line_linked': {
+                    'enable': true,
+                    'distance': 150,
+                    'color': '#ffffff',
+                    'opacity': 0.4,
+                    'width': 1
+                },
+                'move': {
+                    'enable': true,
+                    'speed': 6,
+                    'direction': 'none',
+                    'random': false,
+                    'straight': false,
+                    'out_mode': 'out',
+                    'attract': {
+                        'enable': false,
+                        'rotateX': 600,
+                        'rotateY': 1200
+                    }
+                }
+            },
+            'interactivity': {
+                'detect_on': 'canvas',
+                'events': {
+                    'onhover': {
+                        'enable': true,
+                        'mode': 'repulse'
+                    },
+                    'onclick': {
+                        'enable': true,
+                        'mode': 'push'
+                    },
+                    'resize': true
+                },
+                'modes': {
+                    'grab': {
+                        'distance': 400,
+                        'line_linked': {
+                            'opacity': 1
+                        }
+                    },
+                    'bubble': {
+                        'distance': 400,
+                        'size': 40,
+                        'duration': 2,
+                        'opacity': 8,
+                        'speed': 3
+                    },
+                    'repulse': {
+                        'distance': 200
+                    },
+                    'push': {
+                        'particles_nb': 4
+                    },
+                    'remove': {
+                        'particles_nb': 2
+                    }
+                }
+            },
+            'retina_detect': true,
+            'config_demo': {
+                'hide_card': false,
+                'background_color': '#b61924',
+                'background_image': '',
+                'background_position': '50% 50%',
+                'background_repeat': 'no-repeat',
+                'background_size': 'cover'
+            }
+        }
+    );
+}
+/* END particlesJS */
 (function() {
-    ImageGallery();
-    ParallaxImage();
-    SmoothScrolling();
-    ScrollSpyParam();
-    CountdownTimer();
+    customImageGallery();
+    customParallaxImage();
+    customSmoothScrolling();
+    customScrollSpyParam();
+    customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
-        imagesLoaded( isoContent, function( instance ) {
-            IsotopeF();
-        });
+        customIsotope();
     }
     var blogSearchInput = document.querySelector('#blogsearch-input');
     var blogSearchResult = document.querySelector('#blogsearch-result');
@@ -279,8 +398,34 @@ function SetPieCharts(p){
             // checking for partial visibility
             if(position.top < window.innerHeight && position.bottom >= 0 && !checkPieChartLoaded) {
                 checkPieChartLoaded = true;
-                PieChart();
+                customPieChart();
             }
         }
     });
+    if(typeof particlesJS !== 'undefined') {
+        var particlesElement = document.getElementsByClassName('particles-box');
+        if(particlesElement.length === 1) {
+            if(particlesElement[0].id === 'particles-box') {
+                customParticlesJS();
+            }
+        }
+    }
+    /*
+     * Enable forms that have a data-form-type attribute set to 'contact' by:
+     * - append a hidden form element containing the customer id.
+     * - set the method attribute to 'POST'
+     * - set the action to the /form endpoint
+     */
+    var formElements = document.querySelectorAll('form[data-form-type="contact"]');
+    if(formElements.length > 0) {
+        for (var i = 0; i < formElements.length; i++) {
+            var hiddenInputElement = document.createElement('input');
+            hiddenInputElement.setAttribute('hidden', 'true');
+            hiddenInputElement.setAttribute('name', 'ghoststead_api_key');
+            hiddenInputElement.setAttribute('value', 'GHOSTSTEAD_API_KEY');
+            formElements[i].appendChild(hiddenInputElement);
+            formElements[i].setAttribute('method', 'POST');
+            formElements[i].setAttribute('action', 'https://api.ghoststead.com/form');
+        }
+    }
 })();

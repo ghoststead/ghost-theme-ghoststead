@@ -1,6 +1,6 @@
 # GhostStead Ghost theme
 
-A business Ghost theme built with [Bootstrap v4](https://getbootstrap.com/), the most popular HTML5 framework.
+A SaaS-focused Ghost theme built with [Bootstrap](https://getbootstrap.com/), the most popular HTML5 framework.
 
 **Goals**:
 * Pass gscan

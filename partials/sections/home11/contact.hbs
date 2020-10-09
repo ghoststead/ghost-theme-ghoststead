@@ -5,7 +5,7 @@
             <div class="col-md-8 col-lg-6">
                 <div class="shadow-lg bg-white p-6 p-md-8 rounded border-top-3 border-primary">
                     <h3 class="h4 mb-6">Schedule a demo with us</h3>
-                    <form method="post" action="" novalidate="novalidate">
+                    <form data-form-type="contact" novalidate="novalidate">
                         <div class="mb-4">
                             <input id="contact-name" type="text" name="name" placeholder="Name" data-constraints="@Required" class="form-control form-control-has-validation form-control-last-child"><span class="invalid-feedback"></span>
                         </div>
@@ -16,7 +16,8 @@
                             <textarea class="form-control form-control-has-validation form-control-last-child" id="contact-message" name="message" rows="5" placeholder="Your Comments" data-constraints="@Required"></textarea><span class="invalid-feedback"></span>
                         </div>
                         <div class="form-action">
-                            <button class="btn btn-primary w-100" type="submit" name="send">Get in touch</button>
+                            <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                            <button class="btn btn-primary w-100" type="submit">Get in touch</button>
                         </div>
                     </form>
                 </div>

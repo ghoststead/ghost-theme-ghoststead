@@ -1,5 +1,6 @@
 .section {
-	padding: 100px 0;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	@include media-breakpoint-down(lg) {
 		padding-top: 80px;
 		padding-bottom: 80px;

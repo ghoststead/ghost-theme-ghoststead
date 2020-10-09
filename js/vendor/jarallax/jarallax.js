@@ -1,7 +1,1031 @@
 /*!
  * Name    : Just Another Parallax [Jarallax]
- * Version : 1.12.1
+ * Version : 1.12.2
  * Author  : nK <https://nkdev.info>
  * GitHub  : https://github.com/nk-o/jarallax
- */!function(n){var o={};function i(e){if(o[e])return o[e].exports;var t=o[e]={i:e,l:!1,exports:{}};return n[e].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=n,i.c=o,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(t,e){if(1&e&&(t=i(t)),8&e)return t;if(4&e&&"object"==typeof t&&t&&t.__esModule)return t;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:t}),2&e&&"string"!=typeof t)for(var o in t)i.d(n,o,function(e){return t[e]}.bind(null,o));return n},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i(i.s=10)}([,,function(e,t){e.exports=function(e){"complete"===document.readyState||"interactive"===document.readyState?e.call():document.attachEvent?document.attachEvent("onreadystatechange",function(){"interactive"===document.readyState&&e.call()}):document.addEventListener&&document.addEventListener("DOMContentLoaded",e)}},function(n,e,t){(function(e){var t;t="undefined"!=typeof window?window:void 0!==e?e:"undefined"!=typeof self?self:{},n.exports=t}).call(this,t(4))},function(e,t){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var o;o=function(){return this}();try{o=o||new Function("return this")()}catch(e){"object"===("undefined"==typeof window?"undefined":n(window))&&(o=window)}e.exports=o},,,,,,function(e,t,n){e.exports=n(11)},function(e,t,n){"use strict";n.r(t);var o=n(2),i=n.n(o),a=n(3),r=n(12);function l(e){return(l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var s=a.window.jarallax;if(a.window.jarallax=r.default,a.window.jarallax.noConflict=function(){return a.window.jarallax=s,this},void 0!==a.jQuery){var c=function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];Array.prototype.unshift.call(t,this);var o=r.default.apply(a.window,t);return"object"!==l(o)?o:this};c.constructor=r.default.constructor;var u=a.jQuery.fn.jarallax;a.jQuery.fn.jarallax=c,a.jQuery.fn.jarallax.noConflict=function(){return a.jQuery.fn.jarallax=u,this}}i()(function(){Object(r.default)(document.querySelectorAll("[data-jarallax]"))})},function(e,t,n){"use strict";n.r(t);var o=n(2),i=n.n(o),b=n(3);function c(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){if("undefined"==typeof Symbol||!(Symbol.iterator in Object(e)))return;var n=[],o=!0,i=!1,a=void 0;try{for(var r,l=e[Symbol.iterator]();!(o=(r=l.next()).done)&&(n.push(r.value),!t||n.length!==t);o=!0);}catch(e){i=!0,a=e}finally{try{o||null==l.return||l.return()}finally{if(i)throw a}}return n}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return a(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(n);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return a(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function a(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,o=new Array(t);n<t;n++)o[n]=e[n];return o}function u(e){return(u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function r(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}var l,h,d=b.window.navigator,p=-1<d.userAgent.indexOf("MSIE ")||-1<d.userAgent.indexOf("Trident/")||-1<d.userAgent.indexOf("Edge/"),s=/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(d.userAgent),m=function(){for(var e="transform WebkitTransform MozTransform".split(" "),t=document.createElement("div"),n=0;n<e.length;n+=1)if(t&&void 0!==t.style[e[n]])return e[n];return!1}();function f(){h=s?(!l&&document.body&&((l=document.createElement("div")).style.cssText="position: fixed; top: -9999px; left: 0; height: 100vh; width: 0;",document.body.appendChild(l)),(l?l.clientHeight:0)||b.window.innerHeight||document.documentElement.clientHeight):b.window.innerHeight||document.documentElement.clientHeight}f(),b.window.addEventListener("resize",f),b.window.addEventListener("orientationchange",f),b.window.addEventListener("load",f),i()(function(){f()});var g=[];function y(){g.length&&(g.forEach(function(e,t){var n=e.instance,o=e.oldData,i=n.$item.getBoundingClientRect(),a={width:i.width,height:i.height,top:i.top,bottom:i.bottom,wndW:b.window.innerWidth,wndH:h},r=!o||o.wndW!==a.wndW||o.wndH!==a.wndH||o.width!==a.width||o.height!==a.height,l=r||!o||o.top!==a.top||o.bottom!==a.bottom;g[t].oldData=a,r&&n.onResize(),l&&n.onScroll()}),b.window.requestAnimationFrame(y))}function v(e,t){("object"===("undefined"==typeof HTMLElement?"undefined":u(HTMLElement))?e instanceof HTMLElement:e&&"object"===u(e)&&null!==e&&1===e.nodeType&&"string"==typeof e.nodeName)&&(e=[e]);for(var n,o=e.length,i=0,a=arguments.length,r=new Array(2<a?a-2:0),l=2;l<a;l++)r[l-2]=arguments[l];for(;i<o;i+=1)if("object"===u(t)||void 0===t?e[i].jarallax||(e[i].jarallax=new w(e[i],t)):e[i].jarallax&&(n=e[i].jarallax[t].apply(e[i].jarallax,r)),void 0!==n)return n;return e}var x=0,w=function(){function s(e,t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,s);var n=this;n.instanceID=x,x+=1,n.$item=e,n.defaults={type:"scroll",speed:.5,imgSrc:null,imgElement:".jarallax-img",imgSize:"cover",imgPosition:"50% 50%",imgRepeat:"no-repeat",keepImg:!1,elementInViewport:null,zIndex:-100,disableParallax:!1,disableVideo:!1,videoSrc:null,videoStartTime:0,videoEndTime:0,videoVolume:0,videoLoop:!0,videoPlayOnlyVisible:!0,videoLazyLoading:!0,onScroll:null,onInit:null,onDestroy:null,onCoverImage:null};var o=n.$item.dataset||{},i={};if(Object.keys(o).forEach(function(e){var t=e.substr(0,1).toLowerCase()+e.substr(1);t&&void 0!==n.defaults[t]&&(i[t]=o[e])}),n.options=n.extend({},n.defaults,i,t),n.pureOptions=n.extend({},n.options),Object.keys(n.options).forEach(function(e){"true"===n.options[e]?n.options[e]=!0:"false"===n.options[e]&&(n.options[e]=!1)}),n.options.speed=Math.min(2,Math.max(-1,parseFloat(n.options.speed))),"string"==typeof n.options.disableParallax&&(n.options.disableParallax=new RegExp(n.options.disableParallax)),n.options.disableParallax instanceof RegExp){var a=n.options.disableParallax;n.options.disableParallax=function(){return a.test(d.userAgent)}}if("function"!=typeof n.options.disableParallax&&(n.options.disableParallax=function(){return!1}),"string"==typeof n.options.disableVideo&&(n.options.disableVideo=new RegExp(n.options.disableVideo)),n.options.disableVideo instanceof RegExp){var r=n.options.disableVideo;n.options.disableVideo=function(){return r.test(d.userAgent)}}"function"!=typeof n.options.disableVideo&&(n.options.disableVideo=function(){return!1});var l=n.options.elementInViewport;l&&"object"===u(l)&&void 0!==l.length&&(l=c(l,1)[0]);l instanceof Element||(l=null),n.options.elementInViewport=l,n.image={src:n.options.imgSrc||null,$container:null,useImgTag:!1,position:/iPad|iPhone|iPod|Android/.test(d.userAgent)?"absolute":"fixed"},n.initImg()&&n.canInitParallax()&&n.init()}var e,t,n;return e=s,(t=[{key:"css",value:function(t,n){return"string"==typeof n?b.window.getComputedStyle(t).getPropertyValue(n):(n.transform&&m&&(n[m]=n.transform),Object.keys(n).forEach(function(e){t.style[e]=n[e]}),t)}},{key:"extend",value:function(n){for(var e=arguments.length,o=new Array(1<e?e-1:0),t=1;t<e;t++)o[t-1]=arguments[t];return n=n||{},Object.keys(o).forEach(function(t){o[t]&&Object.keys(o[t]).forEach(function(e){n[e]=o[t][e]})}),n}},{key:"getWindowData",value:function(){return{width:b.window.innerWidth||document.documentElement.clientWidth,height:h,y:document.documentElement.scrollTop}}},{key:"initImg",value:function(){var e=this,t=e.options.imgElement;return t&&"string"==typeof t&&(t=e.$item.querySelector(t)),t instanceof Element||(e.options.imgSrc?(t=new Image).src=e.options.imgSrc:t=null),t&&(e.options.keepImg?e.image.$item=t.cloneNode(!0):(e.image.$item=t,e.image.$itemParent=t.parentNode),e.image.useImgTag=!0),!!e.image.$item||(null===e.image.src&&(e.image.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",e.image.bgImage=e.css(e.$item,"background-image")),!(!e.image.bgImage||"none"===e.image.bgImage))}},{key:"canInitParallax",value:function(){return m&&!this.options.disableParallax()}},{key:"init",value:function(){var e=this,t={position:"absolute",top:0,left:0,width:"100%",height:"100%",overflow:"hidden",pointerEvents:"none"},n={};if(!e.options.keepImg){var o=e.$item.getAttribute("style");if(o&&e.$item.setAttribute("data-jarallax-original-styles",o),e.image.useImgTag){var i=e.image.$item.getAttribute("style");i&&e.image.$item.setAttribute("data-jarallax-original-styles",i)}}if("static"===e.css(e.$item,"position")&&e.css(e.$item,{position:"relative"}),"auto"===e.css(e.$item,"z-index")&&e.css(e.$item,{zIndex:0}),e.image.$container=document.createElement("div"),e.css(e.image.$container,t),e.css(e.image.$container,{"z-index":e.options.zIndex}),p&&e.css(e.image.$container,{opacity:.9999}),e.image.$container.setAttribute("id","jarallax-container-".concat(e.instanceID)),e.$item.appendChild(e.image.$container),e.image.useImgTag?n=e.extend({"object-fit":e.options.imgSize,"object-position":e.options.imgPosition,"font-family":"object-fit: ".concat(e.options.imgSize,"; object-position: ").concat(e.options.imgPosition,";"),"max-width":"none"},t,n):(e.image.$item=document.createElement("div"),e.image.src&&(n=e.extend({"background-position":e.options.imgPosition,"background-size":e.options.imgSize,"background-repeat":e.options.imgRepeat,"background-image":e.image.bgImage||'url("'.concat(e.image.src,'")')},t,n))),"opacity"!==e.options.type&&"scale"!==e.options.type&&"scale-opacity"!==e.options.type&&1!==e.options.speed||(e.image.position="absolute"),"fixed"===e.image.position){var a=function(e){for(var t=[];null!==e.parentElement;)1===(e=e.parentElement).nodeType&&t.push(e);return t}(e.$item).filter(function(e){var t=b.window.getComputedStyle(e),n=t["-webkit-transform"]||t["-moz-transform"]||t.transform;return n&&"none"!==n||/(auto|scroll)/.test(t.overflow+t["overflow-y"]+t["overflow-x"])});e.image.position=a.length?"absolute":"fixed"}n.position=e.image.position,e.css(e.image.$item,n),e.image.$container.appendChild(e.image.$item),e.onResize(),e.onScroll(!0),e.options.onInit&&e.options.onInit.call(e),"none"!==e.css(e.$item,"background-image")&&e.css(e.$item,{"background-image":"none"}),e.addToParallaxList()}},{key:"addToParallaxList",value:function(){g.push({instance:this}),1===g.length&&b.window.requestAnimationFrame(y)}},{key:"removeFromParallaxList",value:function(){var n=this;g.forEach(function(e,t){e.instance.instanceID===n.instanceID&&g.splice(t,1)})}},{key:"destroy",value:function(){var e=this;e.removeFromParallaxList();var t=e.$item.getAttribute("data-jarallax-original-styles");if(e.$item.removeAttribute("data-jarallax-original-styles"),t?e.$item.setAttribute("style",t):e.$item.removeAttribute("style"),e.image.useImgTag){var n=e.image.$item.getAttribute("data-jarallax-original-styles");e.image.$item.removeAttribute("data-jarallax-original-styles"),n?e.image.$item.setAttribute("style",t):e.image.$item.removeAttribute("style"),e.image.$itemParent&&e.image.$itemParent.appendChild(e.image.$item)}e.$clipStyles&&e.$clipStyles.parentNode.removeChild(e.$clipStyles),e.image.$container&&e.image.$container.parentNode.removeChild(e.image.$container),e.options.onDestroy&&e.options.onDestroy.call(e),delete e.$item.jarallax}},{key:"clipContainer",value:function(){if("fixed"===this.image.position){var e=this,t=e.image.$container.getBoundingClientRect(),n=t.width,o=t.height;if(!e.$clipStyles)e.$clipStyles=document.createElement("style"),e.$clipStyles.setAttribute("type","text/css"),e.$clipStyles.setAttribute("id","jarallax-clip-".concat(e.instanceID)),(document.head||document.getElementsByTagName("head")[0]).appendChild(e.$clipStyles);var i="#jarallax-container-".concat(e.instanceID," {\n           clip: rect(0 ").concat(n,"px ").concat(o,"px 0);\n           clip: rect(0, ").concat(n,"px, ").concat(o,"px, 0);\n        }");e.$clipStyles.styleSheet?e.$clipStyles.styleSheet.cssText=i:e.$clipStyles.innerHTML=i}}},{key:"coverImage",value:function(){var e=this,t=e.image.$container.getBoundingClientRect(),n=t.height,o=e.options.speed,i="scroll"===e.options.type||"scroll-opacity"===e.options.type,a=0,r=n,l=0;return i&&(o<0?(a=o*Math.max(n,h),h<n&&(a-=o*(n-h))):a=o*(n+h),1<o?r=Math.abs(a-h):o<0?r=a/o+Math.abs(a):r+=(h-n)*(1-o),a/=2),e.parallaxScrollDistance=a,l=i?(h-r)/2:(n-r)/2,e.css(e.image.$item,{height:"".concat(r,"px"),marginTop:"".concat(l,"px"),left:"fixed"===e.image.position?"".concat(t.left,"px"):"0",width:"".concat(t.width,"px")}),e.options.onCoverImage&&e.options.onCoverImage.call(e),{image:{height:r,marginTop:l},container:t}}},{key:"isVisible",value:function(){return this.isElementInViewport||!1}},{key:"onScroll",value:function(e){var t=this,n=t.$item.getBoundingClientRect(),o=n.top,i=n.height,a={},r=n;if(t.options.elementInViewport&&(r=t.options.elementInViewport.getBoundingClientRect()),t.isElementInViewport=0<=r.bottom&&0<=r.right&&r.top<=h&&r.left<=b.window.innerWidth,e||t.isElementInViewport){var l=Math.max(0,o),s=Math.max(0,i+o),c=Math.max(0,-o),u=Math.max(0,o+i-h),d=Math.max(0,i-(o+i-h)),p=Math.max(0,-o+h-i),m=1-(h-o)/(h+i)*2,f=1;if(i<h?f=1-(c||u)/i:s<=h?f=s/h:d<=h&&(f=d/h),"opacity"!==t.options.type&&"scale-opacity"!==t.options.type&&"scroll-opacity"!==t.options.type||(a.transform="translate3d(0,0,0)",a.opacity=f),"scale"===t.options.type||"scale-opacity"===t.options.type){var g=1;t.options.speed<0?g-=t.options.speed*f:g+=t.options.speed*(1-f),a.transform="scale(".concat(g,") translate3d(0,0,0)")}if("scroll"===t.options.type||"scroll-opacity"===t.options.type){var y=t.parallaxScrollDistance*m;"absolute"===t.image.position&&(y-=o),a.transform="translate3d(0,".concat(y,"px,0)")}t.css(t.image.$item,a),t.options.onScroll&&t.options.onScroll.call(t,{section:n,beforeTop:l,beforeTopEnd:s,afterTop:c,beforeBottom:u,beforeBottomEnd:d,afterBottom:p,visiblePercent:f,fromViewportCenter:m})}}},{key:"onResize",value:function(){this.coverImage(),this.clipContainer()}}])&&r(e.prototype,t),n&&r(e,n),s}();v.constructor=w,t.default=v}]);
-//# sourceMappingURL=jarallax.min.js.map
+ */
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 10);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */,
+/* 1 */,
+/* 2 */
+/***/ (function(module, exports) {
+
+module.exports = function (callback) {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    // Already ready or interactive, execute callback
+    callback.call();
+  } else if (document.attachEvent) {
+    // Old browsers
+    document.attachEvent('onreadystatechange', function () {
+      if (document.readyState === 'interactive') callback.call();
+    });
+  } else if (document.addEventListener) {
+    // Modern browsers
+    document.addEventListener('DOMContentLoaded', callback);
+  }
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {var win;
+
+if (typeof window !== "undefined") {
+  win = window;
+} else if (typeof global !== "undefined") {
+  win = global;
+} else if (typeof self !== "undefined") {
+  win = self;
+} else {
+  win = {};
+}
+
+module.exports = win;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(4)))
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var g; // This works in non-strict mode
+
+g = function () {
+  return this;
+}();
+
+try {
+  // This works if eval is allowed (see CSP)
+  g = g || new Function("return this")();
+} catch (e) {
+  // This works if the window reference is available
+  if ((typeof window === "undefined" ? "undefined" : _typeof(window)) === "object") g = window;
+} // g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+
+module.exports = g;
+
+/***/ }),
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(11);
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lite_ready__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var lite_ready__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lite_ready__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var global__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(global__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _jarallax_esm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+ // no conflict
+
+var oldPlugin = global__WEBPACK_IMPORTED_MODULE_1__["window"].jarallax;
+global__WEBPACK_IMPORTED_MODULE_1__["window"].jarallax = _jarallax_esm__WEBPACK_IMPORTED_MODULE_2__["default"];
+
+global__WEBPACK_IMPORTED_MODULE_1__["window"].jarallax.noConflict = function () {
+  global__WEBPACK_IMPORTED_MODULE_1__["window"].jarallax = oldPlugin;
+  return this;
+}; // jQuery support
+
+
+if ('undefined' !== typeof global__WEBPACK_IMPORTED_MODULE_1__["jQuery"]) {
+  var jQueryPlugin = function jQueryPlugin() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    Array.prototype.unshift.call(args, this);
+    var res = _jarallax_esm__WEBPACK_IMPORTED_MODULE_2__["default"].apply(global__WEBPACK_IMPORTED_MODULE_1__["window"], args);
+    return 'object' !== _typeof(res) ? res : this;
+  };
+
+  jQueryPlugin.constructor = _jarallax_esm__WEBPACK_IMPORTED_MODULE_2__["default"].constructor; // no conflict
+
+  var oldJqPlugin = global__WEBPACK_IMPORTED_MODULE_1__["jQuery"].fn.jarallax;
+  global__WEBPACK_IMPORTED_MODULE_1__["jQuery"].fn.jarallax = jQueryPlugin;
+
+  global__WEBPACK_IMPORTED_MODULE_1__["jQuery"].fn.jarallax.noConflict = function () {
+    global__WEBPACK_IMPORTED_MODULE_1__["jQuery"].fn.jarallax = oldJqPlugin;
+    return this;
+  };
+} // data-jarallax initialization
+
+
+lite_ready__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  Object(_jarallax_esm__WEBPACK_IMPORTED_MODULE_2__["default"])(document.querySelectorAll('[data-jarallax]'));
+});
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lite_ready__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var lite_ready__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lite_ready__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var global__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(global__WEBPACK_IMPORTED_MODULE_1__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var navigator = global__WEBPACK_IMPORTED_MODULE_1__["window"].navigator;
+var isIE = -1 < navigator.userAgent.indexOf('MSIE ') || -1 < navigator.userAgent.indexOf('Trident/') || -1 < navigator.userAgent.indexOf('Edge/');
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+var supportTransform = function () {
+  var prefixes = 'transform WebkitTransform MozTransform'.split(' ');
+  var div = document.createElement('div');
+
+  for (var i = 0; i < prefixes.length; i += 1) {
+    if (div && div.style[prefixes[i]] !== undefined) {
+      return prefixes[i];
+    }
+  }
+
+  return false;
+}();
+
+var $deviceHelper;
+/**
+ * The most popular mobile browsers changes height after page scroll and this generates image jumping.
+ * We can fix it using this workaround with vh units.
+ */
+
+function getDeviceHeight() {
+  if (!$deviceHelper && document.body) {
+    $deviceHelper = document.createElement('div');
+    $deviceHelper.style.cssText = 'position: fixed; top: -9999px; left: 0; height: 100vh; width: 0;';
+    document.body.appendChild($deviceHelper);
+  }
+
+  return ($deviceHelper ? $deviceHelper.clientHeight : 0) || global__WEBPACK_IMPORTED_MODULE_1__["window"].innerHeight || document.documentElement.clientHeight;
+} // Window height data
+
+
+var wndH;
+
+function updateWndVars() {
+  if (isMobile) {
+    wndH = getDeviceHeight();
+  } else {
+    wndH = global__WEBPACK_IMPORTED_MODULE_1__["window"].innerHeight || document.documentElement.clientHeight;
+  }
+}
+
+updateWndVars();
+global__WEBPACK_IMPORTED_MODULE_1__["window"].addEventListener('resize', updateWndVars);
+global__WEBPACK_IMPORTED_MODULE_1__["window"].addEventListener('orientationchange', updateWndVars);
+global__WEBPACK_IMPORTED_MODULE_1__["window"].addEventListener('load', updateWndVars);
+lite_ready__WEBPACK_IMPORTED_MODULE_0___default()(function () {
+  updateWndVars({
+    type: 'dom-loaded'
+  });
+}); // list with all jarallax instances
+// need to render all in one scroll/resize event
+
+var jarallaxList = []; // get all parents of the element.
+
+function getParents(elem) {
+  var parents = [];
+
+  while (null !== elem.parentElement) {
+    elem = elem.parentElement;
+
+    if (1 === elem.nodeType) {
+      parents.push(elem);
+    }
+  }
+
+  return parents;
+}
+
+function updateParallax() {
+  if (!jarallaxList.length) {
+    return;
+  }
+
+  jarallaxList.forEach(function (data, k) {
+    var instance = data.instance,
+        oldData = data.oldData;
+    var clientRect = instance.$item.getBoundingClientRect();
+    var newData = {
+      width: clientRect.width,
+      height: clientRect.height,
+      top: clientRect.top,
+      bottom: clientRect.bottom,
+      wndW: global__WEBPACK_IMPORTED_MODULE_1__["window"].innerWidth,
+      wndH: wndH
+    };
+    var isResized = !oldData || oldData.wndW !== newData.wndW || oldData.wndH !== newData.wndH || oldData.width !== newData.width || oldData.height !== newData.height;
+    var isScrolled = isResized || !oldData || oldData.top !== newData.top || oldData.bottom !== newData.bottom;
+    jarallaxList[k].oldData = newData;
+
+    if (isResized) {
+      instance.onResize();
+    }
+
+    if (isScrolled) {
+      instance.onScroll();
+    }
+  });
+  global__WEBPACK_IMPORTED_MODULE_1__["window"].requestAnimationFrame(updateParallax);
+}
+
+var instanceID = 0; // Jarallax class
+
+var Jarallax = /*#__PURE__*/function () {
+  function Jarallax(item, userOptions) {
+    _classCallCheck(this, Jarallax);
+
+    var self = this;
+    self.instanceID = instanceID;
+    instanceID += 1;
+    self.$item = item;
+    self.defaults = {
+      type: 'scroll',
+      // type of parallax: scroll, scale, opacity, scale-opacity, scroll-opacity
+      speed: 0.5,
+      // supported value from -1 to 2
+      imgSrc: null,
+      imgElement: '.jarallax-img',
+      imgSize: 'cover',
+      imgPosition: '50% 50%',
+      imgRepeat: 'no-repeat',
+      // supported only for background, not for <img> tag
+      keepImg: false,
+      // keep <img> tag in it's default place
+      elementInViewport: null,
+      zIndex: -100,
+      disableParallax: false,
+      disableVideo: false,
+      // video
+      videoSrc: null,
+      videoStartTime: 0,
+      videoEndTime: 0,
+      videoVolume: 0,
+      videoLoop: true,
+      videoPlayOnlyVisible: true,
+      videoLazyLoading: true,
+      // events
+      onScroll: null,
+      // function(calculations) {}
+      onInit: null,
+      // function() {}
+      onDestroy: null,
+      // function() {}
+      onCoverImage: null // function() {}
+
+    }; // prepare data-options
+
+    var dataOptions = self.$item.dataset || {};
+    var pureDataOptions = {};
+    Object.keys(dataOptions).forEach(function (key) {
+      var loweCaseOption = key.substr(0, 1).toLowerCase() + key.substr(1);
+
+      if (loweCaseOption && 'undefined' !== typeof self.defaults[loweCaseOption]) {
+        pureDataOptions[loweCaseOption] = dataOptions[key];
+      }
+    });
+    self.options = self.extend({}, self.defaults, pureDataOptions, userOptions);
+    self.pureOptions = self.extend({}, self.options); // prepare 'true' and 'false' strings to boolean
+
+    Object.keys(self.options).forEach(function (key) {
+      if ('true' === self.options[key]) {
+        self.options[key] = true;
+      } else if ('false' === self.options[key]) {
+        self.options[key] = false;
+      }
+    }); // fix speed option [-1.0, 2.0]
+
+    self.options.speed = Math.min(2, Math.max(-1, parseFloat(self.options.speed))); // prepare disableParallax callback
+
+    if ('string' === typeof self.options.disableParallax) {
+      self.options.disableParallax = new RegExp(self.options.disableParallax);
+    }
+
+    if (self.options.disableParallax instanceof RegExp) {
+      var disableParallaxRegexp = self.options.disableParallax;
+
+      self.options.disableParallax = function () {
+        return disableParallaxRegexp.test(navigator.userAgent);
+      };
+    }
+
+    if ('function' !== typeof self.options.disableParallax) {
+      self.options.disableParallax = function () {
+        return false;
+      };
+    } // prepare disableVideo callback
+
+
+    if ('string' === typeof self.options.disableVideo) {
+      self.options.disableVideo = new RegExp(self.options.disableVideo);
+    }
+
+    if (self.options.disableVideo instanceof RegExp) {
+      var disableVideoRegexp = self.options.disableVideo;
+
+      self.options.disableVideo = function () {
+        return disableVideoRegexp.test(navigator.userAgent);
+      };
+    }
+
+    if ('function' !== typeof self.options.disableVideo) {
+      self.options.disableVideo = function () {
+        return false;
+      };
+    } // custom element to check if parallax in viewport
+
+
+    var elementInVP = self.options.elementInViewport; // get first item from array
+
+    if (elementInVP && 'object' === _typeof(elementInVP) && 'undefined' !== typeof elementInVP.length) {
+      var _elementInVP = elementInVP;
+
+      var _elementInVP2 = _slicedToArray(_elementInVP, 1);
+
+      elementInVP = _elementInVP2[0];
+    } // check if dom element
+
+
+    if (!(elementInVP instanceof Element)) {
+      elementInVP = null;
+    }
+
+    self.options.elementInViewport = elementInVP;
+    self.image = {
+      src: self.options.imgSrc || null,
+      $container: null,
+      useImgTag: false,
+      // position fixed is needed for the most of browsers because absolute position have glitches
+      // on MacOS with smooth scroll there is a huge lags with absolute position - https://github.com/nk-o/jarallax/issues/75
+      // on mobile devices better scrolled with absolute position
+      position: /iPad|iPhone|iPod|Android/.test(navigator.userAgent) ? 'absolute' : 'fixed'
+    };
+
+    if (self.initImg() && self.canInitParallax()) {
+      self.init();
+    }
+  } // add styles to element
+  // eslint-disable-next-line class-methods-use-this
+
+
+  _createClass(Jarallax, [{
+    key: "css",
+    value: function css(el, styles) {
+      if ('string' === typeof styles) {
+        return global__WEBPACK_IMPORTED_MODULE_1__["window"].getComputedStyle(el).getPropertyValue(styles);
+      } // add transform property with vendor prefix
+
+
+      if (styles.transform && supportTransform) {
+        styles[supportTransform] = styles.transform;
+      }
+
+      Object.keys(styles).forEach(function (key) {
+        el.style[key] = styles[key];
+      });
+      return el;
+    } // Extend like jQuery.extend
+    // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "extend",
+    value: function extend(out) {
+      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      out = out || {};
+      Object.keys(args).forEach(function (i) {
+        if (!args[i]) {
+          return;
+        }
+
+        Object.keys(args[i]).forEach(function (key) {
+          out[key] = args[i][key];
+        });
+      });
+      return out;
+    } // get window size and scroll position. Useful for extensions
+    // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "getWindowData",
+    value: function getWindowData() {
+      return {
+        width: global__WEBPACK_IMPORTED_MODULE_1__["window"].innerWidth || document.documentElement.clientWidth,
+        height: wndH,
+        y: document.documentElement.scrollTop
+      };
+    } // Jarallax functions
+
+  }, {
+    key: "initImg",
+    value: function initImg() {
+      var self = this; // find image element
+
+      var $imgElement = self.options.imgElement;
+
+      if ($imgElement && 'string' === typeof $imgElement) {
+        $imgElement = self.$item.querySelector($imgElement);
+      } // check if dom element
+
+
+      if (!($imgElement instanceof Element)) {
+        if (self.options.imgSrc) {
+          $imgElement = new Image();
+          $imgElement.src = self.options.imgSrc;
+        } else {
+          $imgElement = null;
+        }
+      }
+
+      if ($imgElement) {
+        if (self.options.keepImg) {
+          self.image.$item = $imgElement.cloneNode(true);
+        } else {
+          self.image.$item = $imgElement;
+          self.image.$itemParent = $imgElement.parentNode;
+        }
+
+        self.image.useImgTag = true;
+      } // true if there is img tag
+
+
+      if (self.image.$item) {
+        return true;
+      } // get image src
+
+
+      if (null === self.image.src) {
+        self.image.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        self.image.bgImage = self.css(self.$item, 'background-image');
+      }
+
+      return !(!self.image.bgImage || 'none' === self.image.bgImage);
+    }
+  }, {
+    key: "canInitParallax",
+    value: function canInitParallax() {
+      return supportTransform && !this.options.disableParallax();
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var self = this;
+      var containerStyles = {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden'
+      };
+      var imageStyles = {
+        pointerEvents: 'none',
+        transformStyle: 'preserve-3d',
+        backfaceVisibility: 'hidden',
+        willChange: 'transform,opacity'
+      };
+
+      if (!self.options.keepImg) {
+        // save default user styles
+        var curStyle = self.$item.getAttribute('style');
+
+        if (curStyle) {
+          self.$item.setAttribute('data-jarallax-original-styles', curStyle);
+        }
+
+        if (self.image.useImgTag) {
+          var curImgStyle = self.image.$item.getAttribute('style');
+
+          if (curImgStyle) {
+            self.image.$item.setAttribute('data-jarallax-original-styles', curImgStyle);
+          }
+        }
+      } // set relative position and z-index to the parent
+
+
+      if ('static' === self.css(self.$item, 'position')) {
+        self.css(self.$item, {
+          position: 'relative'
+        });
+      }
+
+      if ('auto' === self.css(self.$item, 'z-index')) {
+        self.css(self.$item, {
+          zIndex: 0
+        });
+      } // container for parallax image
+
+
+      self.image.$container = document.createElement('div');
+      self.css(self.image.$container, containerStyles);
+      self.css(self.image.$container, {
+        'z-index': self.options.zIndex
+      }); // fix for IE https://github.com/nk-o/jarallax/issues/110
+
+      if (isIE) {
+        self.css(self.image.$container, {
+          opacity: 0.9999
+        });
+      }
+
+      self.image.$container.setAttribute('id', "jarallax-container-".concat(self.instanceID));
+      self.$item.appendChild(self.image.$container); // use img tag
+
+      if (self.image.useImgTag) {
+        imageStyles = self.extend({
+          'object-fit': self.options.imgSize,
+          'object-position': self.options.imgPosition,
+          // support for plugin https://github.com/bfred-it/object-fit-images
+          'font-family': "object-fit: ".concat(self.options.imgSize, "; object-position: ").concat(self.options.imgPosition, ";"),
+          'max-width': 'none'
+        }, containerStyles, imageStyles); // use div with background image
+      } else {
+        self.image.$item = document.createElement('div');
+
+        if (self.image.src) {
+          imageStyles = self.extend({
+            'background-position': self.options.imgPosition,
+            'background-size': self.options.imgSize,
+            'background-repeat': self.options.imgRepeat,
+            'background-image': self.image.bgImage || "url(\"".concat(self.image.src, "\")")
+          }, containerStyles, imageStyles);
+        }
+      }
+
+      if ('opacity' === self.options.type || 'scale' === self.options.type || 'scale-opacity' === self.options.type || 1 === self.options.speed) {
+        self.image.position = 'absolute';
+      } // 1. Check if one of parents have transform style (without this check, scroll transform will be inverted if used parallax with position fixed)
+      //    discussion - https://github.com/nk-o/jarallax/issues/9
+      // 2. Check if parents have overflow scroll
+
+
+      if ('fixed' === self.image.position) {
+        var $parents = getParents(self.$item).filter(function (el) {
+          var styles = global__WEBPACK_IMPORTED_MODULE_1__["window"].getComputedStyle(el);
+          var parentTransform = styles['-webkit-transform'] || styles['-moz-transform'] || styles.transform;
+          var overflowRegex = /(auto|scroll)/;
+          return parentTransform && 'none' !== parentTransform || overflowRegex.test(styles.overflow + styles['overflow-y'] + styles['overflow-x']);
+        });
+        self.image.position = $parents.length ? 'absolute' : 'fixed';
+      } // add position to parallax block
+
+
+      imageStyles.position = self.image.position; // insert parallax image
+
+      self.css(self.image.$item, imageStyles);
+      self.image.$container.appendChild(self.image.$item); // set initial position and size
+
+      self.onResize();
+      self.onScroll(true); // call onInit event
+
+      if (self.options.onInit) {
+        self.options.onInit.call(self);
+      } // remove default user background
+
+
+      if ('none' !== self.css(self.$item, 'background-image')) {
+        self.css(self.$item, {
+          'background-image': 'none'
+        });
+      }
+
+      self.addToParallaxList();
+    } // add to parallax instances list
+
+  }, {
+    key: "addToParallaxList",
+    value: function addToParallaxList() {
+      jarallaxList.push({
+        instance: this
+      });
+
+      if (1 === jarallaxList.length) {
+        global__WEBPACK_IMPORTED_MODULE_1__["window"].requestAnimationFrame(updateParallax);
+      }
+    } // remove from parallax instances list
+
+  }, {
+    key: "removeFromParallaxList",
+    value: function removeFromParallaxList() {
+      var self = this;
+      jarallaxList.forEach(function (data, key) {
+        if (data.instance.instanceID === self.instanceID) {
+          jarallaxList.splice(key, 1);
+        }
+      });
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      var self = this;
+      self.removeFromParallaxList(); // return styles on container as before jarallax init
+
+      var originalStylesTag = self.$item.getAttribute('data-jarallax-original-styles');
+      self.$item.removeAttribute('data-jarallax-original-styles'); // null occurs if there is no style tag before jarallax init
+
+      if (!originalStylesTag) {
+        self.$item.removeAttribute('style');
+      } else {
+        self.$item.setAttribute('style', originalStylesTag);
+      }
+
+      if (self.image.useImgTag) {
+        // return styles on img tag as before jarallax init
+        var originalStylesImgTag = self.image.$item.getAttribute('data-jarallax-original-styles');
+        self.image.$item.removeAttribute('data-jarallax-original-styles'); // null occurs if there is no style tag before jarallax init
+
+        if (!originalStylesImgTag) {
+          self.image.$item.removeAttribute('style');
+        } else {
+          self.image.$item.setAttribute('style', originalStylesTag);
+        } // move img tag to its default position
+
+
+        if (self.image.$itemParent) {
+          self.image.$itemParent.appendChild(self.image.$item);
+        }
+      } // remove additional dom elements
+
+
+      if (self.$clipStyles) {
+        self.$clipStyles.parentNode.removeChild(self.$clipStyles);
+      }
+
+      if (self.image.$container) {
+        self.image.$container.parentNode.removeChild(self.image.$container);
+      } // call onDestroy event
+
+
+      if (self.options.onDestroy) {
+        self.options.onDestroy.call(self);
+      } // delete jarallax from item
+
+
+      delete self.$item.jarallax;
+    } // it will remove some image overlapping
+    // overlapping occur due to an image position fixed inside absolute position element
+
+  }, {
+    key: "clipContainer",
+    value: function clipContainer() {
+      // needed only when background in fixed position
+      if ('fixed' !== this.image.position) {
+        return;
+      }
+
+      var self = this;
+      var rect = self.image.$container.getBoundingClientRect();
+      var width = rect.width,
+          height = rect.height;
+
+      if (!self.$clipStyles) {
+        self.$clipStyles = document.createElement('style');
+        self.$clipStyles.setAttribute('type', 'text/css');
+        self.$clipStyles.setAttribute('id', "jarallax-clip-".concat(self.instanceID));
+        var head = document.head || document.getElementsByTagName('head')[0];
+        head.appendChild(self.$clipStyles);
+      }
+
+      var styles = "#jarallax-container-".concat(self.instanceID, " {\n           clip: rect(0 ").concat(width, "px ").concat(height, "px 0);\n           clip: rect(0, ").concat(width, "px, ").concat(height, "px, 0);\n        }"); // add clip styles inline (this method need for support IE8 and less browsers)
+
+      if (self.$clipStyles.styleSheet) {
+        self.$clipStyles.styleSheet.cssText = styles;
+      } else {
+        self.$clipStyles.innerHTML = styles;
+      }
+    }
+  }, {
+    key: "coverImage",
+    value: function coverImage() {
+      var self = this;
+      var rect = self.image.$container.getBoundingClientRect();
+      var contH = rect.height;
+      var speed = self.options.speed;
+      var isScroll = 'scroll' === self.options.type || 'scroll-opacity' === self.options.type;
+      var scrollDist = 0;
+      var resultH = contH;
+      var resultMT = 0; // scroll parallax
+
+      if (isScroll) {
+        // scroll distance and height for image
+        if (0 > speed) {
+          scrollDist = speed * Math.max(contH, wndH);
+
+          if (wndH < contH) {
+            scrollDist -= speed * (contH - wndH);
+          }
+        } else {
+          scrollDist = speed * (contH + wndH);
+        } // size for scroll parallax
+
+
+        if (1 < speed) {
+          resultH = Math.abs(scrollDist - wndH);
+        } else if (0 > speed) {
+          resultH = scrollDist / speed + Math.abs(scrollDist);
+        } else {
+          resultH += (wndH - contH) * (1 - speed);
+        }
+
+        scrollDist /= 2;
+      } // store scroll distance
+
+
+      self.parallaxScrollDistance = scrollDist; // vertical center
+
+      if (isScroll) {
+        resultMT = (wndH - resultH) / 2;
+      } else {
+        resultMT = (contH - resultH) / 2;
+      } // apply result to item
+
+
+      self.css(self.image.$item, {
+        height: "".concat(resultH, "px"),
+        marginTop: "".concat(resultMT, "px"),
+        left: 'fixed' === self.image.position ? "".concat(rect.left, "px") : '0',
+        width: "".concat(rect.width, "px")
+      }); // call onCoverImage event
+
+      if (self.options.onCoverImage) {
+        self.options.onCoverImage.call(self);
+      } // return some useful data. Used in the video cover function
+
+
+      return {
+        image: {
+          height: resultH,
+          marginTop: resultMT
+        },
+        container: rect
+      };
+    }
+  }, {
+    key: "isVisible",
+    value: function isVisible() {
+      return this.isElementInViewport || false;
+    }
+  }, {
+    key: "onScroll",
+    value: function onScroll(force) {
+      var self = this;
+      var rect = self.$item.getBoundingClientRect();
+      var contT = rect.top;
+      var contH = rect.height;
+      var styles = {}; // check if in viewport
+
+      var viewportRect = rect;
+
+      if (self.options.elementInViewport) {
+        viewportRect = self.options.elementInViewport.getBoundingClientRect();
+      }
+
+      self.isElementInViewport = 0 <= viewportRect.bottom && 0 <= viewportRect.right && viewportRect.top <= wndH && viewportRect.left <= global__WEBPACK_IMPORTED_MODULE_1__["window"].innerWidth; // stop calculations if item is not in viewport
+
+      if (force ? false : !self.isElementInViewport) {
+        return;
+      } // calculate parallax helping variables
+
+
+      var beforeTop = Math.max(0, contT);
+      var beforeTopEnd = Math.max(0, contH + contT);
+      var afterTop = Math.max(0, -contT);
+      var beforeBottom = Math.max(0, contT + contH - wndH);
+      var beforeBottomEnd = Math.max(0, contH - (contT + contH - wndH));
+      var afterBottom = Math.max(0, -contT + wndH - contH);
+      var fromViewportCenter = 1 - 2 * ((wndH - contT) / (wndH + contH)); // calculate on how percent of section is visible
+
+      var visiblePercent = 1;
+
+      if (contH < wndH) {
+        visiblePercent = 1 - (afterTop || beforeBottom) / contH;
+      } else if (beforeTopEnd <= wndH) {
+        visiblePercent = beforeTopEnd / wndH;
+      } else if (beforeBottomEnd <= wndH) {
+        visiblePercent = beforeBottomEnd / wndH;
+      } // opacity
+
+
+      if ('opacity' === self.options.type || 'scale-opacity' === self.options.type || 'scroll-opacity' === self.options.type) {
+        styles.transform = 'translate3d(0,0,0)';
+        styles.opacity = visiblePercent;
+      } // scale
+
+
+      if ('scale' === self.options.type || 'scale-opacity' === self.options.type) {
+        var scale = 1;
+
+        if (0 > self.options.speed) {
+          scale -= self.options.speed * visiblePercent;
+        } else {
+          scale += self.options.speed * (1 - visiblePercent);
+        }
+
+        styles.transform = "scale(".concat(scale, ") translate3d(0,0,0)");
+      } // scroll
+
+
+      if ('scroll' === self.options.type || 'scroll-opacity' === self.options.type) {
+        var positionY = self.parallaxScrollDistance * fromViewportCenter; // fix if parallax block in absolute position
+
+        if ('absolute' === self.image.position) {
+          positionY -= contT;
+        }
+
+        styles.transform = "translate3d(0,".concat(positionY, "px,0)");
+      }
+
+      self.css(self.image.$item, styles); // call onScroll event
+
+      if (self.options.onScroll) {
+        self.options.onScroll.call(self, {
+          section: rect,
+          beforeTop: beforeTop,
+          beforeTopEnd: beforeTopEnd,
+          afterTop: afterTop,
+          beforeBottom: beforeBottom,
+          beforeBottomEnd: beforeBottomEnd,
+          afterBottom: afterBottom,
+          visiblePercent: visiblePercent,
+          fromViewportCenter: fromViewportCenter
+        });
+      }
+    }
+  }, {
+    key: "onResize",
+    value: function onResize() {
+      this.coverImage();
+      this.clipContainer();
+    }
+  }]);
+
+  return Jarallax;
+}(); // global definition
+
+
+var plugin = function plugin(items, options) {
+  // check for dom element
+  // thanks: http://stackoverflow.com/questions/384286/javascript-isdom-how-do-you-check-if-a-javascript-object-is-a-dom-object
+  if ('object' === (typeof HTMLElement === "undefined" ? "undefined" : _typeof(HTMLElement)) ? items instanceof HTMLElement : items && 'object' === _typeof(items) && null !== items && 1 === items.nodeType && 'string' === typeof items.nodeName) {
+    items = [items];
+  }
+
+  var len = items.length;
+  var k = 0;
+  var ret;
+
+  for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+    args[_key2 - 2] = arguments[_key2];
+  }
+
+  for (k; k < len; k += 1) {
+    if ('object' === _typeof(options) || 'undefined' === typeof options) {
+      if (!items[k].jarallax) {
+        items[k].jarallax = new Jarallax(items[k], options);
+      }
+    } else if (items[k].jarallax) {
+      // eslint-disable-next-line prefer-spread
+      ret = items[k].jarallax[options].apply(items[k].jarallax, args);
+    }
+
+    if ('undefined' !== typeof ret) {
+      return ret;
+    }
+  }
+
+  return items;
+};
+
+plugin.constructor = Jarallax;
+/* harmony default export */ __webpack_exports__["default"] = (plugin);
+
+/***/ })
+/******/ ]);

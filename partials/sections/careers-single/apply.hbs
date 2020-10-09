@@ -12,7 +12,7 @@
             <div class="col-md-11 col-lg-9">
                 <div class="card">
                     <div class="card-body p-5">
-                        <form class="rd-mailform" method="post" action="">
+                        <form class="rd-mailform" data-form-type="contact">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-4">
@@ -45,7 +45,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center pt-2">
-                                    <button class="btn btn-primary">Submit your application</button>
+                                    <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                                    <button type="submit" class="btn btn-primary">Submit your application</button>
                                 </div>
                             </div>
                         </form>

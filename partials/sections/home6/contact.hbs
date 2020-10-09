@@ -13,7 +13,7 @@
                     <div class="pb-4">
                         <h5 class="m-0">Contact</h5>
                     </div>
-                    <form data-form-output="form-output-global" data-form-type="contact" method="post" action="">
+                    <form data-form-type="contact">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-4">
@@ -34,7 +34,8 @@
                                 </div>
                             </div>
                             <div class="col-md-12 p-10px-t">
-                                <button class="btn btn-primary" type="submit" name="send">Create my account</button>
+                                <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                                <button class="btn btn-primary" type="submit">Create my account</button>
                             </div>
                         </div>
                     </form>
@@ -46,7 +47,7 @@
                     <p class="text-white-light mb-5">2 Embarcadero Center, San Francisco, CA 94111 USA</p>
                     <h5 class="lead-sm text-white mb-2">Our contact info</h5>
                     <p class="mb-2 links-white"><a href="mailto:support@domain.com">support@domain.com</a></p>
-                    <p class="m-0 links-white"><a href="tel:+1 (760) 678-4580">+1 (760) 678-4580</a></p>
+                    <p class="m-0 links-white"><a href="tel:+1 (800) 555-1212">+1 (800) 555-1212</a></p>
 
                     <h5 class="lead-sm text-white mb-2 mt-5">Follow us</h5>
                     <div class="social-icon si-30 white radius nav">

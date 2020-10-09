@@ -1,10 +1,10 @@
 <section id="home" class="pb-0 section bg-primary">
     <div class="particles-box" id="particles-box"></div>
-    <div class="container position-relative">
+    <div class="container position-relative pt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-7 py-7 text-center">
-                <h1 class="text-white h1 mb-b">Intuitive, feature-rich, affordable <u class="font-w-600">customer support</u> software</h1>
-                <p class="lead-sm text-white-light mb-3">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+                <h1 class="text-white h1 mb-4">Intuitive, feature-rich, affordable <u class="font-w-600">customer support</u> software</h1>
+                <p class="lead-sm text-white-light mb-4">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
                 {{#if @labs.members}}
                     {{> subscribe-form}}
                 {{/if}}
@@ -15,7 +15,4 @@
             </div>
         </div>
     </div>
-    <!-- particles -->
-    <script src="{{asset "built/js/vendor/particles/particles.js"}}"></script>
-    <script src="{{asset "built/js/vendor/particles/particles-app.js"}}"></script>
 </section>

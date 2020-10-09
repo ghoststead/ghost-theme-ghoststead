@@ -128,12 +128,12 @@
                 <div class="card bg-gray-100">
                     <div class="card-body p-lg-5">
                         <h4 class="mb-5">Leave a Reply</h4>
-                        <form>
+                        <form data-form-type="contact">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label class="form-control-label">Full name</label>
-                                        <input type="text" class="form-control" placeholder="Martin Luthar">
+                                        <input type="text" class="form-control" placeholder="Jane Smith">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -145,7 +145,7 @@
                                 <div class="col-md-12">
                                     <div class="mb-3">
                                         <label class="form-control-label">Your Comment?</label>
-                                        <textarea class="form-control" rows="6" name="answer" placeholder="Hello, There! " aria-label="How'd you hear about Front?" required="" data-msg="Please enter an answer." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
+                                        <textarea class="form-control" rows="6" name="answer" placeholder="Hello, There! " aria-label="How'd you hear about GhostStead?" required="" data-msg="Please enter an answer." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -157,7 +157,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 pt-3">
-                                    <button class="btn btn-primary">Submit</button>
+                                    <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </form>

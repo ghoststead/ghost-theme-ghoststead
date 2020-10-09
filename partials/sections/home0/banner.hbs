@@ -5,8 +5,7 @@
         <div class="row min-vh-100 align-items-center py-10">
             <div class="col-lg-5 col-xl-4 py-7">
                 <h1 class="text-white h1 mb-3">{{title}}</h1>
-                <p class="lead-sm text-white-light mb-3">Sass and Bootstrap 5 theme
-                    with modern and creative multipurpose design you can use it as a startups.</p>
+                <p class="lead-sm text-white-light mb-3">{{content}}</p>
                 {{#if @labs.members}}
                     {{> subscribe-form}}
                 {{/if}}
@@ -20,7 +19,4 @@
             </div>
         </div>
     </div>
-    <!-- particles -->
-    <script src="{{asset "built/js/vendor/particles/particles.js"}}"></script>
-    <script src="{{asset "built/js/vendor/particles/particles-app.js"}}"></script>
 </section>

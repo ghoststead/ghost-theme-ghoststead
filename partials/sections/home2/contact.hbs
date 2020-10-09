@@ -9,7 +9,7 @@
             <div class="col-lg-4 col-xl-3">
                 <div class="p-4 bg-white shadow rounded">
                     <h5 class="h6 mb-3">Send a message</h5>
-                    <form data-form-output="form-output-global" data-form-type="contact" method="post" action="">
+                    <form data-form-type="contact">
                         <div class="mb-3">
                             <input id="contact-name" type="text" name="name" placeholder="Name" class="form-control form-control-sm">
                         </div>
@@ -20,7 +20,8 @@
                             <textarea class="form-control" id="contact-message" name="message" rows="4" placeholder="Your Comments"> </textarea>
                         </div>
                         <div class="form-action">
-                            <button class="btn btn-sm btn-primary" type="submit" name="send">Get in touch</button>
+                            <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                            <button class="btn btn-sm btn-primary" type="submit">Get in touch</button>
                         </div>
                     </form>
                 </div>
