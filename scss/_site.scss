@@ -16,7 +16,7 @@
 .site-archive-header .no-image .site-header-content {
     text-align: center;
     padding: 5vw 0 2rem;
-    border-bottom: 1px solid scale_color($lightgray, $lightness: +10%);
+    border-bottom: 1px solid $lightgray;
 }
 
 .site-archive-header .no-image .site-description {
