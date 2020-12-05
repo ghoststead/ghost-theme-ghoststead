@@ -59,9 +59,6 @@ $whitegray: $gray-100;
 
 @import "mixins";
 
-// Swiper slider
-@import "swiper-bundle";
-
 /* Components */
 @import "components/mega-menu-widget";
 @import "components/effect-widget";
@@ -88,6 +85,7 @@ $whitegray: $gray-100;
 @import "components/post-article-widget";
 @import "components/portfolio-widget";
 @import "components/swiper-widget";
+@import "components/swiper-bundle";
 @import "components/count-down-widget";
 @import "components/pie-chart-widget";
 
@@ -95,7 +93,6 @@ $whitegray: $gray-100;
 @import "header";
 @import "footer";
 
-@import "site";
 @import "post";
 @import "post-card";
 @import "koenig";

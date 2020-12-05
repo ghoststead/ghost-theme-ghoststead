@@ -1,9 +1,122 @@
 .kg-width-wide {
     /*! keep */
 }
+
 .kg-width-full {
     /*! keep */
 }
+
 .kg-bookmark-author {
     /*! keep */
+}
+
+.kg-image {
+    margin: 0 auto;
+}
+
+.kg-gallery-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.kg-gallery-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &:not(:first-of-type) {
+        margin: .75em 0 0;
+    }
+}
+
+.kg-gallery-image {
+    &:not(:first-of-type) {
+        margin: 0 0 0 .75em;
+    }
+}
+
+.kg-bookmark-card {
+    width: 100%;
+
+    .kg-bookmark-container {
+        box-shadow: $box-shadow;
+        display: flex;
+        min-height: 148px;
+        border-radius: 3px;
+        color: $body-color;
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+}
+
+.kg-bookmark-title {
+    color: $dark;
+    font-weight: 600;
+}
+
+.kg-bookmark-description {
+    display: -webkit-box;
+    overflow-y: hidden;
+    margin-top: 12px;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.kg-bookmark-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    @include media-breakpoint-down(sm) {
+        order: 2;
+    }
+}
+
+.kg-bookmark-thumbnail {
+    position: relative;
+    min-width: 33%;
+    max-height: 100%;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 3px 3px 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    @include media-breakpoint-down(sm) {
+        order: 1;
+        min-height: 160px;
+        width: 100%;
+    }
+}
+
+.kg-bookmark-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 14px;
+    font-weight: 400;
+
+    .kg-bookmark-icon {
+        margin-right: 8px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+.kg-bookmark-publisher {
+    overflow: hidden;
+    max-width: 240px;
+    line-height: 1.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
