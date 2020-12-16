@@ -62,6 +62,7 @@
             "xl": {
                 "width": 2000
             }
-    },
-    "dependencies": {}
+        },
+        "dependencies": {}
+    }
 }
