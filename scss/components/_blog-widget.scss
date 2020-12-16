@@ -25,10 +25,6 @@
         color: rgba($white, 0.8);
     }
 
-    .media {
-        padding-top: 20px;
-    }
-
     .b-meta {
         span {
             font-size: 14px;
@@ -97,23 +93,6 @@
             img {
                 transform: scale(1.1);
             }
-        }
-    }
-}
-
-.tag-cloud {
-    a {
-        background: $gray-200;
-        color: $dark;
-        display: block;
-        margin: 0 4px 6px 0px;
-        border-radius: 40px;
-        font-size: 0.86rem;
-        padding: 3px 16px 6px;
-
-        &:hover {
-            background: $primary;
-            color: $white;
         }
     }
 }

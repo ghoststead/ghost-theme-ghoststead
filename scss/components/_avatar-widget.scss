@@ -1,3 +1,5 @@
+// deprecated classes, use bootstrap-avatar instead
+
 @for $i from 3 through 12 {
 	.avatar-#{$i * 10} {
 		width: #{$i * 10}px !important;

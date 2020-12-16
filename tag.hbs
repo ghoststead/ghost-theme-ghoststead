@@ -1,8 +1,6 @@
 {{!< default}}
 
-{{#tag}}
 {{> header-inner}}
-{{/tag}}
 
 <main id="site-main" class="site-main">
     <section class="parallax effect-section page-heading" style="background-image: url({{asset "images/1600x900.jpg"}});">
@@ -19,32 +17,15 @@
             </div>
         </div>
     </section>
-    <section class="post-feed post-tag-feed">
+    <section class="my-5 post-feed post-feed-tag">
         <div class="container">
             <div class="row">
-                <!-- Blog List -->
-                <div class="col-lg-8">
-                    <div class="row row-cols-1 row-cols-sm-2">
+                <div class="col-12">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3">
                         {{#foreach posts limit=9}}
                             {{> "post-card"}}
                         {{/foreach}}
                     </div>
-                </div>
-                <!-- Widget -->
-                <div class="col-lg-4 mt-5 mt-lg-0 pl-xl-8">
-                    {{#if @labs.members}}
-                        <div class="card blog-subscribe">
-                            <div class="card-header bg-transparent">
-                                <span class="h5 m-0">Subscribe</span>
-                            </div>
-                            <div class="card-body">
-                                {{> subscribe-form}}
-                            </div>
-                        </div>
-                    {{/if}}
-                    {{> blog-search}}
-                    {{> blog-recent-post}}
-                    {{> blog-tag}}
                 </div>
             </div>
         </div>

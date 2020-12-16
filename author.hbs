@@ -2,45 +2,53 @@
 
 {{> header-inner}}
 
-{{#author}}
-{{!-- Everything inside the #author tags pulls data from the author --}}
+<main id="site-main" class="site-main">
+    {{#author}}
+    {{!-- Everything inside the #author tags pulls data from the author --}}
 
-
-<header class="site-archive-header">
-    {{!--{{> navbar}}--}}
-    {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-md-10">
-                    <div class="card card-body">
-                        <div class="author-header media p-lg-4">
-                            {{#if profile_image}}
-                                <img class="author-profile-image avatar-120 rounded-circle" src="{{profile_image}}" alt="{{name}}" />
-                            {{else}}
-                                <span class="author-profile-image avatar-120 rounded-circle">{{> "icons/avatar"}}</span>
-                            {{/if}}
-                            <div class="author-header-content media-body pl-4 text-left">
-                                <h1 class="h1">{{name}}</h1>
-                                {{#if bio}}
-                                    <h2 class="author-bio h5">{{bio}}</h2>
+        <header>
+            {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-md-10">
+                        <div class="card card-body">
+                            <div class="author-header d-flex p-lg-4">
+                                {{#if profile_image}}
+                                    <img class="avatar avatar-128 rounded-circle me-2" src="{{profile_image}}"
+                                         alt="{{name}}"/>
+                                {{else}}
+                                    <span class="avatar avatar-128 rounded-circle me-2">{{> "icons/avatar"}}</span>
                                 {{/if}}
-                                <div class="author-meta">
-                                    {{#if location}}
-                                        <div class="author-location">{{location}}</div>
+                                <div class="author-header-content media-body pl-4 text-left">
+                                    <h1 class="h1">{{name}}</h1>
+                                    {{#if bio}}
+                                        <h2 class="author-bio h5">{{bio}}</h2>
                                     {{/if}}
-                                    <div class="author-stats pb-3">
-                                        {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
-                                    </div>
-                                    <div class="social-icon si-30 secondary radius nav">
-                                        {{#if website}}
-                                            <span class="author-social-link mr-1"><a href="{{website}}" target="_blank" rel="noopener">{{> icons/themify/link}}</a></span>
+                                    <div class="author-meta">
+                                        {{#if location}}
+                                            <div class="author-location">{{location}}</div>
                                         {{/if}}
-                                        {{#if twitter}}
-                                            <span class="author-social-link mr-1"><a href="{{twitter_url}}" target="_blank" rel="noopener">{{> icons/themify/twitter-alt}}</a></span>
-                                        {{/if}}
-                                        {{#if facebook}}
-                                            <span class="author-social-link mr-1"><a href="{{facebook_url}}" target="_blank" rel="noopener">{{> icons/themify/facebook}}</a></span>
-                                        {{/if}}
+                                        <div class="author-stats pb-3">
+                                            {{plural ../pagination.total empty='No posts' singular='% post'
+                                                     plural='% posts'}}
+                                        </div>
+                                        <div class="social-icon si-30 secondary radius nav">
+                                            {{#if website}}
+                                                <span class="author-social-link me-1"><a href="{{website}}"
+                                                                                         target="_blank"
+                                                                                         rel="noopener">{{> icons/themify/link}}</a></span>
+                                            {{/if}}
+                                            {{#if twitter}}
+                                                <span class="author-social-link me-1"><a href="{{twitter_url}}"
+                                                                                         target="_blank"
+                                                                                         rel="noopener">{{> icons/themify/twitter-alt}}</a></span>
+                                            {{/if}}
+                                            {{#if facebook}}
+                                                <span class="author-social-link me-1"><a href="{{facebook_url}}"
+                                                                                         target="_blank"
+                                                                                         rel="noopener">{{> icons/themify/facebook}}</a></span>
+                                            {{/if}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +56,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</header>
-{{/author}}
+        </header>
+    {{/author}}
 
-<main id="site-main" class="site-main">
-    <section class="container post-feed">
+    <section class="container post-feed mt-5">
         <div class="row row-cols-1 row-cols-md-3">
             {{#foreach posts limit=9}}
                 {{> "post-card"}}
