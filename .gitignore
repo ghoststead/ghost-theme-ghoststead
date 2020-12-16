@@ -4,3 +4,4 @@ package-lock.json
 /assets/built
 .idea
 .DS_Store
+.steadyrc
