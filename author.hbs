@@ -19,7 +19,7 @@
                             {{else}}
                                 <span class="author-profile-image avatar-120 rounded-circle">{{> "icons/avatar"}}</span>
                             {{/if}}
-                            <div class="author-header-content media-body pl-4 text-left">
+                            <div class="author-header-content media-body ps-4 text-start">
                                 <h1 class="h1">{{name}}</h1>
                                 {{#if bio}}
                                     <h2 class="author-bio h5">{{bio}}</h2>
@@ -33,13 +33,13 @@
                                     </div>
                                     <div class="social-icon si-30 secondary radius nav">
                                         {{#if website}}
-                                            <span class="author-social-link mr-1"><a href="{{website}}" target="_blank" rel="noopener">{{> icons/themify/link}}</a></span>
+                                            <span class="author-social-link me-1"><a href="{{website}}" target="_blank" rel="noopener">{{> icons/themify/link}}</a></span>
                                         {{/if}}
                                         {{#if twitter}}
-                                            <span class="author-social-link mr-1"><a href="{{twitter_url}}" target="_blank" rel="noopener">{{> icons/themify/twitter-alt}}</a></span>
+                                            <span class="author-social-link me-1"><a href="{{twitter_url}}" target="_blank" rel="noopener">{{> icons/themify/twitter-alt}}</a></span>
                                         {{/if}}
                                         {{#if facebook}}
-                                            <span class="author-social-link mr-1"><a href="{{facebook_url}}" target="_blank" rel="noopener">{{> icons/themify/facebook}}</a></span>
+                                            <span class="author-social-link me-1"><a href="{{facebook_url}}" target="_blank" rel="noopener">{{> icons/themify/facebook}}</a></span>
                                         {{/if}}
                                     </div>
                                 </div>

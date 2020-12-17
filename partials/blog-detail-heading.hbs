@@ -13,7 +13,7 @@
                     <p class="lead m-0 text-white">{{custom_excerpt}}</p>
                 {{/if}}
 
-                <div class="d-flex align-items-center mt-4 justify-content-center text-left">
+                <div class="d-flex align-items-center mt-4 justify-content-center text-start">
                     <div class="avatar-50">
                         {{#if profile_image}}
                             <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
@@ -22,7 +22,7 @@
                         {{/if}}
                     </div>
                     {{#primary_author}}
-                        <div class="pl-3">
+                        <div class="ps-3">
                             <p class="my-0"><a class="h6 text-white" href="{{url}}">{{name}}</a></p>
                         </div>
                     {{/primary_author}}

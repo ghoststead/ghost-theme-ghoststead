@@ -42,7 +42,7 @@
 }
 
 .max-width-auto {
-	max-width: none;
+	max-width: 130%;
 	@include media-breakpoint-down(lg) {
 		max-width: 100%;
 	}

@@ -19,49 +19,6 @@
 		}
 	}
 }
-/*---------------------------
- Accordion 02
-------------------------------*/
-.accordion-02 {
-	.acco-group {
-		border: 1px solid $gray-200;
-		background: $white;
-		+ .acco-group {
-			margin-top: -1px;
-		}
-		.acco-heading {
-			padding: 12px 45px 12px 12px;
-			display: inline-block;
-			vertical-align: top;
-			width: 100%;
-			color: $dark;
-			font-weight: 600;
-			position: relative;
-			&:after {
-			    content: "";
-			    width: 7px;
-			    height: 7px;
-			    border-top: 1px solid #000000;
-			    border-left: 1px solid #000000;
-			    transition: ease all 0.55s;
-                transform: rotate(-135deg);
-			    position: absolute;
-			    top: 20px;
-			    right: 20px;
-			}
-            &[aria-expanded="true"] {
-                &:after {
-					top:25px;
-					transform: rotate(45deg);
-				}
-            }
-		}
-		.acco-des {
-			border-top: 1px solid $gray-200;
-			padding: 20px;
-		}
-	}
-}
 
 /*---------------------------
  Accordion 03
