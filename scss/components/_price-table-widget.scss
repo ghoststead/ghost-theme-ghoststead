@@ -44,17 +44,7 @@
 *	Price Table
 -------------------*/
 .price-table-01 {
-	position: relative;
-    top: 0;
-    @include transition(ease-in-out all 0.25s);
-    overflow: hidden;
-    top: 0;
-    box-shadow: $box-shadow;
-    background: $white;
     .pt-head {
-	    padding: 30px 10px 20px 20px;
-	    position: relative;
-	    z-index: 1;
 	    svg {
     	    width: 60px;
 			height: 60px;
@@ -67,16 +57,6 @@
 				fill: $white;
 			}
 	    }
-	    h4 {
-    	    color: $white;
-			font-size: 17px;
-	    }
-	    h5 {
-    	    color: $white;
-		    font-size: 42px;
-		    font-weight: 600;
-		    margin: 0;
-	    }
 	    &:after {
     	    content: "";
 		    position: absolute;
@@ -88,33 +68,8 @@
 		    z-index: -1;
 		    transform: rotate(-7deg);
 	    }
-	    .msg {
-		    background: $secondary;
-		    margin: 0 0 30px;
-		    padding: 7px 20px;
-		    position: relative;
-		    left: -32px;
-		    text-transform: uppercase;
-		    font-size: 12px;
-		    color: $white;
-    	}
-    }
-    .pt-body {
-    	padding: 25px 15px 10px 15px;
-    }
-    .pt-footer {
-	    text-align: center;
-	    position: relative;
-	    z-index: 1;
-	    padding: 15px 0;
-	    margin: 15px 0 0;
-	    border-top: 1px solid $gray-200;
     }
 
-    &:hover {
-    	box-shadow: $box-shadow-lg;
-    	top: -10px;
-    }
     &.active {
     	.pt-head {
     		&:after {
@@ -124,52 +79,9 @@
     }
 }
 
-
 /*------------------
 *	Price Table
 -------------------*/
-.price-table-02 {
-    background: $white;
-    padding: 12% 10%;
-    .pt-head {
-        padding: 0 0 20px;
-	    position: relative;
-	    z-index: 1;
-	    border-bottom: 1px solid $gray-200;
-	    margin: 0 0 20px;
-	    label {
-		    margin: 0;
-		    font-size: 14px;
-		    vertical-align: top;
-		    font-weight: 500;
-	    }
-	    h4 {
-    	    font-size: 22px;
-		    margin: 0 0 5px;
-	    }
-	    h5 {
-		    font-size: 44px;
-		    font-weight: 700;
-		    margin: 0;
-		    span {
-	    	    font-size: 20px;
-				vertical-align: super;
-		    }
-	    }
-    }
-    .pt-footer {
-	    position: relative;
-	    z-index: 1;
-	    padding: 25px 0 0;
-	    border-top: 1px solid $gray-200;
-	    margin: 25px 0 0;
-    }
-}
-
-/*------------------
-*	Price Table
--------------------*/
-
 .price-table-03 {
 	background-color: $white;
 	text-align: center;
