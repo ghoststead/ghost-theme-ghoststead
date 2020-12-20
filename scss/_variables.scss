@@ -4,7 +4,8 @@
 $primary: 			#03c !default;
 $secondary: 		#15db95 !default;
 $dark:				#171347 !default;
-$gray-100: 			#fafbfe !default;
+$white:				#fff !default;
+$gray-100: 			#f1f6fd !default;
 $gray-200:          #eff2f7 !default;
 $gray-300:       #e2e8f0 !default;
 
@@ -22,6 +23,14 @@ $input-btn-padding-x:         1.5rem !default;
 $btn-font-weight:               600 !default;
 $btn-focus-box-shadow:           none !default;
 
+$accordion-button-focus-border-color:     none !default;
+$accordion-button-focus-box-shadow:       none !default;
+
+$accordion-button-color:                  $dark !default;
+
+$accordion-border-color:                  $gray-200 !default;
+$accordion-button-active-bg:              $white !default;
+$accordion-button-active-color:           $primary !default;
 
 //- Override Body
 //

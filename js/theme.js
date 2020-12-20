@@ -116,7 +116,7 @@ function customParallaxImage(){
 }
 /* End Parallax Image */
 /* Start Smooth Scrolling */
-function customSmoothScrolling(){
+/* function customSmoothScrolling(){
     var anchorLinks = document.querySelectorAll('a[href^="#"]');
     if(anchorLinks.length > 0){
         for (var i = 0; i < anchorLinks.length; i++) {
@@ -138,6 +138,7 @@ function customSmoothScrolling(){
         }
     }
 }
+*/
 /* End Smooth Scrolling */
 /* Start Isotope */
 function customIsotope(){
@@ -170,7 +171,7 @@ function customScrollSpyParam(){
     var mainHeader = document.querySelector('#main-header');
     if (mainHeader) {
         if (!mainHeader.classList.contains('header-inner')) {
-            document.body.setAttribute('data-spy', 'scroll');
+            document.body.setAttribute('data-bs-spy', 'scroll');
         }
     }
 }
@@ -186,7 +187,7 @@ function customCountdownTimer(){
                 initTimer(currentCountDown, CountDownAttr);
             }
         }
-    }   
+    }
 }
 function GetSeconds(end_date){
     var date_now = new Date();
@@ -374,7 +375,7 @@ function customParticlesJS(){
 (function() {
     customImageGallery();
     customParallaxImage();
-    customSmoothScrolling();
+    //customSmoothScrolling();
     customScrollSpyParam();
     customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');

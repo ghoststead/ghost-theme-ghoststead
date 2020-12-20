@@ -10,24 +10,22 @@
             {{#get "posts" order="published_at desc" include="authors" limit="4"}}
             {{#foreach posts}}
             <div class="col-md-6 col-lg-3 my-3">
-                <div class="blog-grid">
-                    <div class="blog-grid-img">
-                        <a href="{{url}}">
-                            {{#if feature_image}}
-                                <img src="{{img_url feature_image}}" title="" alt="">
-                            {{else}}
-                                <img src="{{asset "images/900x550.jpg"}}" title="" alt="">
-                            {{/if}}
-                        </a>
+                <div class="position-relative">
+                    <div>
+                        {{#if feature_image}}
+                            <img class="rounded" src="{{img_url feature_image}}" title="" alt="">
+                        {{else}}
+                            <img class="rounded" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                        {{/if}}
                     </div>
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
+                    <div class="pt-3">
+                        <div class="small pb-1">
                             <span class="date"><time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time></span>
                         </div>
-                        <h5><a href="{{url}}">{{title}}</a></h5>
+                        <h5>{{title}}</h5>
                         <p class="paragraph-overflow">{{excerpt words="10"}}</p>
                         <div class="btn-grid">
-                            <a class="btn btn-sm btn-primary" href="{{url}}">Read more</a>
+                            <a class="btn btn-sm btn-primary stretched-link" href="{{url}}">Read more</a>
                         </div>
                     </div>
                 </div>

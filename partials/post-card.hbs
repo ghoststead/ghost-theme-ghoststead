@@ -1,6 +1,6 @@
 <div class="mb-4 {{#if feature_image}}{{^is "home"}}{{#has index="0"}}col-lg-12{{/has}}{{/is}}{{/if}}">
     <div class="card {{post_class}} {{#unless feature_image}}no-image{{else}}{{^is "home"}}{{#has
-            index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100 border-0 p-0 post-card">
+            index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100 border-0 shadow p-0 post-card">
         {{#if feature_image}}
             <a href="{{url}}">
                 {{!-- This is a responsive image, it loads different sizes depending on device
@@ -39,7 +39,7 @@
 
             </a>
         </div>
-        <div class="card-footer bg-transparent d-flex post-card-meta">
+        <div class="card-footer bg-transparent d-flex post-card-meta py-3">
             <ul class="author-list list-unstyled m-0 me-2">
                 {{#foreach authors}}
                     <li class="author-list-item">
@@ -56,7 +56,7 @@
                 {{/foreach}}
             </ul>
             <div class="d-flex flex-column pl-2 lh-1">
-                <span class="text-muted">
+                <span class="text-muted pb-2 font-w-500">
                     {{#has author="count:>2"}}
                         Multiple authors
                     {{else}}

@@ -3,7 +3,7 @@
 -------------------*/
 .tab-style-1 {
     .nav {
-        border-bottom: 1px solid $gray-200;
+        border-bottom: 1px solid $gray-300;
         @include media-breakpoint-down(md) {
             margin-bottom: 15px;
         }
