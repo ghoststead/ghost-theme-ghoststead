@@ -15,31 +15,6 @@
 	}
 }
 
-.hr-line {
-    height: 3px;
-	font-size: 0px;
-	span {
-	    width: 50px;
-	    display: inline-block;
-	    vertical-align: top;
-	    position: relative;
-	    height: 3px;
-	    margin-right: 15px;
-	    border-radius: 3px;
-	    &:after {
-			content: "";
-			background: currentColor;
-			width: 15px;
-			height: 3px;
-			margin-right: 10px;
-			position: absolute;
-			top: 0;
-			right: -30px;
-	    }
-    }
-}
-
-
 // Page Heading
 .page-heading {
 	padding-top: $spacer * 10;
