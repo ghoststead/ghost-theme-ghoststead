@@ -20,8 +20,12 @@
 <body class="{{body_class}}" data-bs-target="#navbar-collapse-toggle" data-bs-offset="70" tabindex="0">
     {{{body}}}
 
+    {{>subscribe}}
     {{ghost_foot}}
 
+    <script async defer src={{asset "js/ghost-theme-utils.min.js"}}></script>
     <script async defer src={{asset "built/js/ghoststead.js"}}></script>
 </body>
 </html>
+
+

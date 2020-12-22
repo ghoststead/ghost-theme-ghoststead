@@ -42,3 +42,42 @@
         display: block;
     }
 }
+
+/**
+ * portal.min.js uses three classes on data-members-form to indicate state:
+ *   success, error and loading.
+ */
+.subscribe-form,
+form[data-members-form] {
+    &.invalid,
+    &.error {
+        .message-error {
+            display: block;
+
+        }
+    }
+
+    &.success {
+        .message-success {
+            display: block;
+        }
+    }
+
+    &.loading {
+        button[type="submit"] {
+            display: none;
+        }
+        .loader, .button-loader {
+            display: block;
+        }
+    }
+
+    .loader, .button-loader {
+        display: none;
+    }
+
+    .message-error,
+    .message-success {
+        display: none;
+    }
+}

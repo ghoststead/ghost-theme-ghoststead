@@ -8,6 +8,7 @@ const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const clean = require('gulp-clean');
+const rename = require('gulp-rename');
 
 function serve(done) {
     livereload.listen();
@@ -55,6 +56,18 @@ function js(done) {
     ], done);
 }
 
+function vendor(done) {
+    pump([
+        gulp.src(
+            ['node_modules/ghost-theme-utils/dist/js/*.js']
+        ),
+        uglify(),
+        rename({ suffix: '.min' }),
+        gulp.dest('assets/js/'),
+        livereload()
+    ], done);
+}
+
 function zipper(done) {
     const pkg = require('./package.json');
     const targetDir = 'dist/';
@@ -75,7 +88,7 @@ const scssWatcher = () => gulp.watch(['scss/**'], scss);
 const hbsWatcher = () => gulp.watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const jsWatcher = () => gulp.watch(['js/**'], js);
 const watcher = gulp.parallel(scssWatcher, hbsWatcher, jsWatcher);
-const build = gulp.series(scss, js);
+const build = gulp.series(scss, vendor, js);
 const dev = gulp.series(build, serve, watcher);
 
 exports.build = build;
