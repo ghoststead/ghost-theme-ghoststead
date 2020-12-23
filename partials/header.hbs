@@ -21,27 +21,6 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
                 <ul class="nav navbar-nav m-auto">
-                    <li class="nav-item mm-in mm-dropdown">
-                        <a class="nav-link py-lg-4" href="#">Home</a>
-                        <i class="px-nav-toggle" type="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">{{> icons/bootstrap/chevron-down}}</i>
-                        <ul class="mm-dropdown-menu mm-drop-in dropdown-menu">
-                            <li><a href="/home-1">Home Option 1</a></li>
-                            <li><a href="/home-2">Home Option 2</a></li>
-                            <li><a href="/home-3">Home Option 3</a></li>
-                            <li><a href="/home-4">Home Option 4</a></li>
-                            <li><a href="/home-5">Home Option 5</a></li>
-                            <li><a href="/home-6">Home Option 6</a></li>
-                            <li><a href="/home-7">Home Option 7</a></li>
-                            <li><a href="/home-8">Home Option 8</a></li>
-                            <li><a href="/home-9">Home Option 9</a></li>
-                            <li><a href="/home-10">Home Option 10</a></li>
-                            <li><a href="/home-11">Home Option 11</a></li>
-                            <li><a href="/home-12">Home Option 12</a></li>
-                            <li><a href="/home-13">Home Option 13</a></li>
-                            <li><a href="/home-13">Home Option 14</a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item mm-in mm-mega">
                         <a class="nav-link py-lg-4" href="#">Pages</a>
                         <i class="px-nav-toggle" type="button" data-bs-toggle="dropdown"
@@ -54,43 +33,12 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="mm-right">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <h6 class="mm-title">Company</h6>
-                                                <ul class="mm-link">
-                                                    <li><a href="/about">About</a></li>
-                                                    <li><a href="/services">Services</a></li>
-                                                    <li><a href="/pricing">Pricing</a></li>
-                                                    <li><a href="/portfolio">Portfolio</a></li>
-                                                    <li><a href="/team">Our Team</a></li>
-                                                    <li><a href="/contact">Contact</a></li>
-                                                    <li><a href="/careers">Careers</a></li>
-                                                    <li><a href="/careers-single">Careers single</a></li>
-                                                    <li><a href="/policy">Policy</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <h6 class="mm-title">Blogs</h6>
-                                                <ul class="mm-link">
-                                                    <li><a href="/blog-only">Blog</a></li>
-                                                    <li><a href="/blog">Blog with sidebar</a></li>
-                                                    <li><a href="/blog-only-detail">Single blog</a></li>
-                                                    <li><a href="/blog/welcome">Single Blog Sidebar</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-4">
-                                                <h6 class="mm-title">Others</h6>
-                                                <ul class="mm-link">
-                                                    <li><a href="/support">Support</a></li>
-                                                    <li><a href="/support-topic">Support Topic</a></li>
-                                                    <li><a href="/faq">FAQs</a></li>
-                                                    <li><a href="/coming-soon-subscribe">Coming Soon
-                                                        Subscribe</a></li>
-                                                    <li><a href="/coming-soon-countdown">Coming Soon
-                                                        Countdown</a></li>
-                                                    <li><a href="/error-404">Error 404</a></li>
-                                                </ul>
-                                            </div>
+                                        <div class="row row-cols-1 row-cols-lg-3">
+                                            {{#get "pages" limit="all" order="title asc"}}
+                                                {{#foreach pages}}
+                                                    <div class="col mb-2"><a class="text-dark" href="{{url}}">{{title}}</a></div>
+                                                {{/foreach}}
+                                            {{/get}}
                                         </div>
                                     </div>
                                 </div>
