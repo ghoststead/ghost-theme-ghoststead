@@ -19,7 +19,7 @@
                 autoHeight: currentSwiper.getAttribute('data-autoHeight') || false,
                 centeredSlides:currentSwiper.getAttribute('data-centeredSlides') || false,
                 pagination: {
-                    el: (currentSwiper.getAttribute('data-dotshide') == 'true' ? null : '.swiper-pagination'),
+                    el: (currentSwiper.getAttribute('data-dotshide') === 'true' ? null : '.swiper-pagination'),
                     clickable: currentSwiper.getAttribute('data-paginationclickable') || false,
                 },
                 autoplay: {
@@ -115,31 +115,6 @@ function customParallaxImage(){
     }
 }
 /* End Parallax Image */
-/* Start Smooth Scrolling */
-/* function customSmoothScrolling(){
-    var anchorLinks = document.querySelectorAll('a[href^="#"]');
-    if(anchorLinks.length > 0){
-        for (var i = 0; i < anchorLinks.length; i++) {
-            var item = anchorLinks[i];
-            item.addEventListener('click', function (e) {
-                var hashval = item.getAttribute('href');
-                if(hashval !== undefined && hashval !== '#'){
-                    var target = document.querySelector(hashval);
-                    if(target !== null){
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                }
-                history.pushState(null, null, '');
-                e.preventDefault();
-            });
-        }
-    }
-}
-*/
-/* End Smooth Scrolling */
 /* Start Isotope */
 function customIsotope(){
     var isoWork = document.querySelector('.portfolio-content');
@@ -166,16 +141,6 @@ function customIsotope(){
     }
 }
 /* End Isotope */
-/* Start Add Default Scroll Spy Param */
-function customScrollSpyParam(){
-    var mainHeader = document.querySelector('#main-header');
-    if (mainHeader) {
-        if (!mainHeader.classList.contains('header-inner')) {
-            document.body.setAttribute('data-bs-spy', 'scroll');
-        }
-    }
-}
-/* End Add Default Scroll Spy Param */
 /* Start Countdown Timer */
 function customCountdownTimer(){
     var numberOfCountDown = document.getElementsByClassName('count-down');
@@ -207,11 +172,11 @@ function initTimer(i, date) {
         for (var j = 0; j < childNodes.length; j++) {
             if (childNodes[j].className === 'date-box-1') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
-            }else if (childNodes[j].className === 'date-box-2') {
+            } else if (childNodes[j].className === 'date-box-2') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
-            }else if (childNodes[j].className === 'date-box-3') {
+            } else if (childNodes[j].className === 'date-box-3') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
-            }else if (childNodes[j].className === 'date-box-4') {
+            } else if (childNodes[j].className === 'date-box-4') {
                 childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
             }
         }
@@ -375,8 +340,6 @@ function customParticlesJS(){
 (function() {
     customImageGallery();
     customParallaxImage();
-    //customSmoothScrolling();
-    customScrollSpyParam();
     customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
     if(isoContent !== null) {
@@ -413,20 +376,33 @@ function customParticlesJS(){
     }
     /*
      * Enable forms that have a data-form-type attribute set to 'contact' by:
-     * - append a hidden form element containing the customer id.
+     * - append a hidden form element containing the customer api key (if not present).
      * - set the method attribute to 'POST'
      * - set the action to the /form endpoint
+     * - set the redirect location (if not already present)
      */
     var formElements = document.querySelectorAll('form[data-form-type="contact"]');
     if(formElements.length > 0) {
         for (var i = 0; i < formElements.length; i++) {
-            var hiddenInputElement = document.createElement('input');
-            hiddenInputElement.setAttribute('hidden', 'true');
-            hiddenInputElement.setAttribute('name', 'ghoststead_api_key');
-            hiddenInputElement.setAttribute('value', 'GHOSTSTEAD_API_KEY');
-            formElements[i].appendChild(hiddenInputElement);
-            formElements[i].setAttribute('method', 'POST');
-            formElements[i].setAttribute('action', 'https://api.ghoststead.com/form');
+            var formElement = formElements[i];
+
+            if (!formElement.querySelector('input[name="ghoststead_api_key"]')) {
+                var hiddenInputElement = document.createElement('input');
+                hiddenInputElement.setAttribute('hidden', 'true');
+                hiddenInputElement.setAttribute('name', 'ghoststead_api_key');
+                hiddenInputElement.setAttribute('value', 'GHOSTSTEAD_API_KEY');
+            }
+
+            if (!formElement.querySelector('input[name="location"]')) {
+                var locationInputElement = document.createElement('input');
+                locationInputElement.setAttribute('hidden', 'true');
+                locationInputElement.setAttribute('name', 'location');
+                locationInputElement.setAttribute('value', './#thank-you');
+            }
+
+            formElement.appendChild(hiddenInputElement);
+            formElement.setAttribute('method', 'POST');
+            formElement.setAttribute('action', 'https://api.ghoststead.com/form');
         }
     }
 })();

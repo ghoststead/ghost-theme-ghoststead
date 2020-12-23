@@ -21,32 +21,10 @@
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapse-toggle">
                 <ul class="nav navbar-nav m-auto">
-                    <li class="nav-item mm-in mm-mega">
-                        <a class="nav-link py-lg-4" href="#">Pages</a>
-                        <i class="px-nav-toggle" type="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">{{> icons/bootstrap/chevron-down}}</i>
-                        <div class="mm-mega-menu mm-drop-in dropdown-menu">
-                            <div class="row no-gutters">
-                                <div class="col-lg-4 d-none d-lg-block">
-                                    <div class="h-100 mm-left"
-                                         style="background-image: url({{asset "images/mega-menu.svg"}}); "></div>
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="mm-right">
-                                        <div class="row row-cols-1 row-cols-lg-3">
-                                            {{#get "pages" limit="all" order="title asc"}}
-                                                {{#foreach pages}}
-                                                    <div class="col mb-2"><a class="text-dark" href="{{url}}">{{title}}</a></div>
-                                                {{/foreach}}
-                                            {{/get}}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> <!-- row -->
-                        </div>
-                    </li>
 
                     {{navigation}}
+
+                    {{>mega-menu}}
                 </ul>
             </div>
         </div>
@@ -56,7 +34,7 @@
         (function () {
             "use strict";
 
-            let header = document.getElementById('main-header');
+            var header = document.getElementById('main-header');
             window.addEventListener('scroll', function () {
                 if (window.scrollY > 50) {
                     header.children[0].classList.add('bg-primary');
@@ -64,6 +42,17 @@
                 } else {
                     header.children[0].classList.remove('bg-primary');
                     header.classList.remove('fixed-header');
+                }
+            });
+
+            document.querySelectorAll('#main-header a.nav-link').forEach(function (element) {
+                var href = element.getAttribute('href');
+                if (href && href.endsWith('#pages')) {
+                    element.classList.add('dropdown-toggle')
+                    element.classList.add('mm-in')
+                    element.classList.add('mm-mega');
+                    element.setAttribute('data-bs-target', '#megaMenu');
+                    element.setAttribute('data-bs-toggle', 'collapse');
                 }
             });
         })();

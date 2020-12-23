@@ -407,7 +407,7 @@ var Timer = (
 
             /**
              * [start starts the timer configured by the params object. Dispatch started event]
-             * @param  {[object]} params [Configuration parameters]
+             * @param  {{startValues: {seconds: *}, precision: string}} params [Configuration parameters]
              */
             function start(params) {
                 if (this.isRunning()) {

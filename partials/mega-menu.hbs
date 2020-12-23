@@ -1,0 +1,19 @@
+<div class="dropdown-menu rounded-0 p-0" id="megaMenu">
+    <div class="row no-gutters">
+        <div class="col-lg-4 d-none d-lg-block">
+            <div class="h-100"
+                 style="background-image: url({{asset "images/mega-menu.svg"}}); "></div>
+        </div>
+        <div class="col-lg-8">
+            <div class="row row-cols-1 row-cols-lg-3">
+                {{#get "pages" limit="all" order="title asc"}}
+                    {{#foreach pages}}
+                        <div class="col px-4 px-lg-3 py-2 py-lg-1"><a class="text-dark" href="{{url}}">{{title}}</a>
+                        </div>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+
+    </div> <!-- row -->
+</div>
