@@ -1,15 +1,11 @@
 .footer {
-	.footer-widget {
-		padding-top: 50px;
-		padding-bottom: 50px;
-		+ .footer-widget {
+	.footer-column {
+		+ .footer-column {
 			border-left: 1px solid rgba($white,.1);
 		}
 	}
 
 	.footer-bottom {
-		padding-top: 20px;
-		padding-bottom: 20px;
 		.nav {
 			li {
 				margin-bottom: 0;
@@ -21,27 +17,8 @@
 		}
 	}
 
-	h6 {
-		margin-bottom: 20px;
-		font-size: 1.12rem;
-	}
-
-	.links-white {
-		a:not(:hover) {
-			color: rgba($white, 0.6);
-		}
-	}
-
-	a.theme2nd-color {
-		&:hover {
-			color: $white;
-		}
-	}
-
 	.footer-link-1 {
-		margin: 0;
 		li {
-		    margin: 0 0 10px;
 		    a {
 		    	position: relative;
 		    	&:after {
