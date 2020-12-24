@@ -1,7 +1,10 @@
 .footer {
-	.footer-top {
+	.footer-widget {
 		padding-top: 50px;
 		padding-bottom: 50px;
+		+ .footer-widget {
+			border-left: 1px solid rgba($white,.1);
+		}
 	}
 
 	.footer-bottom {

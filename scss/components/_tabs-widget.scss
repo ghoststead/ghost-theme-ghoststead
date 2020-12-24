@@ -93,7 +93,7 @@
                     width: 0px;
                     transition: ease-in-out all 0.55s;
                     height: 2px;
-                    background: $secondary;
+                    background: $info;
                 }
                 &.active {
                     color: $primary;
@@ -133,7 +133,7 @@
             &:after {
               width: 0px;
               height: 3px;
-              background: $secondary;
+              background: $info;
             }
             &:before {
               width: 20px;
@@ -145,7 +145,7 @@
               box-shadow: $box-shadow;
             }
             &.active {
-              color: $secondary;
+              color: $info;
               &:after {
                 width: 100%;
               }

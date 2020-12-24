@@ -24,7 +24,7 @@
 	}
     &.secondary {
 		svg {
-            color: $secondary;
+            color: $info;
         }
 	}
 }
@@ -66,7 +66,7 @@
     &.secondary {
 		li {
 			&::after {
-				color: $secondary;
+				color: $info;
 			}
 		}
 	}
@@ -110,7 +110,7 @@
     &.secondary {
 		li {
 			&::after {
-				color: $secondary;
+				color: $info;
 			}
 		}
 	}
@@ -128,7 +128,7 @@
 			content: "";
 			width: 10px;
 			height: 10px;
-			border: 2px solid $secondary;
+			border: 2px solid $info;
 			position: absolute;
 			top: 9px;
 			left: 0;
