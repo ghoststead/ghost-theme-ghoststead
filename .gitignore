@@ -5,4 +5,4 @@ package-lock.json
 /assets/js
 .idea
 .DS_Store
-.steadyrc
+.steadyrc*

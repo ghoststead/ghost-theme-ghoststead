@@ -2,7 +2,7 @@
     <div class="card {{post_class}} {{#unless feature_image}}no-image{{else}}{{^is "home"}}{{#has
             index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100 border-0 shadow p-0 post-card">
         {{#if feature_image}}
-            <a href="{{url}}">
+            <a class="text-decoration-none" href="{{url}}">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img srcset="{{img_url feature_image size="s"}} 300w,
@@ -19,7 +19,7 @@
         {{/if}}
 
         <div class="card-body post-card-body">
-            <a href="{{url}}">
+            <a class="text-decoration-none" href="{{url}}">
                 <div class="post-card-header">
                     {{#if primary_tag}}
                         {{#primary_tag}}
@@ -44,13 +44,13 @@
                 {{#foreach authors}}
                     <li class="author-list-item">
                         {{#if profile_image}}
-                            <a href="{{url}}" class="static-avatar avatar-30">
-                                <img class="author-profile-image" title="{{name}}" alt="{{name}}"
+                            <a class="text-decoration-none" href="{{url}}">
+                                <img class="avatar avatar-32 rounded" title="{{name}}" alt="{{name}}"
                                      src="{{img_url profile_image size="xs"}}"
                                      alt="{{name}}"/>
                             </a>
                         {{else}}
-                            <a href="{{url}}">{{> "icons/avatar"}}</a>
+                            <a class="text-decoration-none" href="{{url}}">{{> "icons/avatar"}}</a>
                         {{/if}}
                     </li>
                 {{/foreach}}
@@ -61,7 +61,7 @@
                         Multiple authors
                     {{else}}
                         {{#foreach authors}}
-                            <a href="{{url}}" title="{{name}}" class="text-muted author author-{{id}} {{slug}}">{{name}}</a>
+                            <a class="text-decoration-none" href="{{url}}" title="{{name}}" class="text-muted author author-{{id}} {{slug}}">{{name}}</a>
                         {{/foreach}}
                     {{/has}}
                 </span>

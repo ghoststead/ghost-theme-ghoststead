@@ -17,14 +17,14 @@
                         {{#if @labs.members}}
                             <div class="card blog-subscribe">
                                 <div class="card-header bg-transparent">
-                                    <span class="h5 m-0">Subscribe</span>
+                                    <span class="h5 m-0">Subscribe to {{@site.title}}</span>
                                 </div>
                                 <div class="card-body">
                                     {{> subscribe-form}}
                                 </div>
                             </div>
                         {{/if}}
-                        {{> blog-search}}
+                        {{!--{{> blog-search}}--}}
                         {{> blog-recent-post}}
                         {{> blog-tag}}
                     </div>

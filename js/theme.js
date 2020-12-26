@@ -342,12 +342,12 @@ function customParticlesJS(){
     customParallaxImage();
     customCountdownTimer();
     var isoContent = document.querySelector('.portfolio-content');
-    if(isoContent !== null) {
+    if (isoContent !== null) {
         customIsotope();
     }
-    var blogSearchInput = document.querySelector('#blogsearch-input');
-    var blogSearchResult = document.querySelector('#blogsearch-result');
-    if(blogSearchInput !== null && blogSearchResult !== null) {
+    var blogSearchInput = document.querySelector('#blog-search-input');
+    var blogSearchResult = document.querySelector('#blog-search-result');
+    if (blogSearchInput !== null && blogSearchResult !== null) {
         new GhostFinder({
             input: '#blogsearch-input',
             showResult: '#blogsearch-result',
@@ -357,10 +357,10 @@ function customParticlesJS(){
     var checkPieChartLoaded = false;
     window.addEventListener('scroll', function() {
         var element = document.getElementsByClassName('piechartcontainer');
-        if(element.length > 0) {
+        if (element.length > 0) {
             var position = element[0].getBoundingClientRect();
             // checking for partial visibility
-            if(position.top < window.innerHeight && position.bottom >= 0 && !checkPieChartLoaded) {
+            if (position.top < window.innerHeight && position.bottom >= 0 && !checkPieChartLoaded) {
                 checkPieChartLoaded = true;
                 customPieChart();
             }
@@ -368,8 +368,8 @@ function customParticlesJS(){
     });
     if(typeof particlesJS !== 'undefined') {
         var particlesElement = document.getElementsByClassName('particles-box');
-        if(particlesElement.length === 1) {
-            if(particlesElement[0].id === 'particles-box') {
+        if (particlesElement.length === 1) {
+            if (particlesElement[0].id === 'particles-box') {
                 customParticlesJS();
             }
         }
@@ -382,7 +382,7 @@ function customParticlesJS(){
      * - set the redirect location (if not already present)
      */
     var formElements = document.querySelectorAll('form[data-form-type="contact"]');
-    if(formElements.length > 0) {
+    if (formElements.length > 0) {
         for (var i = 0; i < formElements.length; i++) {
             var formElement = formElements[i];
 
