@@ -1,9 +1,9 @@
 {{!< default}}
 
-{{> header}}
-
 {{!-- The main content area --}}
 {{#post}}
+    {{> header}}
+    
     <main id="site-main" class="site-main">
         {{> sections/home12/banner}}
         {{> sections/home12/feature}}
@@ -20,4 +20,3 @@
 
 {{!-- swiper --}}
 <script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
-
