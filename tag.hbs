@@ -1,22 +1,22 @@
 {{!< default}}
 
-{{> header }}
+{{> header}}
 
 <main id="site-main" class="site-main">
-    <section class="parallax effect-section page-heading" style="background-image: url({{asset "images/1600x900.jpg"}});">
-        <div class="mask bg-primary opacity-9"></div>
-        <div class="container">
+    {{#tag}}
+        {{> header-background background=@site.cover_image}}
+        <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <h2 class="text-white h1 mb-4">Tags</h2>
-                    <ol class="breadcrumb white">
-                        <li><a href="/">Home</a></li>
-                        <li class="active">Tags</li>
-                    </ol>
+                    <h2 class="text-white display-5 mb-4">{{name}}</h2>
+                    {{#if description}}
+                        <p class="lead text-white">{{description}}</p>
+                    {{/if}}
                 </div>
             </div>
         </div>
-    </section>
+        </div>
+    {{/tag}}
     <section class="my-5 post-feed post-feed-tag">
         <div class="container">
             <div class="row">

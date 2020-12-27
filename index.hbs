@@ -1,38 +1,27 @@
 {{!< default}}
 
 {{!-- The main content area --}}
-{{> header-inner}}
-
-{{> blog-heading}}
+{{> header}}
 
 <main id="site-main" class="site-main">
+    {{> header-background background=@site.cover_image}}
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white display-5 mb-4">{{@site.title}}</h2>
+                <p class="lead text-white">{{@site.description}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
     <section class="post-feed my-3 mx-auto py-1 px-0 p-md-0 my-md-5">
         <div class="container">
-            <div class="row">
-                <!-- Blog List -->
-                <div class="col-lg-8">
-                    <div class="row row-cols-1 row-cols-sm-2">
-                        {{#foreach posts limit=9}}
-                            {{> "post-card"}}
-                        {{/foreach}}
-                        <div class="col-12 col-sm-12 pt-3">
-                            {{pagination}}
-                        </div>
-                    </div>
-                </div>
-                <!-- Widget -->
-                <div class="col-lg-4 mt-5 mt-lg-0 ps-xl-8">
-                    {{#if @labs.members}}
-                        <div class="card blog-subscribe">
-                            <div class="card-header bg-transparent">
-                                <span class="h5 m-0">Subscribe</span>
-                            </div>
-                            <div class="card-body">
-                                {{> subscribe-form}}
-                            </div>
-                        </div>
-                    {{/if}}
-                    {{> blog-search}}
+            <div class="row row-cols-1 row-cols-sm-2">
+                {{#foreach posts limit=9}}
+                    {{> "post-card"}}
+                {{/foreach}}
+                <div class="col-12 col-sm-12 pt-3">
+                    {{pagination}}
                 </div>
             </div>
         </div>
