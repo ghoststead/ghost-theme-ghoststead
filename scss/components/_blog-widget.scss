@@ -1,4 +1,26 @@
 .subscribe-form {
+    form {
+        position: relative;
+    }
+    .message-error,
+    .message-success {
+        position: absolute;
+        top: 100%;
+        background: $white;
+        padding: 4px 13px;
+        font-size: 13px;
+        left: 0;
+        &:before {
+            content: "";
+            top: -0.3rem;
+            position: absolute;
+            left: 8px;
+            border-left: 0.3rem solid transparent;
+            border-right: 0.3rem solid transparent;
+            border-bottom: 0.3rem solid $white;
+        }
+    }
+
     .button {
         .button-loader {
             position: absolute;
