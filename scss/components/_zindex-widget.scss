@@ -1,4 +1,3 @@
-// Global Class for opacity
 @for $i from 1 through 9 {
     .z-index-#{$i} {
         z-index: #{$i};
