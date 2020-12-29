@@ -9,6 +9,10 @@ $gray-100:       #f1f6fd !default;
 $gray-200:       #eff2f7 !default;
 $gray-300:       #e2e8f0 !default;
 
+
+// - Negative margin enable
+$enable-negative-margins: true;
+
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // Default value is 3
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
