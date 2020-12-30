@@ -41,8 +41,11 @@
         "gulp-zip": "^5.0.1",
         "node-sass": "^4.13.1",
         "pump": "^3.0.0",
+        "shufflejs": "^5.2.3",
+        "vinyl-named": "^1.1.0",
         "webpack": "^4.42.1",
-        "webpack-cli": "^3.3.11"
+        "webpack-cli": "^3.3.11",
+        "webpack-stream": "^6.1.1"
     },
     "config": {
         "posts_per_page": 10,

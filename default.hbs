@@ -25,8 +25,10 @@
 
     {{ghost_foot}}
 
-    <script async defer src={{asset "js/ghost-theme-utils.min.js"}}></script>
-    <script async defer src={{asset "built/js/ghoststead.js"}}></script>
+    {{{block "scripts"}}}
+
+    <script async defer src={{asset "built/js/ghost-theme-utils.min.js"}}></script>
+    <script async defer src={{asset "built/js/ghoststead.min.js"}}></script>
 </body>
 </html>
 
