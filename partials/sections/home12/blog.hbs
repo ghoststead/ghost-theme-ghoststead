@@ -1,4 +1,4 @@
-<section id="blog" class="section">
+<section id="blog" class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
             <div class="col-lg-8 col-xl-6">
@@ -24,17 +24,17 @@
                                 <h5 class="mt-2 mb-3">{{title}}</h5>
                             </div>
                             <div class="post-card-excerpt text-body">
-                                <p class="paragraph-overflow">{{excerpt words="10"}}</p>
+                                <p class="text-truncate">{{excerpt words="10"}}</p>
                             </div>
                         </a>
                     </div>
                     <footer class="card-footer bg-transparent post-card-meta d-flex">
                         {{#primary_author}}
-                        <div class="media">
+                        <div class="d-flex">
                             <div class="avatar avatar-32 overflow-hidden rounded-circle">
                                 <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
                             </div>
-                            <div class="media-body ps-2 align-self-center">
+                            <div class="col ps-2 align-self-center">
                                 <span class="links-dark w-100 d-block lh-1 font-w-600"><a href="{{url}}">{{name}}</a></span>
                                 <span class="post-card-byline-date small">
                                     <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
