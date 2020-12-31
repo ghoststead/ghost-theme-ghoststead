@@ -30,5 +30,7 @@
         </div>
     </div>
 </section>
-<!-- swiper -->
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}

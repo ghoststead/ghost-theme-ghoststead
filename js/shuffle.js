@@ -1,13 +1,13 @@
 import Shuffle from 'shufflejs';
 
-function clearActive() {
-    document.querySelectorAll('*[data-filter]').forEach(function (element) {
+function clearActive(container) {
+    container.querySelectorAll('.active[data-filter]').forEach(function (element) {
         element.classList.remove('active');
     });
 }
 
 function dataFilter(element) {
-    let attr = element.getAttribute('data-filter');
+    var attr = element.getAttribute('data-filter');
     try {
         return JSON.parse(attr);
     } catch (e) {
@@ -16,17 +16,17 @@ function dataFilter(element) {
 }
 
 function setup() {
-    let element = document.querySelector('.portfolio-content');
-    if (element) {
-        let shuffleInstance = new Shuffle(element, {
+    var container = document.querySelector('.portfolio-content');
+    if (container) {
+        var shuffleInstance = new Shuffle(container, {
             itemSelector: '.grid-item'
         });
 
-        document.querySelectorAll('[data-filter]').forEach(function (item) {
-            item.addEventListener('click', function() {
-                clearActive();
-                shuffleInstance.filter(dataFilter(item));
-                item.classList.add('active');
+        document.querySelectorAll('[data-filter]').forEach(function (element) {
+            element.addEventListener('click', function() {
+                clearActive(container);
+                shuffleInstance.filter(dataFilter(element));
+                element.classList.add('active');
             });
         });
     }

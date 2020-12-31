@@ -1,4 +1,3 @@
-<!-- Section -->
 <section class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-between">
@@ -92,6 +91,7 @@
         </div>
     </div>
 </section>
-<!-- End Section -->
-<!-- swiper -->
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}
