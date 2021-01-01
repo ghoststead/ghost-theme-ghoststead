@@ -2,6 +2,7 @@
     "name": "ghoststead",
     "version": "0.4.1",
     "author": {
+        "name": "GhostStead",
         "email": "ghoststead@ghoststead.com"
     },
     "keywords": [
@@ -17,7 +18,7 @@
         "zip": "gulp zip",
         "gscan": "gscan .",
         "clean": "gulp clean",
-        "linter": "eslint"
+        "lint": "eslint js/*.js"
     },
     "devDependencies": {
         "bigpicture": "^2.5.3",

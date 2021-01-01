@@ -13,8 +13,8 @@ function setup() {
     }
 
     var videoLinks = document.getElementsByClassName('video-constainer');
-    for (var i = 0; i < videoLinks.length; i++) {
-        videoLinks[i].addEventListener('click', function (e) {
+    for (var j = 0; j < videoLinks.length; j++) {
+        videoLinks[j].addEventListener('click', function (e) {
             var className = e.target.className;
             if (~className.indexOf('htmlvid')) {
                 BigPicture({
