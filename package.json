@@ -20,6 +20,7 @@
         "linter": "eslint"
     },
     "devDependencies": {
+        "bigpicture": "^2.5.3",
         "bootstrap": "^5.0.0-beta1",
         "bootstrap-avatar": "^1.2.0",
         "clean": "^4.0.2",

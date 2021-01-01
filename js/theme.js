@@ -1,54 +1,3 @@
-/* Start Video & Photo Swiper */
-// four image gallery
-function customImageGallery(){
-    var imageLinks = document.querySelectorAll('.image_container a.gallery-link');
-    if(imageLinks.length > 0) {
-        for (var i = 0; i < imageLinks.length; i++) {
-            imageLinks[i].addEventListener('click', function(e) {
-                e.preventDefault();
-                BigPicture({
-                    el: e.target,
-                    gallery: '.image_container',
-                });
-            });
-        }
-    }
-    setClickHandler('video_container', function(e) {
-        var className = e.target.className;
-        if (~className.indexOf('htmlvid')) {
-            BigPicture({
-                el: e.target,
-                vidSrc: e.target.getAttribute('vidSrc'),
-            });
-        } else if (~className.indexOf('vimeo')) {
-            BigPicture({
-                el: e.target,
-                vimeoSrc: e.target.getAttribute('vimeoSrc'),
-            });
-        } else if (~className.indexOf('twin-peaks')) {
-            BigPicture({
-                el: e.target,
-                ytSrc: e.target.getAttribute('ytSrc'),
-                dimensions: [1226, 900],
-            });
-        } else if (~className.indexOf('youtube')) {
-            BigPicture({
-                el: e.target,
-                ytSrc: e.target.getAttribute('ytSrc'),
-            });
-        }
-    });
-}
-function setClickHandler(id, fn) {
-    var x = document.getElementsByClassName(id);
-    var i;
-    if(x.length > 0){
-        for (i = 0; i < x.length; i++) {
-            x[i].addEventListener('click', fn);
-        }
-    }
-}
-/* End Video & Photo Swiper */
 /* Start Parallax Image */
 function customParallaxImage(){
     var x = document.getElementsByClassName('parallax');
@@ -258,7 +207,6 @@ function customParticlesJS(){
 }
 /* END particlesJS */
 (function() {
-    customImageGallery();
     customParallaxImage();
     customCountdownTimer();
     var blogSearchInput = document.querySelector('#blog-search-input');
