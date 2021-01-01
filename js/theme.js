@@ -166,7 +166,6 @@ function customParticlesJS(){
 /* END particlesJS */
 (function() {
     customParallaxImage();
-    customCountdownTimer();
     var blogSearchInput = document.querySelector('#blog-search-input');
     var blogSearchResult = document.querySelector('#blog-search-result');
     if (blogSearchInput !== null && blogSearchResult !== null) {
