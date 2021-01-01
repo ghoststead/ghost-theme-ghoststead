@@ -166,15 +166,7 @@ function customParticlesJS(){
 /* END particlesJS */
 (function() {
     customParallaxImage();
-    var blogSearchInput = document.querySelector('#blog-search-input');
-    var blogSearchResult = document.querySelector('#blog-search-result');
-    if (blogSearchInput !== null && blogSearchResult !== null) {
-        new GhostFinder({
-            input: '#blogsearch-input',
-            showResult: '#blogsearch-result',
-            contentApiKey: 'CONTENT_API_KEY',
-        });
-    }
+
     var checkPieChartLoaded = false;
     window.addEventListener('scroll', function() {
         var element = document.getElementsByClassName('piechartcontainer');
