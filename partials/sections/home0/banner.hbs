@@ -1,6 +1,6 @@
 <section id="home" class="effect-section bg-gray-100">
     <div class="effect bg-primary effect-skew"></div>
-    <div class="particles-box" id="particles-box"></div>
+    <div class="particles-box" id="particles-js"></div>
     <div class="container position-relative">
         <div class="row min-vh-100 align-items-center py-10">
             <div class="col-lg-5 col-xl-4 py-7">
@@ -20,3 +20,7 @@
         </div>
     </div>
 </section>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/particles.js"}}"></script>
+{{/contentFor}}
