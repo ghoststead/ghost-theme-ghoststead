@@ -12,7 +12,7 @@ function setup() {
         });
     }
 
-    var videoLinks = document.getElementsByClassName('video-constainer');
+    var videoLinks = document.querySelectorAll('.video-container a.gallery-link');
     for (var j = 0; j < videoLinks.length; j++) {
         videoLinks[j].addEventListener('click', function (e) {
             var className = e.target.className;
