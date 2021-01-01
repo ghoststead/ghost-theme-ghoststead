@@ -10,48 +10,6 @@ function customParallaxImage(){
     }
 }
 /* End Parallax Image */
-/* Start Countdown Timer */
-function customCountdownTimer(){
-    var numberOfCountDown = document.getElementsByClassName('count-down');
-    if(numberOfCountDown.length > 0) {
-        for (var i = 0; i < numberOfCountDown.length; i++) {
-            var currentCountDown = numberOfCountDown[i];
-            var CountDownAttr = currentCountDown.getAttribute('data-date');
-            if(CountDownAttr !== ''){
-                initTimer(currentCountDown, CountDownAttr);
-            }
-        }
-    }
-}
-function GetSeconds(end_date){
-    var date_now = new Date();
-    var date_future = new Date(end_date);
-    var diff =(date_future.getTime() - date_now.getTime()) / 1000;
-    diff /= 60;
-    var minutes = Math.abs(Math.round(diff));
-    return minutes * 60;
-}
-
-function initTimer(i, date) {
-    var timer = new Timer();
-    var seconds = GetSeconds(date);
-    timer.start({precision: 'seconds', startValues: {seconds: seconds}});
-    timer.addEventListener('secondsUpdated', function () {
-        var childNodes = i.childNodes;
-        for (var j = 0; j < childNodes.length; j++) {
-            if (childNodes[j].className === 'date-box-1') {
-                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().days;
-            } else if (childNodes[j].className === 'date-box-2') {
-                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().hours;
-            } else if (childNodes[j].className === 'date-box-3') {
-                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().minutes;
-            } else if (childNodes[j].className === 'date-box-4') {
-                childNodes[j].childNodes[0].innerHTML = timer.getTimeValues().seconds;
-            }
-        }
-    });
-}
-/* End Countdown Timer */
 /* Start Pie Chart */
 function customPieChart(){
     var chart = document.getElementsByClassName('pie_chart_in');

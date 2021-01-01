@@ -12,11 +12,11 @@
                         <h1 class="display-2 text-white mb-3">We're coming soon..</h1>
                         <p class="h5 text-white-50 pb-2 font-w-400">Our website is under construction. We'll be here soon with our new awesome site.</p>
                         <div class="text-white">
-                            <div class="count-down pt-4" id="clock_time3" data-date="2020-08-06">
-                                <div class="date-box-1"><span>00</span> <label>days</label></div>
-                                <div class="date-box-2"><span>00</span> <label>hr</label></div>
-                                <div class="date-box-3"><span>00</span> <label>min</label></div>
-                                <div class="date-box-4"><span>00</span> <label>sec</label></div>
+                            <div class="count-down pt-4" id="clock_time3" data-date="2025-01-01">
+                                <div class="date-box"><span class="days">00</span> <label>days</label></div>
+                                <div class="date-box"><span class="hours">00</span> <label>hr</label></div>
+                                <div class="date-box"><span class="minutes">00</span> <label>min</label></div>
+                                <div class="date-box"><span class="seconds">00</span> <label>sec</label></div>
                             </div>
                         </div>
                         <div class="pt-6">
@@ -28,3 +28,7 @@
         </section>
     </main>
 {{/post}}
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/easy-timer.js"}}"></script>
+{{/contentFor}}
