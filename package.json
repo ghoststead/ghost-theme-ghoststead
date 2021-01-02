@@ -21,6 +21,7 @@
         "lint": "eslint js/*.js"
     },
     "devDependencies": {
+        "@srexi/purecounterjs": "^1.1.1",
         "bigpicture": "^2.5.3",
         "bootstrap": "^5.0.0-beta1",
         "bootstrap-avatar": "^1.2.0",
