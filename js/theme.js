@@ -1,15 +1,3 @@
-/* Start Parallax Image */
-function customParallaxImage(){
-    var x = document.getElementsByClassName('parallax');
-    if(x.length > 0){
-        for (var i = 0; i < x.length; i++) {
-            new jarallax(x[i], {
-                speed: 0.2
-            });
-        }
-    }
-}
-/* End Parallax Image */
 /* Start Pie Chart */
 function customPieChart(){
     var chart = document.getElementsByClassName('pie_chart_in');
@@ -44,8 +32,6 @@ function customSetPieCharts(p){
 /* End Pie Chart */
 /* END particlesJS */
 (function() {
-    customParallaxImage();
-
     var checkPieChartLoaded = false;
     window.addEventListener('scroll', function() {
         var element = document.getElementsByClassName('piechartcontainer');

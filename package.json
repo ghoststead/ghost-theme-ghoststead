@@ -44,6 +44,7 @@
         "gulp-sass": "^4.0.2",
         "gulp-uglify": "^3.0.2",
         "gulp-zip": "^5.0.1",
+        "jarallax": "^1.12.5",
         "node-sass": "^4.13.1",
         "particles.js": "^2.0.0",
         "pump": "^3.0.0",
