@@ -1,5 +1,4 @@
-(function() {
-
+function setup() {
     /*
      * Enable forms that have a data-form-type attribute set to 'contact' by:
      * - append a hidden form element containing the customer api key (if not present).
@@ -30,5 +29,13 @@
             formElement.setAttribute('method', 'POST');
             formElement.setAttribute('action', 'https://api.ghoststead.com/form');
         }
+    }
+}
+
+(function () {
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(setup, 1);
+    } else {
+        document.addEventListener('DOMContentLoaded', setup);
     }
 })();
