@@ -26,6 +26,7 @@
         "bootstrap": "^5.0.0-beta1",
         "bootstrap-avatar": "^1.2.0",
         "clean": "^4.0.2",
+        "easy-pie-chart": "^2.1.7",
         "easytimer": "^1.1.1",
         "eslint": "^7.7.0",
         "eslint-config-standard": "^14.1.1",
@@ -79,5 +80,6 @@
             }
         },
         "dependencies": {}
-    }
+    },
+    "dependencies": {}
 }
