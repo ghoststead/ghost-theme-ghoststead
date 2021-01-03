@@ -10,34 +10,7 @@
         <div class="row">
             {{#get "posts" order="published_at desc" include="authors" limit="3"}}
             {{#foreach posts}}
-            <div class="col-lg-4 my-3">
-                {{#if feature_image}}
-                    <div class="hover-top bg-no-repeat bg-cover bg-center rounded overflow-hidden" style="background-image: url({{img_url feature_image}}); ">
-                {{else}}
-                    <div class="hover-top bg-no-repeat bg-cover bg-center rounded overflow-hidden" style="background-image: url({{asset "images/900x550.jpg"}}); ">
-                {{/if}}
-                    <div class="p-5 pt-12 bg-dark-light">
-                        <div class="pb-2">
-                            <span class="text-white">
-                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                            </span>
-                        </div>
-                        <h5 class="pb-2"><a class="text-white stretched-link text-truncate d-block" href="{{url}}">{{title}}</a></h5>
-                        <p class="text-truncate text-white mb-4">{{excerpt words="10"}}</p>
-                        <div class="border-style top light"></div>
-                        {{#primary_author}}
-                        <div class="d-flex pt-4">
-                            <div class="avatar avatar-32 overflow-hidden rounded-circle">
-                                <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
-                            </div>
-                            <div class="col ps-2 align-self-center">
-                                <span class="text-white"><a class="text-white" href="{{url}}">{{name}}</a></span>
-                            </div>
-                        </div>
-                        {{/primary_author}}
-                    </div>
-                </div>
-            </div>
+                {{> post-card-overlay }}
             {{/foreach}}
             {{/get}}
         </div>
