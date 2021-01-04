@@ -10,7 +10,7 @@
         <div class="row">
             {{#get "posts" order="published_at desc" include="authors" limit="3"}}
             {{#foreach posts}}
-                {{> post-card-overlay }}
+                {{> post-card-1 }}
             {{/foreach}}
             {{/get}}
         </div>
