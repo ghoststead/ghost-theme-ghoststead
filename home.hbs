@@ -6,7 +6,13 @@
 
     <main id="site-main" class="site-main">
         {{> sections/home0/banner}}
-        {{> sections/home0/feature-1}}
+
+        <section id="about" class="py-5">
+            <div class="container text-center section-title my-5">
+                {{content}}
+            </div>
+        </section>
+
         {{> sections/home0/blog}}
         {{> sections/home0/contact}}
     </main>
