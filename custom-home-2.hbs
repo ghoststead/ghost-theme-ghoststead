@@ -1,9 +1,9 @@
 {{!< default}}
 
-{{> header}}
-
 {{!-- The main content area --}}
 {{#post}}
+    {{> header}}
+    
     <main id="site-main" class="site-main">
         {{> sections/home2/banner}}
         {{> sections/home2/brand}}
@@ -14,7 +14,7 @@
         {{> sections/home2/counter}}
         {{> sections/home2/pricing}}
         {{> sections/home2/testimonials}}
-        {{> sections/home2/call-top-action}}
+        {{> sections/home2/call-to-action}}
         {{> sections/home2/team}}
         {{> sections/home2/blog}}
         {{> sections/home2/contact}}
@@ -22,7 +22,3 @@
 {{/post}}
 
 {{> footer }}
-
-{{!-- swiper --}}
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
-

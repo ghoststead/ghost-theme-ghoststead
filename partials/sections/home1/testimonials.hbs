@@ -1,4 +1,4 @@
-<section class="section">
+<section class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
             <div class="col-lg-8 col-xl-6">
@@ -10,61 +10,61 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="border text-center mt-5 mb-3">
-                        <div class="icon icon-lg bg-secondary mt-n4 rounded-circle text-white">
+                        <div class="avatar avatar-64 p-3 bg-info mt-n5 rounded-circle text-white">
                             {{> icons/themify/quote-left}}
                         </div>
                         <div class="p-5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                             <h5 class="h6 m-0px">Nancy Bayers</h5>
-                            <label class="font-w-600 font-small m-0px">Co-founder</label>
+                            <label class="font-w-600 small m-0px">Co-founder</label>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="border text-center mt-5 mb-3">
-                        <div class="icon icon-lg bg-secondary mt-n4 rounded-circle text-white">
+                        <div class="avatar avatar-64 p-3 bg-info mt-n5 rounded-circle text-white">
                             {{> icons/themify/quote-left}}
                         </div>
                         <div class="p-5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                             <h5 class="h6 m-0px">Nancy Bayers</h5>
-                            <label class="font-w-600 font-small m-0px">Co-founder</label>
+                            <label class="font-w-600 small m-0px">Co-founder</label>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="border text-center mt-5 mb-3">
-                        <div class="icon icon-lg bg-secondary mt-n4 rounded-circle text-white">
+                        <div class="avatar avatar-64 p-3 bg-info mt-n5 rounded-circle text-white">
                             {{> icons/themify/quote-left}}
                         </div>
                         <div class="p-5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                             <h5 class="h6 m-0px">Nancy Bayers</h5>
-                            <label class="font-w-600 font-small m-0px">Co-founder</label>
+                            <label class="font-w-600 small m-0px">Co-founder</label>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="border text-center mt-5 mb-3">
-                        <div class="icon icon-lg bg-secondary mt-n4 rounded-circle text-white">
+                        <div class="avatar avatar-64 p-3 bg-info mt-n5 rounded-circle text-white">
                             {{> icons/themify/quote-left}}
                         </div>
                         <div class="p-5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                             <h5 class="h6 m-0px">Nancy Bayers</h5>
-                            <label class="font-w-600 font-small m-0px">Co-founder</label>
+                            <label class="font-w-600 small m-0px">Co-founder</label>
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="border text-center mt-5 mb-3">
-                        <div class="icon icon-lg bg-secondary mt-n4 rounded-circle text-white">
+                        <div class="avatar avatar-64 p-3 bg-info mt-n5 rounded-circle text-white">
                             {{> icons/themify/quote-left}}
                         </div>
                         <div class="p-5">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
                             <h5 class="h6 m-0px">Nancy Bayers</h5>
-                            <label class="font-w-600 font-small m-0px">Co-founder</label>
+                            <label class="font-w-600 small m-0px">Co-founder</label>
                         </div>
                     </div>
                 </div>
@@ -73,5 +73,7 @@
         </div>
     </div>
 </section>
-<!-- swiper -->
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}

@@ -1,0 +1,36 @@
+<div class="col-lg-4 my-3">
+    <div class="card post tag-getting-started h-100">
+        <a href="{{url}}">
+            {{#if feature_image}}
+                <img class="card-img-top img-fluid" src="{{img_url feature_image}}">
+            {{else}}
+                <img class="card-img-top img-fluid" src="{{asset "images/900x550.jpg"}}">
+            {{/if}}
+        </a>
+        <div class="card-body">
+            <a href="{{url}}">
+                <div class="post-card-header">
+                    <h5 class="mt-2 mb-3">{{title}}</h5>
+                </div>
+                <div class="post-card-excerpt text-body">
+                    <p class="text-truncate">{{excerpt words="10"}}</p>
+                </div>
+            </a>
+        </div>
+        <footer class="card-footer bg-transparent post-card-meta d-flex">
+            {{#primary_author}}
+            <div class="d-flex">
+                <div class="avatar avatar-32 overflow-hidden rounded-circle">
+                    <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
+                </div>
+                <div class="col ps-2 align-self-center">
+                    <span class="links-dark w-100 d-block lh-1 font-w-600"><a href="{{url}}">{{name}}</a></span>
+                    <span class="post-card-byline-date small">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                    </span>
+                </div>
+            </div>
+            {{/primary_author}}
+        </footer>
+    </div>
+</div>

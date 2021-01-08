@@ -6,8 +6,9 @@ const livereload = require('gulp-livereload');
 const zip = require('gulp-zip');
 const sass = require('gulp-sass');
 const uglify = require('gulp-uglify');
-const concat = require('gulp-concat');
 const clean = require('gulp-clean');
+const webpack = require('webpack-stream');
+const named = require('vinyl-named');
 
 function serve(done) {
     livereload.listen();
@@ -41,16 +42,19 @@ function scss(done) {
 
 function js(done) {
     pump([
-        gulp.src(
-            ['node_modules/bootstrap/dist/js/bootstrap.js', 'js/vendor/**/*.js', 'js/*.js'],
-            {sourcemaps: true}
-        ),
-        concat('ghoststead.js'),
+        gulp.src('js/*.js'),
+        named(),
+        webpack(require('./webpack.config')),
+        gulp.dest('assets/built/js/'),
+        livereload()
+    ], done);
+}
+
+function vendor(done) {
+    pump([
+        gulp.src('node_modules/ghost-theme-utils/dist/js/*.js'),
         uglify(),
-        gulp.dest(
-            'assets/built/js/',
-            {sourcemaps: '.'}
-        ),
+        gulp.dest('assets/built/js/'),
         livereload()
     ], done);
 }
@@ -75,7 +79,7 @@ const scssWatcher = () => gulp.watch(['scss/**'], scss);
 const hbsWatcher = () => gulp.watch(['*.hbs', 'partials/**/*.hbs'], hbs);
 const jsWatcher = () => gulp.watch(['js/**'], js);
 const watcher = gulp.parallel(scssWatcher, hbsWatcher, jsWatcher);
-const build = gulp.series(scss, js);
+const build = gulp.series(scss, js, vendor);
 const dev = gulp.series(build, serve, watcher);
 
 exports.build = build;

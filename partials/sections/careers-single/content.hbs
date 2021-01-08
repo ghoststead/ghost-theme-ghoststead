@@ -1,4 +1,4 @@
-<section class="section bg-gray-100">
+<section class="py-6 py-md-9 py-lg-11 bg-gray-100">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-10">
@@ -31,14 +31,14 @@
             <div class="col-12 m-30px-t">
                 <div class="swiper-container" data-slidesPerView="1" data-sm="1" data-md="1" data-lg="2" data-xl="2" data-xxl="2" data-spaceBetween="10">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img class="rounded" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                        <div class="swiper-slide mb-3">
+                            <img class="rounded img-fluid" src="{{asset "images/900x550.jpg"}}" title="" alt="">
                         </div>
-                        <div class="swiper-slide">
-                            <img class="rounded" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                        <div class="swiper-slide mb-3">
+                            <img class="rounded img-fluid" src="{{asset "images/900x550.jpg"}}" title="" alt="">
                         </div>
-                        <div class="swiper-slide">
-                            <img class="rounded" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                        <div class="swiper-slide mb-3">
+                            <img class="rounded img-fluid" src="{{asset "images/900x550.jpg"}}" title="" alt="">
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -47,6 +47,7 @@
         </div>
     </div>
 </section>
-<!-- swiper -->
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
 
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}

@@ -1,10 +1,10 @@
-<section class="section overflow-hidden">
+<section class="py-6 py-md-9 py-lg-11 overflow-hidden">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-6 my-3">
                 <div class="section-title">
-                    <label class="border-bottom-2 font-w-600 text-primary border-secondary mb-2">Testimonials</label>
-                    <h3 class="h1">Check what’s our client say about.</h3>
+                    <label class="border-bottom border-2 font-w-600 text-primary border-info mb-2">Testimonials</label>
+                    <h3 class="h1 pb-3">Check what’s our client say about.</h3>
                     <p>We’ve strong work history with different business services</p>
                 </div>
                 <div class="swiper-container" data-sm="1" data-md="2" data-lg="2" data-xl="2" data-xxl="2" data-spaceBetween="10">
@@ -19,8 +19,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-2 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -37,8 +37,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-2 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -55,8 +55,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-2 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -73,8 +73,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-2 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -86,9 +86,15 @@
                 </div>
             </div>
             <div class="col-lg-5 my-3">
-                <img class="max-width-auto" src="{{asset "images/900x550.jpg"}}" title="" alt="">
+                <img class="max-width-auto" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
             </div>
 
         </div>
     </div>
 </section>
+
+{{!-- swiper is included in banner.hbs
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}
+--}}

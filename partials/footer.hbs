@@ -1,87 +1,52 @@
 <footer class="bg-dark footer">
     <div class="footer-top">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-12 my-3 me-auto">
-                    <div class="mb-2">
-                        <img height="32" src="{{@site.logo}}" title="" alt="">
+            <div class="row g-2">
+                <div class="mt-0 py-5 col-6 d-flex justify-content-center footer-column">
+                    <div>
+                        <div class="mb-4">
+                            {{#if @site.logo}}
+                                <img class="img-fluid" width="190" src="{{@site.logo}}" title="" alt="">
+                            {{else}}
+                                {{@site.title}}
+                            {{/if}}
+                        </div>
+                        <div class="nav">
+                            {{#if @site.facebook}}<a class="avatar avatar-32 rounded-circle bg-info text-white me-2 p-2" href="{{facebook_url @site.facebook}}" target="_blank"
+                                                     rel="noopener">{{> icons/themify/facebook}}</a>{{/if}}
+                            {{#if @site.twitter}}<a class="avatar avatar-32 rounded-circle bg-info text-white me-2 p-2" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">{{> icons/themify/twitter-alt}}</a>{{/if}}
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 my-3">
-                    <h6 class="text-white">
-                        Useful
-                    </h6>
-                    <ul class="list-unstyled links-white footer-link-1">
-                        <li>
-                            <a href="#">Web Design</a>
-                        </li>
-                        <li>
-                            <a href="#">Development</a>
-                        </li>
-                        <li>
-                            <a href="#">UI/UX Design</a>
-                        </li>
-                        <li>
-                            <a href="#">Online Marketing</a>
-                        </li>
-                        <li>
-                            <a href="#">SEO Marketing</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-sm-6 my-3">
-                    <h6 class="text-white">
-                        About
-                    </h6>
-                    <ul class="list-unstyled links-white footer-link-1">
-                        <li>
-                            <a href="#">Support Center</a>
-                        </li>
-                        <li>
-                            <a href="#">Customer Support</a>
-                        </li>
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Copyright</a>
-                        </li>
-                        <li>
-                            <a href="#">Popular Campaign</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-sm-6 my-3">
-                    <h6 class="text-white">
-                        Information
-                    </h6>
-                    <address>
-                        <p class="text-white-50 mb-2">2 Embarcadero Center, San Francisco, CA 94111 USA</p>
-                        <p class="mb-2"><a class="text-secondary border-bottom-1 border-secondary" href="mailto:support@domain.com">support@domain.com</a></p>
-                        <p class="mb-2"><a class="text-secondary border-bottom-1 border-secondary" href="tel:+1 (800) 555-1212">+1 (800) 555-1212</a></p>
-                    </address>
-                    <div class="social-icon si-30 secondary nav">
-                        <a href="#">{{> icons/themify/facebook}}</a>
-                        <a href="#">{{> icons/themify/twitter-alt}}</a>
-                        <a href="#">{{> icons/themify/linkedin}}</a>
-                        <a href="#">{{> icons/themify/instagram}}</a>
+                <div class="mt-0 py-5 col-6 d-flex justify-content-center footer-column">
+                    <div>
+                        <p class="text-white mb-2 h5">
+                            Company
+                        </p>
+                        <ul class="list-unstyled footer-link-1">
+                            {{#get "pages" limit="all" filter="tag:hash-company" order="title asc"}}
+                                {{#foreach pages}}
+                                    <li class="p-1">
+                                        <a class="footer-link-1 text-light" href="{{url}}">{{title}}</a>
+                                    </li>
+                                {{/foreach}}
+                            {{/get}}
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-bottom footer-border-light">
+    <div class="py-3 footer-bottom footer-border-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end my-2">
                     <ul class="nav justify-content-center justify-content-md-start links-white small footer-link-1">
-                        <li><a href="#">Privacy &amp; policy</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Get a quote</a></li>
+                        {{navigation type="secondary"}}
                     </ul>
                 </div>
                 <div class="col-md-6 text-center text-md-end my-2">
-                    <p class="m-0 small text-white-50 links-white">© 2020 copyright all rights reserved by <a href="https://www.ghoststead.com/">ghoststead.com</a<</p>
+                    <p class="m-0 small text-white-50 links-white">©{{date format="YYYY"}} All Rights Reserved by {{@site.title}}</p>
                 </div>
             </div>
         </div>

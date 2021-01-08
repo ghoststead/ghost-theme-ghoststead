@@ -1,4 +1,4 @@
-<section class="section">
+<section class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
@@ -15,13 +15,13 @@
                 <h5 class="pt-4 mb-3">What are my payment options?</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <h5 class="pt-4 mb-3">What are my payment options?</h5>
-                <ul class="list-type-02">
-                    <li>Your bank account or credit/debit card via PayPal.</li>
-                    <li>Skrill (available for non US customers only)</li>
-                    <li>Your Visa or Mastercard.</li>
-                    <li>GhostStead credit (existing credit only, no further purchases of credits are available).</li>
+                <ul class="list-unstyled">
+                    <li class="d-flex py-2 align-items-center"><span class="avatar avatar-16 text-primary">{{> icons/themify/check}}</span> <p class="m-0 col ps-2">Your bank account or credit/debit card via PayPal.</p></li>
+                    <li class="d-flex py-2 align-items-center"><span class="avatar avatar-16 text-primary">{{> icons/themify/check}}</span> <p class="m-0 col ps-2">Skrill (available for non US customers only)</p></li>
+                    <li class="d-flex py-2 align-items-center"><span class="avatar avatar-16 text-primary">{{> icons/themify/check}}</span> <p class="m-0 col ps-2">Your Visa or Mastercard.</p></li>
+                    <li class="d-flex py-2 align-items-center"><span class="avatar avatar-16 text-primary">{{> icons/themify/check}}</span> <p class="m-0 col ps-2">GhostStead credit (existing credit only, no further purchases of credits are available).</p></li>
                 </ul>
-                <div class="bg-gray-100 border-left-5 border-primary p-4 my-4">
+                <div class="bg-gray-100 border-left border-5 border-primary p-4 my-4">
                     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                     <p class="blockquote-footer m-0">Someone famous in <cite title="Source Title">Source Title</cite></p>
                 </div>
@@ -36,40 +36,40 @@
                     <a href="#">Research</a>
                     <a href="#">Managment</a>
                 </div>
-                <div class="py-4 my-5 border-top-1 border-bottom-1 border-gray">
+                <div class="py-4 my-5 border-top border-bottom">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
                             <h5 class="m-0">Share Post</h5>
                         </div>
                         <div>
-                            <div class="nav justify-content-center justify-content-md-end social-icon si-30 gray">
-                                <a href="#">{{> icons/themify/facebook}}</a>
-                                <a href="#">{{> icons/themify/twitter-alt}}</a>
-                                <a href="#">{{> icons/themify/linkedin}}</a>
-                                <a href="#">{{> icons/themify/instagram}}</a>
+                            <div class="nav justify-content-center justify-content-md-end">
+                                <a class="avatar avatar-32 rounded bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/facebook}}</a>
+                                <a class="avatar avatar-32 rounded bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/twitter-alt}}</a>
+                                <a class="avatar avatar-32 rounded bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/linkedin}}</a>
+                                <a class="avatar avatar-32 rounded bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/instagram}}</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="media bg-gray-100 p-4">
-                    <div class="avatar-80 rounded-circle">
-                        <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                <div class="d-flex bg-gray-100 p-4">
+                    <div class="avatar avatar-96 overflow-hidden rounded-circle">
+                        <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                     </div>
-                    <div class="media-body ps-4">
+                    <div class="col ps-4">
                         <h5 class="mb-2">Nancy Bayers</h5>
                         <p class="m-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
                 </div>
                 <div class="comments-area my-5">
-                    <div class="border-bottom-1 border-gray pb-2 mb-5">
+                    <div class="border-bottom pb-2 mb-5">
                         <h4 class="m-0">3 Comments</h4>
                     </div>
                     <ul class="list-unstyled pt-4">
-                        <li class="media">
-                            <div class="avatar-60 rounded-circle">
-                                <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                        <li class="d-flex">
+                            <div class="avatar avatar-64 overflow-hidden rounded-circle">
+                                <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                             </div>
-                            <div class="media-body ps-3">
+                            <div class="col ps-3">
                                 <h6 class="mt-0 mb-2">Nancy Bayers</h6>
                                 <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                                 <div class="nav dark-link">
@@ -78,11 +78,11 @@
                                     </a>
                                 </div>
                                 <ul class="list-unstyled mt-5 pt-5 border-top">
-                                    <li class="media">
-                                        <div class="avatar-60 rounded-circle">
-                                            <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                                    <li class="d-flex">
+                                        <div class="avatar avatar-64 overflow-hidden rounded-circle">
+                                            <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                                         </div>
-                                        <div class="media-body ps-3">
+                                        <div class="col ps-3">
                                             <h6 class="mt-0 mb-2">Nancy Bayers</h6>
                                             <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                                             <div class="nav dark-link">
@@ -95,11 +95,11 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="media mt-5 pt-5 border-top">
-                            <div class="avatar-60 rounded-circle">
-                                <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                        <li class="d-flex mt-5 pt-5 border-top">
+                            <div class="avatar avatar-64 overflow-hidden rounded-circle">
+                                <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                             </div>
-                            <div class="media-body ps-3">
+                            <div class="col ps-3">
                                 <h6 class="mt-0 mb-2">Nancy Bayers</h6>
                                 <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                                 <div class="nav dark-link">
@@ -109,11 +109,11 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="media mt-5 pt-5 border-top">
-                            <div class="avatar-60 rounded-circle">
-                                <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                        <li class="d-flex mt-5 pt-5 border-top">
+                            <div class="avatar avatar-64 overflow-hidden rounded-circle">
+                                <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                             </div>
-                            <div class="media-body ps-3">
+                            <div class="col ps-3">
                                 <h6 class="mt-0 mb-2">Nancy Bayers</h6>
                                 <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                                 <div class="nav dark-link">

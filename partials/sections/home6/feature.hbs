@@ -1,90 +1,94 @@
-<section id="about" class="section border-bottom">
+<section id="about" class="py-6 py-md-9 py-lg-11 border-bottom">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
-			<div class="col-lg-8">
-                <label class="border-bottom-2 text-uppercase font-w-600 text-primary border-secondary">About</label>
-				<h3 class="h1 m-0">Effective tools for busy administrators</h3>
-			</div>
-		</div>
+            <div class="col-lg-8">
+                <label class="border-bottom border-2 text-uppercase font-w-600 text-primary border-info">About</label>
+                <h3 class="h1 m-0">Effective tools for busy administrators</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-4 my-3">
                 <div class="rounded shadow-only-hover py-6 px-5 hover-top text-center">
-                    <div class="icon icon-xl rounded-circle border mb-3 dots-icon text-secondary">
+                    <div class="avatar avatar-96 p-4 rounded-circle border mb-3 dots-icon text-info">
                         {{> icons/et-line/desktop}}
                     </div>
                     <h5 class="h6 m-10px-b">Web development</h5>
-                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you
+                        build the perfect site.</p>
                 </div>
             </div>
             <div class="col-md-4 my-3">
                 <div class="rounded shadow-lg py-6 px-5 hover-top text-center">
-                    <div class="icon icon-xl rounded-circle border mb-3 dots-icon text-secondary">
+                    <div class="avatar avatar-96 p-4 rounded-circle border mb-3 dots-icon text-info">
                         {{> icons/et-line/tools}}
                     </div>
                     <h5 class="h6 m-10px-b">Logo & identity</h5>
-                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you
+                        build the perfect site.</p>
                 </div>
             </div>
             <div class="col-md-4 my-3">
                 <div class="rounded shadow-only-hover py-6 px-5 hover-top text-center">
-                    <div class="icon icon-xl rounded-circle border mb-3 dots-icon text-secondary">
+                    <div class="avatar avatar-96 p-4 rounded-circle border mb-3 dots-icon text-info">
                         {{> icons/et-line/hotairballoon}}
                     </div>
                     <h5 class="h6 m-10px-b">Graphics design</h5>
-                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+                    <p class="m-0px">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you
+                        build the perfect site.</p>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center pt-5 pt-lg-7">
             <div class="col-lg-10">
-                <div class="swiper-container" data-sm="2" data-md="3" data-lg="4" data-xl="5" data-xxl="5" data-spaceBetween="30" data-slidesPerView="2">
+                <div class="swiper-container" data-sm="2" data-md="3" data-lg="4" data-xl="5" data-xxl="5"
+                     data-spaceBetween="30" data-slidesPerView="2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="grayscale-hover">
                                 <a href="#">
-                                    <img src="{{asset "images/300x100.jpg"}}" title="" alt="">
+                                    <img class="img-fluid" src="{{asset "images/300x100.jpg"}}" title="" alt="">
                                 </a>
                             </div>
                         </div>
@@ -92,4 +96,11 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
+
+{{!-- swiper is included in banner.hbs
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}
+--}}

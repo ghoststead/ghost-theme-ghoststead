@@ -1,4 +1,4 @@
-<section class="parallax effect-section section" style="background-image: url({{asset "images/1600x900.jpg"}});">
+<section class="parallax effect-section py-6 py-md-9 py-lg-11" style="background-image: url({{asset "images/1600x900.jpg"}});">
     <div class="mask bg-primary opacity-9"></div>
     <div class="container position-relative">
         <div class="row justify-content-center pt-8">
@@ -43,3 +43,7 @@
         </div>
     </div>
 </section>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/jarallax.js"}}"></script>
+{{/contentFor}}

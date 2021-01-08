@@ -14,6 +14,8 @@ with a `no-image` class so we can style it accordingly.
 <style type="text/css">
     .responsive-header-img {
         background-image: url({{img_url background size='xl'}});
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     @media(max-width: 1000px) {
         .responsive-header-img {
@@ -34,10 +36,10 @@ with a `no-image` class so we can style it accordingly.
         }
     }
 </style>
-<div class="parallax effect-section page-heading site-header-background responsive-header-img">
+<div class="site-header-background responsive-header-img">
 
 {{else}}
 
-<div class="parallax effect-section page-heading site-header-background no-image bg-primary">
+<div class="site-header-background no-image bg-primary">
 
 {{/if}}

@@ -2,5 +2,7 @@ node_modules
 package-lock.json
 /dist
 /assets/built
+/assets/js
 .idea
 .DS_Store
+.steadyrc*

@@ -1,0 +1,46 @@
+{{#if feature_image}}
+
+<style type="text/css">
+    .responsive-header-img {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{img_url feature_image size='xl'}});
+
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        height: calc(100vw * .6);
+    }
+
+    .responsive-header-img > .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: calc(100vw * .6);
+        background: #000000;
+    }
+
+    @media(max-width: 1000px) {
+        .responsive-header-img {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{img_url feature_image size='l'}});
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), -webkit-image-set(url({{img_url feature_image size='l'}}) 1x,
+                url({{img_url feature_image size='xl'}}) 2x);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-set(url({{img_url feature_image size='l'}}) 1x,
+                url({{img_url feature_image size='xl'}}) 2x);
+        }
+    }
+    @media(max-width: 600px) {
+        .responsive-header-img {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{img_url feature_image size='m'}});
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), -webkit-image-set(url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), image-set(url({{img_url feature_image size='m'}}) 1x,
+                url({{img_url feature_image size='l'}}) 2x);
+        }
+    }
+</style>
+<div class="site-header-background responsive-header-img">
+
+{{else}}
+
+<div class="site-header-background no-image bg-primary">
+
+{{/if}}

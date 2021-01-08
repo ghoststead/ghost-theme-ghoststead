@@ -1,9 +1,8 @@
-<!-- Section -->
-<section class="section">
+<section class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-5 my-3">
-                <label class="text-secondary mb-3">Testimonials</label>
+                <label class="text-info mb-3">Testimonials</label>
                 <h2 class="mb-3">Loved by businesses, and individuals across the globe.</h2>
                 <p class="lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
                 <div class="pt-2">
@@ -23,8 +22,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-3 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -41,8 +40,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-3 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -59,8 +58,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-3 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -77,8 +76,8 @@
                                         <label class="m-0 small text-white">Co-founder</label>
                                     </div>
                                 </div>
-                                <div class="mt-n4 px-4 pb-5 position-relative text-center">
-                                    <div class="icon bg-secondary rounded-circle text-white mb-3">
+                                <div class="mt-n5 px-4 pb-5 position-relative text-center">
+                                    <div class="avatar avatar-48 p-3 bg-info rounded-circle text-white mb-3">
                                         {{> icons/themify/quote-left}}
                                     </div>
                                     <p class="m-0">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5.</p>
@@ -92,7 +91,7 @@
         </div>
     </div>
 </section>
-<!-- End Section -->
-<!-- swiper -->
-<script defer src={{asset "built/js/vendor/swiper/swiper.js"}}></script>
 
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}

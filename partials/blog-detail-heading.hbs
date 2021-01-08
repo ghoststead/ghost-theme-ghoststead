@@ -1,33 +1,30 @@
-{{#if feature_image}}
-    <section class="parallax effect-section effect-section" style="background-image: url({{img_url feature_image}}); ">
-{{else}}
-    <section class="parallax effect-section effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
-{{/if}}
-    <div class="mask bg-dark opacity-6"></div>
-    <div class="container position-relative">
-        <div class="row screen-65 justify-content-center align-items-center py-12">
-            <div class="col-lg-10 text-center mt-6">
-                <h1 class="display-4 text-white mb-4">{{title}}</h1>
+{{> feature-background}}
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center p-5 h-100">
+            <div class="col-lg-10 text-center">
+                <h1 class="display-4 mb-4 text-white">{{title}}</h1>
 
                 {{#if custom_excerpt}}
                     <p class="lead m-0 text-white">{{custom_excerpt}}</p>
                 {{/if}}
 
-                <div class="d-flex align-items-center mt-4 justify-content-center text-start">
-                    <div class="avatar-50">
+                <div class="d-none d-md-flex align-items-center mt-4 justify-content-center text-left">
+                    <div class="avatar avatar-48 me-2">
                         {{#if profile_image}}
-                            <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
+                            <img> src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
                         {{else}}
-                            <div class="author-profile-image">{{> "icons/avatar"}}</div>
+                            {{> "icons/avatar"}}
                         {{/if}}
                     </div>
                     {{#primary_author}}
                         <div class="ps-3">
-                            <p class="my-0"><a class="h6 text-white" href="{{url}}">{{name}}</a></p>
+                            <p class="my-0">
+                                <a class="h6 text-white text-decoration-none" href="{{url}}">{{name}}</a>
+                            </p>
                         </div>
                     {{/primary_author}}
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>

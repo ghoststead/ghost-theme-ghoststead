@@ -1,13 +1,16 @@
+{{!-- Ghost finder implementation --}}
 <div class="card mt-5">
     <div class="card-header bg-transparent">
         <span class="h5 m-0">Search</span>
     </div>
     <div class="card-body">
-        <form>
-            <input id="blogsearch-input" type="text" class="form-control" placeholder="Search">
-            <div id="blogsearch-result"></div>
+        <form data-form-type="search">
+            <input data-search-input type="text" class="form-control" placeholder="Search">
+            <div data-search-result></div>
         </form>
     </div>
 </div>
-<!-- ghost_finder -->
-<script defer src={{asset "built/js/vendor/ghost_finder/ghost_finder.js"}}></script>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/ghost-finder.js"}}"></script>
+{{/contentFor}}

@@ -1,4 +1,4 @@
-<section class="parallax effect-section effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
+<section class="parallax effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
     <div class="mask bg-dark opacity-7"></div>
     <div class="container position-relative">
         <div class="row screen-65 justify-content-center align-items-center py-12">
@@ -6,8 +6,8 @@
                 <h1 class="display-4 text-white mb-4">How to make trust your competitive advantage</h1>
                 <p class="lead m-0 text-white">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.</p>
                 <div class="d-flex align-items-center mt-4 justify-content-center text-start">
-                    <div class="avatar-50 rounded-circle">
-                        <img src="{{asset "images/250x250.jpg"}}" title="" alt="">
+                    <div class="avatar avatar-48 overflow-hidden rounded-circle">
+                        <img class="img-fluid" src="{{asset "images/250x250.jpg"}}" title="" alt="">
                     </div>
                     <div class="ps-3">
                         <p class="h6 text-white">Nancy Bayers</p>
@@ -18,3 +18,7 @@
         </div>
     </div>
 </section>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/jarallax.js"}}"></script>
+{{/contentFor}}

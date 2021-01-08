@@ -1,8 +1,8 @@
-<div class="mb-4 {{#if feature_image}}{{^is "home"}}{{#has index="0"}}col-md-12 col-lg-12{{/has}}{{/is}}{{/if}}">
+<div class="mb-4 {{#if feature_image}}{{^is "home"}}{{#has index="0"}}col-lg-12{{/has}}{{/is}}{{/if}}">
     <div class="card {{post_class}} {{#unless feature_image}}no-image{{else}}{{^is "home"}}{{#has
-            index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100">
+            index="0"}}post-card-large{{/has}}{{/is}}{{/unless}} h-100 border-0 shadow p-0 post-card">
         {{#if feature_image}}
-            <a href="{{url}}">
+            <a class="text-decoration-none" href="{{url}}">
                 {{!-- This is a responsive image, it loads different sizes depending on device
                 https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img srcset="{{img_url feature_image size="s"}} 300w,
@@ -13,20 +13,20 @@
                      loading="lazy"
                      src="{{img_url feature_image size="m"}}"
                      alt="{{title}}"
-                     class="card-img-top"
+                     class="card-img-top img-fluid"
                 />
             </a>
         {{/if}}
 
-        <div class="card-body">
-            <a href="{{url}}">
+        <div class="card-body post-card-body">
+            <a class="text-decoration-none" href="{{url}}">
                 <div class="post-card-header">
                     {{#if primary_tag}}
                         {{#primary_tag}}
-                            <div class="post-card-primary-tag text-body">{{name}}</div>
+                            <div class="text-body small post-card-primary-tag">{{name}}</div>
                         {{/primary_tag}}
                     {{/if}}
-                    <h5 class="mt-2 mb-3">{{title}}</h5>
+                    <h2 class="h5 mt-2 mb-3">{{title}}</h2>
                 </div>
 
                 <div class="post-card-excerpt text-body">
@@ -39,34 +39,36 @@
 
             </a>
         </div>
-        <footer class="card-footer bg-transparent post-card-meta d-flex">
-            <ul class="author-list list-unstyled m-0">
+        <div class="card-footer bg-transparent d-flex post-card-meta py-3">
+            <ul class="author-list list-unstyled m-0 me-2">
                 {{#foreach authors}}
                     <li class="author-list-item">
-
-                        <!--
-                        <div class="author-name-tooltip">
-                            {{name}}
-                        </div>
-                        -->
-
                         {{#if profile_image}}
-                            <a href="{{url}}" class="static-avatar avatar-30">
-                                <img class="author-profile-image" title="{{name}}" alt="{{name}}" src="{{img_url profile_image size="xs"}}"
+                            <a class="text-decoration-none" href="{{url}}">
+                                <img class="avatar avatar-32 rounded" title="{{name}}" alt="{{name}}"
+                                     src="{{img_url profile_image size="xs"}}"
                                      alt="{{name}}"/>
                             </a>
                         {{else}}
-                            <a href="{{url}}">{{> "icons/avatar"}}</a>
+                            <a class="text-decoration-none" href="{{url}}">{{> "icons/avatar"}}</a>
                         {{/if}}
                     </li>
                 {{/foreach}}
             </ul>
-            <div class="d-flex flex-column ps-2 lh-1">
-                <span class="links-dark font-w-600">{{#has author="count:>2"}}Multiple authors{{else}}{{authors}}{{/has}}</span>
-                <span class="post-card-byline-date small"><time datetime="{{date format="YYYY-MM-DD"}}">{{date
-                        format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
+            <div class="d-flex flex-column pl-2 lh-1">
+                <span class="text-muted pb-2 font-w-500">
+                    {{#has author="count:>2"}}
+                        Multiple authors
+                    {{else}}
+                        {{#foreach authors}}
+                            <a class="text-decoration-none" href="{{url}}" title="{{name}}" class="text-muted author author-{{id}} {{slug}}">{{name}}</a>
+                        {{/foreach}}
+                    {{/has}}
+                </span>
+                <span class="small post-card-byline-date">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    <span class="bull">&bull;</span> {{reading_time}}</span>
             </div>
-        </footer>
-
+        </div>
     </div>
 </div>

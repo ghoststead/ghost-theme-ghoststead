@@ -17,11 +17,20 @@
     {{ghost_head}}
 
 </head>
-<body class="{{body_class}}" data-target="#navbar-collapse-toggle" data-offset="0">
+<body class="{{body_class}}" data-bs-target="#navbar-collapse-toggle" data-bs-offset="70" tabindex="0">
     {{{body}}}
+
+    {{>subscribe}}
+    {{>thank-you}}
 
     {{ghost_foot}}
 
-    <script async defer src={{asset "built/js/ghoststead.js"}}></script>
+    {{{block "scripts"}}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script async defer src={{asset "built/js/ghost-theme-utils.js"}}></script>
+    <script async defer src={{asset "built/js/theme.js"}}></script>
 </body>
 </html>
+
+

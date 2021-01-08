@@ -67,6 +67,9 @@
 			margin-top: -24px;
 		}
     }
+	.hover-top-up {
+		z-index: 1;
+	}
     &:hover {
         .hover-top--in {
             top:-10px;

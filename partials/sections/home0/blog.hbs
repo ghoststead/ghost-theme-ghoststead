@@ -1,5 +1,5 @@
 <!-- End Section -->
-<section id="blog" class="section">
+<section id="blog" class="py-6 py-md-9 py-lg-11">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
             <div class="col-lg-8 col-xl-6">
@@ -10,34 +10,7 @@
         <div class="row">
             {{#get "posts" order="published_at desc" include="authors" limit="3"}}
             {{#foreach posts}}
-            <div class="col-lg-4 my-3">
-                {{#if feature_image}}
-                    <div class="hover-top blog-grid-overlay" style="background-image: url({{img_url feature_image}}); ">
-                {{else}}
-                    <div class="hover-top blog-grid-overlay" style="background-image: url({{asset "images/900x550.jpg"}}); ">
-                {{/if}}
-                    <div class="blog-gird-info">
-                        <div class="b-meta">
-                            <span class="date">
-                                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-                            </span>
-                        </div>
-                        <h5><a class="text-white stretched-link" href="{{url}}">{{title}}</a></h5>
-                        <p class="paragraph-overflow">{{excerpt words="10"}}</p>
-                        <div class="border-style top light mt-4"></div>
-                        {{#primary_author}}
-                        <div class="media">
-                            <div class="avatar-40 rounded-circle">
-                                <img src="{{profile_image}}" title="{{name}}" alt="{{name}}">
-                            </div>
-                            <div class="media-body ps-2 align-self-center">
-                                <span class="text-white"><a class="text-white" href="{{url}}">{{name}}</a></span>
-                            </div>
-                        </div>
-                        {{/primary_author}}
-                    </div>
-                </div>
-            </div>
+                {{> post-card-1 }}
             {{/foreach}}
             {{/get}}
         </div>

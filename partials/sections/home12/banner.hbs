@@ -1,5 +1,4 @@
-<!-- Home Banner -->
-<section id="home" class="section effect-section bg-gray-100">
+<section id="home" class="py-6 py-md-9 py-lg-11 effect-section bg-gray-100">
    <div class="effect effect-bg-65 bg-primary"></div>
    <div class="container position-relative">
        <div class="row align-items-center pt-10 pb-7 justify-content-center">
@@ -13,7 +12,7 @@
                <div class="swiper-slide">
                    <div class="shadow hover-top bg-bg rounded p-4 text-center mt-3 mb-4 bg-white">
                        <div class="d-inline-block mb-5">
-                           <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
+                           <img class="img-fluid" src="{{asset "images/500x500.jpg"}}" title="" alt="">
                        </div>
                        <h5>Web development</h5>
                        <p class="m-0 lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
@@ -25,7 +24,7 @@
                <div class="swiper-slide">
                    <div class="shadow hover-top bg-bg rounded p-4 text-center mt-3 mb-4 bg-white">
                        <div class="d-inline-block mb-5">
-                           <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
+                           <img class="img-fluid" src="{{asset "images/500x500.jpg"}}" title="" alt="">
                        </div>
                        <h5>Web development</h5>
                        <p class="m-0 lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
@@ -37,7 +36,7 @@
                <div class="swiper-slide">
                    <div class="shadow hover-top bg-bg rounded p-4 text-center mt-3 mb-4 bg-white">
                        <div class="d-inline-block mb-5">
-                           <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
+                           <img class="img-fluid" src="{{asset "images/500x500.jpg"}}" title="" alt="">
                        </div>
                        <h5>Web development</h5>
                        <p class="m-0 lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
@@ -49,7 +48,7 @@
                <div class="swiper-slide">
                    <div class="shadow hover-top bg-bg rounded p-4 text-center mt-3 mb-4 bg-white">
                        <div class="d-inline-block mb-5">
-                           <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
+                           <img class="img-fluid" src="{{asset "images/500x500.jpg"}}" title="" alt="">
                        </div>
                        <h5>Web development</h5>
                        <p class="m-0 lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
@@ -61,7 +60,7 @@
                <div class="swiper-slide">
                    <div class="shadow hover-top bg-bg rounded p-4 text-center mt-3 mb-4 bg-white">
                        <div class="d-inline-block mb-5">
-                           <img src="{{asset "images/500x500.jpg"}}" title="" alt="">
+                           <img class="img-fluid" src="{{asset "images/500x500.jpg"}}" title="" alt="">
                        </div>
                        <h5>Web development</h5>
                        <p class="m-0 lead">GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
@@ -74,4 +73,7 @@
        </div>
    </div>
 </section>
-<!-- End Home Banner -->
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}

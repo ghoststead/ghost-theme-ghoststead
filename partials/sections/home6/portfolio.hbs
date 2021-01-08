@@ -1,20 +1,21 @@
-<!-- Section -->
-<section id="portfolio" class="section bg-gray-100">
+<section id="portfolio" class="py-6 py-md-9 py-lg-11 bg-gray-100">
     <div class="container">
         <div class="row justify-content-center text-center section-title">
-			<div class="col-lg-8">
-                <label class="border-bottom-2 text-uppercase font-w-600 text-primary border-secondary">Portfolio</label>
-				<h3 class="h1 m-0">We’ve done lot’s of work, let’s check some from here</h3>
-			</div>
-		</div>
+            <div class="col-lg-8">
+                <label class="border-bottom border-2 text-uppercase font-w-600 text-primary border-info">Portfolio</label>
+                <h3 class="h1 m-0">We’ve done lot’s of work, let’s check some from here</h3>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid image_container">
-        <div class="swiper-container" data-sm="1" data-md="2" data-lg="3" data-xl="4" data-xxl="4" data-spaceBetween="5">
+    <div class="container-fluid image-container">
+        <div class="swiper-container" data-sm="1" data-md="2" data-lg="3" data-xl="4" data-xxl="4"
+             data-spaceBetween="5">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="portfolio-box m-2 p-2 shadow bg-white">
                         <div class="portfolio-img">
-                            <img data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
+                            <img class="img-fluid" data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}"
+                                 title="" alt="">
                         </div>
                         <div class="portfolio-info">
                             <div class="portfolio-desc">
@@ -33,7 +34,8 @@
                 <div class="swiper-slide">
                     <div class="portfolio-box m-2 p-2 shadow bg-white">
                         <div class="portfolio-img">
-                            <img data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
+                            <img class="img-fluid" data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}"
+                                 title="" alt="">
                         </div>
                         <div class="portfolio-info">
                             <div class="portfolio-desc">
@@ -52,7 +54,8 @@
                 <div class="swiper-slide">
                     <div class="portfolio-box m-2 p-2 shadow bg-white">
                         <div class="portfolio-img">
-                            <img data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
+                            <img class="img-fluid" data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}"
+                                 title="" alt="">
                         </div>
                         <div class="portfolio-info">
                             <div class="portfolio-desc">
@@ -71,7 +74,8 @@
                 <div class="swiper-slide">
                     <div class="portfolio-box m-2 p-2 shadow bg-white">
                         <div class="portfolio-img">
-                            <img data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
+                            <img class="img-fluid" data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}"
+                                 title="" alt="">
                         </div>
                         <div class="portfolio-info">
                             <div class="portfolio-desc">
@@ -90,7 +94,8 @@
                 <div class="swiper-slide">
                     <div class="portfolio-box m-2 p-2 shadow bg-white">
                         <div class="portfolio-img">
-                            <img data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}" title="" alt="">
+                            <img class="img-fluid" data-bp="{{asset "images/1000x1000.jpg"}}" src="{{asset "images/1000x1000.jpg"}}"
+                                 title="" alt="">
                         </div>
                         <div class="portfolio-info">
                             <div class="portfolio-desc">
@@ -109,5 +114,15 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+    </div>
 </section>
-<!-- End Section -->
+
+{{!-- swiper is included in banner.hbs
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/swiper.js"}}"></script>
+{{/contentFor}}
+--}}
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/big-picture.js"}}"></script>
+{{/contentFor}}

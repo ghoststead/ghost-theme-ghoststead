@@ -1,46 +1,45 @@
-<!-- Section -->
-<section class="section bg-gray-100">
+<section class="py-6 py-md-9 py-lg-11 bg-gray-100">
     <div class="container">
         <div class="row counter">
             <div class="col-12 col-md-6 col-lg-3 my-3">
-                <div class="media align-items-center">
-                    <div class="only-icon icon-after bg-secondary-after text-primary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-48 icon-after bg-info-after text-primary">
                         {{> icons/et-line/happy}}
                     </div>
-                    <div class="ps-3 ms-3 border-left">
+                    <div class="ps-3 ms-3 border-start col border-white">
                         <div class="purecounter count h3 mb-1" data-purecounter-start="0" data-purecounter-end="650" data-purecounter-duration="2" data-purecounter-delay="10" data-purecounter-once="true">650</div>
                         <span class="text-uppercase small">Happy clients</span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 my-3">
-                <div class="media align-items-center">
-                    <div class="only-icon icon-after bg-secondary-after text-primary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-48 icon-after bg-info-after text-primary">
                         {{> icons/et-line/layers}}
                     </div>
-                    <div class="ps-3 ms-3 border-left">
+                    <div class="ps-3 ms-3 border-start col border-white">
                         <div class="purecounter count h3 mb-1"  data-purecounter-start="0" data-purecounter-end="987" data-purecounter-duration="2" data-purecounter-delay="9" data-purecounter-once="true">987</div>
                         <span class="text-uppercase small">Work completed</span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 my-3">
-                <div class="media align-items-center">
-                    <div class="only-icon icon-after bg-secondary-after text-primary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-48 icon-after bg-info-after text-primary">
                         {{> icons/et-line/global}}
                     </div>
-                    <div class="ps-3 ms-3 border-left">
+                    <div class="ps-3 ms-3 border-start col border-white">
                         <div class="purecounter count h3 mb-1"  data-purecounter-start="0" data-purecounter-end="350" data-purecounter-duration="2" data-purecounter-delay="5" data-purecounter-once="true">350</div>
                         <span class="text-uppercase small">Award winning</span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 my-3">
-                <div class="media align-items-center">
-                    <div class="only-icon icon-after bg-secondary-after text-primary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar avatar-48 icon-after bg-info-after text-primary">
                         {{> icons/et-line/chat}}
                     </div>
-                    <div class="ps-3 ms-3 border-left">
+                    <div class="ps-3 ms-3 border-start col border-white">
                         <div class="purecounter count h3 mb-1" data-purecounter-start="0" data-purecounter-end="850" data-purecounter-duration="2" data-purecounter-delay="8" data-purecounter-once="true">850</div>
                         <span class="text-uppercase small">Telephone calls</span>
                     </div>
@@ -49,4 +48,7 @@
         </div>
     </div>
 </section>
-<!-- End Section -->
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/pure-counter.js"}}"></script>
+{{/contentFor}}

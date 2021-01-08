@@ -52,6 +52,9 @@
 @import "node_modules/bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
 
+// vendor
+@import "node_modules/ghost-theme-utils/scss/style";
+
 //- Grays to Bootstrap
 $darkgray: $gray-900;
 $midgray: $gray-500;
@@ -60,43 +63,29 @@ $whitegray: $gray-100;
 
 @import "mixins";
 
-// Swiper slider
-@import "swiper-bundle";
-
 /* Components */
-@import "components/mega-menu-widget";
 @import "components/effect-widget";
 @import "components/heading-widget";
-@import "components/space-widget";
-@import "components/accordion-widget";
 @import "components/opacity-widget";
-@import "components/zindex-widget";
-@import "components/list-widget";
+//@import "components/list-widget";
 @import "components/border-widget";
-@import "components/avatar-widget";
 @import "components/price-table-widget";
-@import "components/media-widget";
-@import "components/typography-widget";
 @import "components/font-weight-widget";
 @import "components/section-widget";
 @import "components/icon-widget";
-@import "components/social-icon-widget";
 @import "components/button-widget";
 @import "components/hover-widget";
 @import "components/tabs-widget";
 @import "components/image-widget";
-@import "components/blog-widget";
 @import "components/post-article-widget";
 @import "components/portfolio-widget";
 @import "components/swiper-widget";
 @import "components/count-down-widget";
 @import "components/pie-chart-widget";
+@import "components/subscribe-widget";
 
 @import "colors";
 @import "header";
 @import "footer";
 
-@import "site";
-@import "post";
 @import "post-card";
-@import "koenig";
