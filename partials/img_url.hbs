@@ -1,0 +1,14 @@
+<picture>
+    <source type="image/webp"
+            srcset="{{img_url src size="s"}}.webp 300w,
+                    {{img_url src size="m"}}.webp 600w,
+                    {{img_url src size="l"}}.webp 1000w,
+                    {{img_url src size="xl"}}.webp 2000w"
+    />
+    <source srcset="{{img_url src size="s"}} 300w,
+                    {{img_url src size="m"}} 600w,
+                    {{img_url src size="l"}} 1000w,
+                    {{img_url src size="xl"}} 2000w"
+    />
+    <img src="{{img_url src size="xl"}}" alt="{{title}}" />
+</picture>
