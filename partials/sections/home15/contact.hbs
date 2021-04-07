@@ -1,0 +1,62 @@
+<section id="contact" class="py-6 py-md-9 py-lg-11 bg-gray-100">
+    <div class="container">
+        <div class="row justify-content-center text-center section-title">
+			<div class="col-lg-8 col-xl-6">
+				<h3 class="h1 after-50px bg-primary-after">let's start working together</h3>
+				<p>GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+			</div>
+		</div>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 my-3">
+                <div class="bg-white shadow p-4 p-lg-6">
+                    <div class="pb-4">
+                        <h5 class="m-0">Contact</h5>
+                    </div>
+                    <form data-form-type="contact">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label class="form-label">Name</label>
+                                    <input id="contact-name" type="text" name="name" placeholder="Rachel Roth" data-constraints="@Required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-4">
+                                    <label class="form-label">Email address</label>
+                                    <input id="contact-email" type="email" name="email" placeholder="name@example.com" data-constraints="@Required" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="mb-4">
+                                    <label class="form-label">Comment</label>
+                                    <textarea class="form-control" id="contact-message" name="message" rows="3" placeholder="Hi there, I would like to ..." data-constraints="@Required"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input name="location" type="hidden" value="{{@site.url}}/thank-you">
+                                <button class="btn btn-primary" type="submit">Create my account</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xl-3 my-3">
+                <div class="border border-5 border-white py-5 px-4 bg-primary shadow h-100">
+                    <h5 class="text-white mb-2">Our address info</h5>
+                    <p class="text-white-50 mb-5">2 Embarcadero Center, San Francisco, CA 94111 USA</p>
+                    <h5 class="text-white mb-2">Our contact info</h5>
+                    <p class="mb-2 links-white"><a href="mailto:support@domain.com">support@domain.com</a></p>
+                    <p class="m-0 links-white"><a href="tel:+1 (800) 555-1212">+1 (800) 555-1212</a></p>
+
+                    <h5 class="text-white mb-2 mt-5">Follow us</h5>
+                    <div class="nav">
+                        <a class="avatar avatar-32 rounded-circle bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/facebook}}</a>
+                        <a class="avatar avatar-32 rounded-circle bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/twitter-alt}}</a>
+                        <a class="avatar avatar-32 rounded-circle bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/linkedin}}</a>
+                        <a class="avatar avatar-32 rounded-circle bg-gray-100 text-dark me-1 p-2" href="#">{{> icons/themify/instagram}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

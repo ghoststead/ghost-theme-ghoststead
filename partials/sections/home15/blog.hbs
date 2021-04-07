@@ -1,0 +1,18 @@
+<!-- End Section -->
+<section id="blog" class="py-6 py-md-9 py-lg-11">
+    <div class="container">
+        <div class="row justify-content-center text-center section-title">
+            <div class="col-lg-8 col-xl-6">
+                <h3 class="h1 after-50px bg-primary-after">Daily updates</h3>
+                <p>GhostStead is a multipurpose Ghost theme based on Sass and Bootstrap 5 to help you build the perfect site.</p>
+            </div>
+        </div>
+        <div class="row">
+            {{#get "posts" order="published_at desc" include="authors" limit="3"}}
+            {{#foreach posts}}
+                {{> post-card-1 }}
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>

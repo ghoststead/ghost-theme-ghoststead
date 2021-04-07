@@ -1,0 +1,27 @@
+<section id="home" class="effect-section bg-white">
+    <div class="particles-box" id="particles-js"></div>
+    <div class="container position-relative">
+        <div class="row min-vh-100 align-items-center py-10">
+            <div class="col-lg-5 col-xl-4 py-7">
+                <h1 class="h1 mb-3">Our analysis is your financial results</h1>
+                <p class="lead mb-3">Sass and Bootstrap 5 theme
+                    with modern and creative multipurpose design you can use it as a startups.</p>
+                {{#if @labs.members}}
+                    {{> subscribe-form}}
+                {{/if}}
+                <small class="text-white-50">14-day FREE trial - no credit card needed</small>
+            </div>
+            <div class="col-lg-7 col-xl-8">
+                {{#if feature_image}}
+                    {{> feature-image}}
+                {{else}}
+                    <img width="1100" class="max-width-auto" src="{{asset "images/home-banner-v2.svg"}}" title="" alt="">
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{#contentFor "scripts"}}
+    <script async defer src="{{asset "built/js/particles.js"}}"></script>
+{{/contentFor}}
