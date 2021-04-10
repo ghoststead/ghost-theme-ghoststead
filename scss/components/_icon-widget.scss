@@ -17,133 +17,133 @@
 
 // Icon Dots Effect
 .dots-icon {
-    position: relative;
+	position: relative;
 }
 .dots {
-  	z-index: 0;
-  	animation: dots 6s infinite linear;
+	z-index: 0;
+	animation: dots 6s infinite linear;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-    .dot {
-        width: 5px;
-        height: 5px;
-        border-radius: 100px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -3px;
-        margin-top: -3px;
-    }
-    .dot1 {
-        background-color: #8ad9fd;
-        transform: translate(15px, 5px);
-        animation: dot1 1.5s infinite alternate;
-    }
-    .dot2 {
-        background-color: #b8a6f7;
-        transform: translate(-8px, 8px);
-        animation: dot2 1.5s infinite alternate;
-        animation-delay: .5s;
-    }
-    .dot3 {
-        background-color: #fac5a7;
-        transform: translate(-5px, -12px);
-        animation: dot3 1.5s infinite alternate;
-        animation-delay: 1s;
-    }
+	.dot {
+		width: 5px;
+		height: 5px;
+		border-radius: 100px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -3px;
+		margin-top: -3px;
+	}
+	.dot1 {
+		background-color: #8ad9fd;
+		transform: translate(15px, 5px);
+		animation: dot1 1.5s infinite alternate;
+	}
+	.dot2 {
+		background-color: #b8a6f7;
+		transform: translate(-8px, 8px);
+		animation: dot2 1.5s infinite alternate;
+		animation-delay: .5s;
+	}
+	.dot3 {
+		background-color: #fac5a7;
+		transform: translate(-5px, -12px);
+		animation: dot3 1.5s infinite alternate;
+		animation-delay: 1s;
+	}
 }
 
 @keyframes dots {
   from {
-    transform: rotate(-360deg)
+	transform: rotate(-360deg)
   }
 
   to {
-    transform: rotate(0)
+	transform: rotate(0)
   }
 
 }
 
 @keyframes dot1 {
   from {
-    transform: translate(15px, 5px);
-    opacity: 1;
+	transform: translate(15px, 5px);
+	opacity: 1;
   }
 
   to {
-    transform: translate(25px, 5px);
-    opacity: 1;
+	transform: translate(25px, 5px);
+	opacity: 1;
   }
 
 }
 
 @keyframes dot2 {
   from {
-    transform: translate(-8px, 8px);
-    opacity: 1;
+	transform: translate(-8px, 8px);
+	opacity: 1;
   }
 
   to {
-    transform: translate(-19px, 19px);
-    opacity: 1;
+	transform: translate(-19px, 19px);
+	opacity: 1;
   }
 
 }
 
 @keyframes dot3 {
   from {
-    transform: translate(-5px, -12px);
-    opacity: 1;
+	transform: translate(-5px, -12px);
+	opacity: 1;
   }
 
   to {
-    transform: translate(-10px, -24px);
-    opacity: 1;
+	transform: translate(-10px, -24px);
+	opacity: 1;
   }
 
 }
 
 // Arrow Icon
 .arrow-icon {
-    width: 32px;
-    height: 12px;
-    position: relative;
-    &:before {
-        width: 32px;
-        height: 2px;
-        background: currentColor;
-        content: "";
-        top: 0;
-        bottom: 0;
-        right: 0;
-        margin: auto;
-        position: absolute;
-    }
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 12px;
-        height: 12px;
-        border-right: 2px solid currentColor;
-        border-bottom: 2px solid currentColor;
-        margin: auto;
-        right: 0;
-        @include rotate(-45);
-    }
+	width: 32px;
+	height: 12px;
+	position: relative;
+	&:before {
+		width: 32px;
+		height: 2px;
+		background: currentColor;
+		content: "";
+		top: 0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		position: absolute;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 12px;
+		height: 12px;
+		border-right: 2px solid currentColor;
+		border-bottom: 2px solid currentColor;
+		margin: auto;
+		right: 0;
+		@include rotate(-45);
+	}
 }
 
 // Hover rotate effect
 @keyframes lds-dual-ring {
   0% {
-    transform: rotate(0deg);
+	transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+	transform: rotate(360deg);
   }
 }
 
@@ -158,77 +158,77 @@
 
 .hover-rotate {
   .hr-rotate {
-    @include hover-rotate;
+	@include hover-rotate;
   }
 
   .hr-rotate-after {
-    position: relative;
-    z-index: 1;
-    &:after {
-        content: "";
-        position: absolute;
-        margin: auto;
-        border-radius: 60px;
+	position: relative;
+	z-index: 1;
+	&:after {
+		content: "";
+		position: absolute;
+		margin: auto;
+		border-radius: 60px;
 		transition: ease all 0.55s;
-        z-index: -1;
-        @include hover-rotate;
-    }
+		z-index: -1;
+		@include hover-rotate;
+	}
   }
   .ef-1 {
-    &:after {
-        border-top: 60px solid transparent;
-        border-left: 60px solid currentColor;
-        top: -10px;
-        left: -10px;
+	&:after {
+		border-top: 60px solid transparent;
+		border-left: 60px solid currentColor;
+		top: -10px;
+		left: -10px;
 		bottom: -10px;
-        right: -10px;
-        border-right: 60px solid transparent;
-        border-bottom: 60px solid transparent;
-    }
+		right: -10px;
+		border-right: 60px solid transparent;
+		border-bottom: 60px solid transparent;
+	}
   }
   .ef-2 {
-    &:after {
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      border: 4px solid currentcolor;
-      border-bottom: 4px solid transparent;
-    }
+	&:after {
+	  top: -10px;
+	  left: -10px;
+	  right: -10px;
+	  bottom: -10px;
+	  border: 4px solid currentcolor;
+	  border-bottom: 4px solid transparent;
+	}
   }
   .ef-3 {
-    &:after {
-      top: -8px;
-      left: -8px;
-      right: -8px;
-      bottom: -8px;
-      border: 2px solid currentcolor;
-      border-bottom: 2px solid transparent;
-      border-top: 2px solid transparent;
-    }
+	&:after {
+	  top: -8px;
+	  left: -8px;
+	  right: -8px;
+	  bottom: -8px;
+	  border: 2px solid currentcolor;
+	  border-bottom: 2px solid transparent;
+	  border-top: 2px solid transparent;
+	}
   }
   .ef-4 {
-    &:after {
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
-        border: 2px solid currentcolor;
-        border-left: 2px solid transparent;
-        border-right: 2px solid transparent;
-        border-top: 2px solid transparent;
-    }
+	&:after {
+		top: -8px;
+		left: -8px;
+		right: -8px;
+		bottom: -8px;
+		border: 2px solid currentcolor;
+		border-left: 2px solid transparent;
+		border-right: 2px solid transparent;
+		border-top: 2px solid transparent;
+	}
   }
 
   &:hover {
-    .hr-rotate {
-      @include hover-rotate-hover;
-    }
-    .hr-rotate-after {
-      &:after {
-        @include hover-rotate-hover;
-      }
-    }
+	.hr-rotate {
+	  @include hover-rotate-hover;
+	}
+	.hr-rotate-after {
+	  &:after {
+		@include hover-rotate-hover;
+	  }
+	}
   }
 }
 

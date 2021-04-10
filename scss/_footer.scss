@@ -4,52 +4,7 @@
 			border-left: 1px solid rgba($white,.1);
 		}
 	}
-
-	.footer-bottom {
-		.nav {
-			li {
-				margin-bottom: 0;
-				&:not(:first-child),
-				&:not(:last-child) {
-					margin-right: 15px;
-				}
-			}
-		}
-	}
-
-	.footer-link-1 {
-		li {
-		    a {
-		    	position: relative;
-		    	&:after {
-		    		content:"";
-		    		position: absolute;
-		    		bottom: 0;
-		    		right: 0;
-		    		left: auto;
-		    		width: 0px;
-		    		height: 1px;
-		    		transition: ease all 0.35s;
-		    		background: currentColor;
-		    	}
-		    	&:hover {
-		    		&:after {
-	    			    width: 100%;
-					    left: 0;
-					    right: auto;
-		    		}
-		    	}
-		    }
-		    &:last-child {
-		    	margin-bottom:0;
-		    }
-		}
-	}
-
 	.footer-border-light {
 		border-top: 1px solid rgba($white,.1);
-	}
-	.footer-border-dark {
-		border-top: 1px solid rgba($dark,.07);
 	}
 }

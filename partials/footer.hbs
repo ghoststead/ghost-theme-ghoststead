@@ -23,11 +23,11 @@
                         <p class="text-white mb-2 h5">
                             Company
                         </p>
-                        <ul class="list-unstyled footer-link-1">
+                        <ul class="list-unstyled links-white">
                             {{#get "pages" limit="all" filter="tag:hash-company" order="title asc"}}
                                 {{#foreach pages}}
                                     <li class="p-1">
-                                        <a class="text-light" href="{{url}}">{{title}}</a>
+                                        <a href="{{url}}">{{title}}</a>
                                     </li>
                                 {{/foreach}}
                             {{/get}}
@@ -37,11 +37,11 @@
             </div>
         </div>
     </div>
-    <div class="py-3 footer-bottom footer-border-light">
+    <div class="py-3 footer-border-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-end my-2">
-                    <ul class="nav justify-content-center justify-content-md-start links-white small footer-link-1">
+                    <ul class="nav justify-content-center justify-content-md-start links-white small">
                         {{navigation type="secondary"}}
                     </ul>
                 </div>

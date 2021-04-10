@@ -3,7 +3,7 @@
 {{!-- The main content area --}}
 {{#post}}
     <main id="site-main" class="site-main">
-        <section class="bg-center bg-cover bg-fiexd effect-section" style="background-image: url({{asset "images/1600x900.jpg"}});">
+        <section class="bg-center bg-cover bg-fiexd effect-section position-relative overflow-hidden" style="background-image: url({{asset "images/1600x900.jpg"}});">
             <div class="container">
                 <div class="row justify-content-center min-vh-100 align-items-center">
                     <div class="col-lg-8 text-center">
@@ -11,7 +11,7 @@
                             <img class="img-fluid" width="250" src="{{@site.logo}}" alt="{{@site.title}}"/>
                         </div>
                         <h1 class="display-2 text-white mb-3">We're coming soon..</h1>
-                        <p class="h5 text-white-50 pb-2 font-w-400">Our website is under construction. We'll be here soon with our new awesome site.</p>
+                        <p class="h5 text-white-50 pb-2 fw-normal">Our website is under construction. We'll be here soon with our new awesome site.</p>
                         {{#if @labs.members}}
                             {{> subscribe-form}}
                         {{/if}}
