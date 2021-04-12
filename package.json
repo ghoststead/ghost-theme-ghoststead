@@ -23,7 +23,7 @@
     "devDependencies": {
         "@srexi/purecounterjs": "^1.1.1",
         "bigpicture": "^2.5.3",
-        "bootstrap": "^5.0.0-beta1",
+        "bootstrap": "^5.0.0-beta3",
         "bootstrap-avatar": "^1.2.0",
         "clean": "^4.0.2",
         "easy-pie-chart": "^2.1.7",
